@@ -1,0 +1,6 @@
+Tool: built-in OpenAI image generation
+Asset: assets/vcc-workbench.webp
+Original prompt:
+Use case: illustration-story. Asset type: wide website hero, 3:2 landscape. An educator's workbench where a modest open laptop, a paper website wireframe, and three slim tabbed instruction folders form one coherent scene of building a classroom website thoughtfully. Editorial illustration with tactile matte paper shapes, sophisticated flat perspective and gentle natural light; warm ivory background #f6f3eb, deep forest green ink, small warm ochre accents. Composition subject fills right and middle of image, no people, no actual readable screen UI. Welcoming, practical library field guide character. No text, no letters, no logos, no shields, no padlock symbols, no robots, no gradients, no glossy 3D, no watermark.
+
+The output includes an illustrated owl. Its laptop screen is illustrative, not a working application screenshot.

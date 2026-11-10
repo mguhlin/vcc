@@ -1,0 +1,413 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Put students’ needs first — Vibe-Coding Center</title><meta name="description" content="Begin by asking what information the educational task actually needs. Avoid collecting student information when the activity works without it. The guide separates engineering safeguards from legal review and school authorization."><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="canonical" href="https://mguhlin.github.io/vcc/guides/education.html"><link rel="stylesheet" href="../assets/site.css"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span>VCC</span> Vibe-Coding Center</a><nav aria-label="Main"><a href="../#library">Resource library</a><a href="../#start">Start here</a><a href="../#tools">Helpful GitHubs</a><a href="../#download">Download</a></nav></div></header><main class="wrap guide-layout" id="main"><aside class="guide-rail" aria-label="Guide navigation"><div><a href="../#library">← All resources</a><p><strong>In this guide</strong></p><a href="#overview">Overview</a><a href="#start-here-instructions-for-the-ai-coding-assistant">Start here: instructions for the AI coding assistant</a><a href="#1-profile-the-project-before-writing-code">1. Profile the project before writing code</a><a href="#2-non-negotiable-design-defaults">2. Non-negotiable design defaults</a><a href="#3-determine-the-legal-and-contractual-triggers">3. Determine the legal and contractual triggers</a><a href="#4-inspect-every-data-flow-including-invisible-ones">4. Inspect every data flow, including invisible ones</a><a href="#5-engineering-checks-the-ai-must-perform">5. Engineering checks the AI must perform</a><a href="#6-special-rules-by-feature">6. Special rules by feature</a><a href="#7-documentation-to-generate-or-update-only-when-warranted">7. Documentation to generate or update (only when warranted)</a><a href="#8-testing-and-release-gates">8. Testing and release gates</a><a href="#9-required-response-format-from-the-ai-assistant">9. Required response format from the AI assistant</a><a href="#10-maintenance-rules-for-this-instruction-file">10. Maintenance rules for this instruction file</a><a href="#11-official-sources-to-verify-at-review-time">11. Official sources to verify at review time</a></div></aside><article class="guide-content"><p class="eyebrow">Vibe-Coding Center / Field guide</p><h1 id="overview">Put students’ needs first</h1><p>Begin by asking what information the educational task actually needs. Avoid collecting student information when the activity works without it. The guide separates engineering safeguards from legal review and school authorization.</p><p><a class="button" href="../EDU_COMPLIANCE.md" download>Download EDU_COMPLIANCE.md</a></p><figure><a href="../assets/education-compliance.webp"><img src="../assets/education-compliance.webp" alt="Education compliance guide: privacy, security, accessibility, student safety, and documentation" width="1600" height="900" loading="lazy"></a><figcaption class="meta">Visual overview; the full text instructions below provide the detail. <a href="../assets/education-compliance.webp" download>Download image</a></figcaption></figure><h2>Full reference</h2><h2 id="edu-compliance-md-education-website-privacy-safety-security-and-accessibility">EDU_COMPLIANCE.md — Education Website Privacy, Safety, Security, and Accessibility</h2>
+<blockquote>
+<p><strong>Purpose:</strong> Give a vibe-coding assistant practical, repeatable instructions for designing, reviewing, repairing, and documenting any website or web application intended for K–16 education. This file is a development and review standard, <strong>not a compliance certificate, legal opinion, or substitute for school authorization</strong>.</p>
+<p><strong>Compatibility:</strong> Plain Markdown. Put this file at the root of any project and tell ChatGPT, Claude Code, Codex, or another coding assistant to follow it. It may also be used as the body of an AI coding skill. <strong>No other instruction file is required.</strong></p>
+</blockquote>
+<h3 id="start-here-instructions-for-the-ai-coding-assistant">Start here: instructions for the AI coding assistant</h3>
+<p><strong>Your job is to make the actual project safer, more accessible, and easier for a school or university to evaluate.</strong> Read the code, infrastructure configuration, dependencies, and published claims. Do not infer compliance from the existence of a privacy page. Follow these rules for <em>new projects, existing projects, and every material feature change</em>.</p>
+<ol>
+<li><strong>Inspect before advising.</strong> Find application entry points, forms, scripts, storage, network calls, authentication, uploads, embeds, third-party services, telemetry, hosting/configuration, logs, and existing legal pages. Read what is actually present. If unable to inspect a deployed site or backend, say so.</li>
+<li><strong>Choose the applicable profile</strong> in Section 1 and classify risks. Unknowns stay <code>UNVERIFIED</code>; never turn a missing answer into “none.”</li>
+<li><strong>Default to privacy by design.</strong> Prefer no accounts, no identifiable student data, no third-party trackers, local processing, minimal permissions, and a simple accessible interface. Do not add collection to make a feature easier to implement.</li>
+<li><strong>Check legal triggers, not just law names.</strong> Use Section 3, and confirm the applicable federal, state, institutional, and country-specific obligations with current official sources. Distinguish a legal requirement from a recommended safeguard.</li>
+<li><strong>Fix critical code and design risks</strong> before drafting claims. A policy must describe implemented behavior; it cannot make an unsafe implementation acceptable.</li>
+<li><strong>Produce evidence.</strong> Run feasible tests and record the commands, browser/network observations, code paths, dates, results, and limitations. Do not claim to have tested tools you did not run.</li>
+<li><strong>Write or update documentation</strong> using Section 7. Do not invent organization names, contacts, retention periods, certifications, signed DPAs, subprocessors, hosting regions, or security controls.</li>
+<li><strong>Apply release gates</strong> in Section 8. If a critical risk remains, report <code>BLOCKED FOR STUDENT DATA</code> and propose the safest workable alternative. Continue with safe improvements where possible.</li>
+<li><strong>Keep the review proportionate.</strong> A simple offline worksheet should not require enterprise infrastructure. A student-record system, AI tutor, health application, or assessment service needs substantially more scrutiny.</li>
+<li><strong>Do not issue blanket compliance verdicts.</strong> Report <code>VERIFIED</code>, <code>PARTIALLY VERIFIED</code>, <code>UNVERIFIED</code>, or <code>NOT APPLICABLE</code> separately for each control. Reserve legal sign-off for authorized institutional or professional reviewers.</li>
+</ol>
+<p><strong>Reusable invocation prompt:</strong></p>
+<blockquote>
+<p>Read <code>EDU_COMPLIANCE.md</code> and apply it to this project. Inspect the code and deployment assumptions, classify the data and age risks, identify applicable U.S./European requirements, fix what you can safely fix, draft only fact-supported legal/privacy documentation, run appropriate security and accessibility tests, and give me a release decision with evidence and unresolved issues. Do not claim compliance or school approval without proof. If facts are missing, proceed with privacy-protective defaults and mark the rest <code>UNVERIFIED</code>.</p>
+</blockquote>
+<hr />
+<h3 id="1-profile-the-project-before-writing-code">1. Profile the project before writing code</h3>
+<p>Populate the following <strong>Project Facts</strong> internally or in the review report. Infer facts from code when possible; keep uncertain answers explicit. Do not ask a long questionnaire if the repository contains the answers.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Possible findings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intended purpose and education level</td>
+<td>K–2, 3–5, 6–8, 9–12, college/university, staff-only, public information</td>
+</tr>
+<tr>
+<td>Users and ages</td>
+<td>Under 13, 13–17, adults, mixed/unknown, teachers, families, administrators</td>
+</tr>
+<tr>
+<td>Geography and school context</td>
+<td>U.S. states, EU/EEA member countries, UK, other; institution's own rules</td>
+</tr>
+<tr>
+<td>Operation</td>
+<td>Offline single-file, static hosted, browser storage, authenticated cloud, institution-managed server, third-party SaaS</td>
+</tr>
+<tr>
+<td>Data actually received</td>
+<td>Names, emails, IDs, scores, essays, messages, images, voices, IP addresses, cookies, log entries, accessibility data, none verified</td>
+</tr>
+<tr>
+<td>Data locations</td>
+<td>Browser memory, localStorage, IndexedDB, cookies, URLs, server database, backups, logs, AI vendor, analytics, storage vendor</td>
+</tr>
+<tr>
+<td>Role and ownership</td>
+<td>Developer/operator, school/controller, processor/service provider, independent third party; determine rather than assume</td>
+</tr>
+<tr>
+<td>School authorization</td>
+<td>None shown, pending review, confirmed by named authorized official</td>
+</tr>
+<tr>
+<td>Integrations</td>
+<td>Sign-in/SSO, cloud storage, analytics, advertising, CAPTCHA, fonts/CDNs, videos, embedded widgets, Gen AI APIs</td>
+</tr>
+<tr>
+<td>High-impact features</td>
+<td>Grading, admissions, placement, proctoring, monitoring, profiling, biometrics, chat/sharing, student health, payments</td>
+</tr>
+<tr>
+<td>Existing proof</td>
+<td>Privacy notice, terms, DPA, contract, subprocessor register, retention schedule, accessibility test, incident plan</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="risk-modes-pick-the-highest-applicable">Risk modes (pick the highest applicable)</h4>
+<p><strong>Mode A — Ephemeral/local-only classroom activity.</strong> No user account and no identifiable data intentionally transmitted to the application operator. Work is processed in browser memory or a local file. Still inspect hosting request logs, CDN calls, fonts, device storage, query strings, cache, and exports. Do not say “no data processing” merely because there is no database.</p>
+<p><strong>Mode B — Browser-persistent or shareable tool.</strong> Uses localStorage/IndexedDB, QR/share URLs, exports, public links, uploaded documents, classroom devices, or user-generated content. Treat local device disclosure, URL leakage, public access, and retained content as meaningful privacy risks, even without a server database.</p>
+<p><strong>Mode C — Identifiable school service.</strong> Has accounts, remote saves, rosters, assignments, identifiable work, feedback, grades, messaging, or analytics linked to users. Requires validated permissions, institutional oversight, complete data lifecycle controls, vendor/contract review, and an incident response capability.</p>
+<p><strong>Mode D — High-impact/sensitive processing.</strong> Includes health/disability data, biometrics, sensitive surveys, behavioral/disciplinary profiles, automated consequential decisions, AI-driven grading/admissions/monitoring, cross-school data aggregation, or public social interactions among minors. <strong>Do not launch for student use without specialist legal, privacy, safety, security, and educational review.</strong></p>
+<p>If personal data are optional or user-supplied, assess their <strong>reasonably foreseeable</strong> use. A free-text box or file upload can collect student information even if the product does not request it.</p>
+<h3 id="2-non-negotiable-design-defaults">2. Non-negotiable design defaults</h3>
+<p>Apply these to every mode unless a documented reason requires something different:</p>
+<ul>
+<li><strong>Purpose limitation:</strong> Identify the educational task; process only what is needed to complete it.</li>
+<li><strong>Data minimization:</strong> Prefer anonymous interaction; never require a real name, birth date, location, photo, voice, or email for a feature that works without it.</li>
+<li><strong>No exploitation:</strong> No targeted advertising to students; no sale of student information; no undisclosed tracking, fingerprinting, behavioral profiling, or use of student data to train external models. Do not add trackers to a school-facing tool by default.</li>
+<li><strong>Highest privacy defaults for minors:</strong> Disable public profiles, discovery, geolocation, recordings, direct messaging, and sharing unless clearly necessary, approved, and safeguarded.</li>
+<li><strong>Accessible by default:</strong> Keyboard access, visible focus, semantic controls, readable labels, screen reader support, sufficient contrast, responsive/reflowing layouts, reduced motion, media alternatives, and no color-only instructions.</li>
+<li><strong>Security by design:</strong> Restrict access; validate inputs; escape output; protect all credentials; encrypt appropriate data in transit and at rest; keep dependencies maintained; avoid unneeded services.</li>
+<li><strong>Transparent behavior:</strong> Explain what stays on the user's device, what leaves it, which providers receive data, who can view it, and what can be deleted.</li>
+<li><strong>Real deletion:</strong> Define and implement deletion for live storage, caches, backups, logs, exports (where controllable), and school-termination requests. Clearly explain limits for user-downloaded copies and independently held records.</li>
+<li><strong>No dark patterns:</strong> Do not push students to share more data, turn off privacy protections, or accept unnecessary tracking.</li>
+<li><strong>Human oversight:</strong> Do not make consequential instructional, disciplinary, accessibility, admissions, or academic-integrity decisions solely through automated output.</li>
+<li><strong>Least complexity:</strong> Prefer static hosting and local computation when they meet the instructional need; introduce servers, accounts, or AI APIs only with a documented reason.</li>
+</ul>
+<h3 id="3-determine-the-legal-and-contractual-triggers">3. Determine the legal and contractual triggers</h3>
+<p><strong>Legal applicability is jurisdiction-, age-, institution-, funding-, feature-, and data-dependent.</strong> Research current official law and regulator guidance at review time. Do not present this table as automatic applicability.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>When to investigate</th>
+<th>Action/evidence required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>U.S. FERPA</strong></td>
+<td>School maintains education records or discloses personally identifiable information from those records to a service, including K–12 and postsecondary contexts</td>
+<td>Confirm school authorization and lawful disclosure path; for school-official exception verify institutional function, direct control, legitimate educational interest, use restrictions, and redisclosure limits. A written agreement is recommended and may be mandated locally; some FERPA exceptions independently require one. Do <strong>not</strong> claim a DPA is always federally mandatory.</td>
+</tr>
+<tr>
+<td><strong>U.S. COPPA</strong></td>
+<td>Covered online service directed to children under 13 or with actual knowledge it collects their personal information</td>
+<td>Evaluate notice, parental consent or valid school authorization limited to school-approved educational use, parental rights, security, retention and deletion, vendors, and applicable amended rule. An age gate alone is not proof.</td>
+</tr>
+<tr>
+<td><strong>U.S. PPRA</strong></td>
+<td>School-administered surveys/evaluations involving protected subjects, surveys for marketing, or covered student-privacy activities</td>
+<td>Flag to institution for its parental inspection, notice, consent/opt-out, and survey rules. Do not collect protected responses by default.</td>
+</tr>
+<tr>
+<td><strong>U.S. state student privacy / general privacy / breach laws</strong></td>
+<td>Student data, minors, employees, consumers, biometrics, security incidents, or operation in a particular state</td>
+<td>Identify each relevant state, district, and contract requirement. Review laws such as California SOPIPA, New York Education Law § 2-d, state student-data laws, and relevant biometric/privacy laws <strong>only where applicable</strong>; check current texts and enforcement rules.</td>
+</tr>
+<tr>
+<td><strong>U.S. ADA / Section 504 / Section 508</strong></td>
+<td>Public education, federally funded institutions, or covered government technology</td>
+<td>Evaluate disability access obligations. For covered state/local government web and mobile services, the DOJ Title II technical rule uses <strong>WCAG 2.1 AA</strong>; review current compliance dates and exceptions. WCAG 2.2 AA is a sensible engineering target where feasible, <strong>not</strong> a replacement claim about what the rule mandates. Section 508 has a different applicability test.</td>
+</tr>
+<tr>
+<td><strong>U.S. CIPA</strong></td>
+<td>School/library receives covered federal E-rate or other specified funding and provides internet access</td>
+<td>Flag institutional internet safety/filtering responsibilities; do not claim every educational website independently requires filtering.</td>
+</tr>
+<tr>
+<td><strong>U.S. postsecondary financial/health data</strong></td>
+<td>Financial aid, consumer financial data, counseling, medical records, payments, or disability documentation</td>
+<td>Assess GLBA Safeguards Rule, relevant education requirements, PCI obligations, FERPA, HIPAA <strong>only where its entity/data rules apply</strong>, and state health/privacy laws. Do not assume all student health data are HIPAA data.</td>
+</tr>
+<tr>
+<td><strong>EU/EEA GDPR</strong></td>
+<td>Personal data processed in the context of an EU/EEA establishment, or relevant offering/monitoring of people in the EU/EEA</td>
+<td>Identify controller/processor roles, Article 6 lawful basis, Articles 5/12–14 notices, rights, retention, security, Article 28 processor terms, Article 30 records where applicable, Article 35 DPIA triggers, children/special-category rules, breach processes, and Chapter V transfer mechanisms.</td>
+</tr>
+<tr>
+<td><strong>EU ePrivacy / national cookie laws</strong></td>
+<td>Cookies or similar storage/access on devices, analytics, tracking, SDKs</td>
+<td>Assess whether prior consent is needed for non-essential storage/access; strictly necessary technologies may be exempt. A cookie banner is not a substitute for blocking non-essential tools until consent where required.</td>
+</tr>
+<tr>
+<td><strong>EU AI Act</strong></td>
+<td>AI system used for education or vocational training, especially admission, evaluation of learning outcomes, directing learning, or monitoring prohibited behavior during tests</td>
+<td>Classify actual use case against the AI Act, including high-risk triggers, transparency, prohibited uses, oversight, recordkeeping, and current implementation dates. A generic chatbot is not automatically high-risk, and &quot;AI-powered&quot; is not an exemption.</td>
+</tr>
+<tr>
+<td><strong>EU public-sector accessibility / European Accessibility Act</strong></td>
+<td>Public educational websites/apps or goods and services within a covered EU accessibility category</td>
+<td>Check national implementation of the Web Accessibility Directive, EN 301 549, and the European Accessibility Act <strong>only if the service is within scope</strong>. Do not claim the EAA automatically covers every educational website.</td>
+</tr>
+<tr>
+<td><strong>United Kingdom</strong></td>
+<td>UK pupils/users or UK-targeted service</td>
+<td>Assess UK GDPR, Data Protection Act 2018, PECR, ICO Children's Code for services likely accessed by children, accessibility/equality obligations, and Online Safety Act duties where applicable. EU GDPR and UK GDPR are distinct legal regimes.</td>
+</tr>
+<tr>
+<td><strong>Institutional / contractual requirements</strong></td>
+<td>Any proposed school, district, college, or university use</td>
+<td>Obtain local approval, procurement/security review, retention obligations, accessibility requirements, current contract or DPA, and policies for staff/student Gen AI use. A public website being reachable does <strong>not</strong> make it approved for classroom use.</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="interpret-these-distinctions-correctly">Interpret these distinctions correctly</h4>
+<ul>
+<li><strong>FERPA:</strong> The institution controls disclosures of protected education-record data. A vendor's public assurance cannot replace the institution's review. FERPA rights generally move to an eligible student at age 18 or attendance at a postsecondary institution; do not silently assume parents always have direct access.</li>
+<li><strong>DPA:</strong> “Data Processing Agreement” may mean an Article 28 GDPR controller–processor contract or a U.S. student data privacy agreement. These are related but <strong>not interchangeable</strong>. A model NDPA, unsigned template, privacy policy, and executed school contract are four different things. Do not say the site has signed an agreement without evidence.</li>
+<li><strong>COPPA:</strong> School authorization can be used within the FTC's limited school context for educational benefit, not for unrelated commercial uses. It is not blanket permission to monetize children's data. Review the 2025 COPPA amendments and newer guidance against the actual processing.</li>
+<li><strong>GDPR:</strong> Do not assume consent is the lawful basis for public education. A school or institution must determine the lawful basis for its purpose; where Article 8 consent rules apply to information society services, member-state ages vary between <strong>13 and 16</strong>. Record special-category Article 9 conditions if applicable. A U.S. privacy policy is not itself an Article 28 agreement.</li>
+<li><strong>Cross-border transfers:</strong> Server region alone does not determine whether international transfers occur. Include remote support, subcontractors, analytics, administrative access, and AI APIs. Document relevant adequacy mechanisms or safeguards (including SCCs and transfer assessments where needed); never assume a cloud provider is automatically transfer-compliant.</li>
+<li><strong>Breach timing:</strong> Different notification duties apply. Under GDPR, a controller may need to notify its authority within <strong>72 hours of awareness when Article 33 conditions are met</strong>; a processor notifies its controller without undue delay. U.S. and UK obligations can differ. Build an escalation process rather than hardcoding “72 hours for all incidents.”</li>
+<li><strong>Regulation changes:</strong> Check official sources at each significant release. Legal commencement dates, implementation regulations, exemptions, and judicial decisions can change.</li>
+</ul>
+<h3 id="4-inspect-every-data-flow-including-invisible-ones">4. Inspect every data flow, including invisible ones</h3>
+<p>Map <strong>input → processing → storage → recipient → retention → deletion</strong>, with proof for every path.</p>
+<p><strong>Minimum inventory</strong></p>
+<ul>
+<li>Input: forms, imports, student text, files, camera, microphone, clipboard, location, school SSO, cookies, URL parameters/fragments, and administrative tools.</li>
+<li>Browser: memory, sessionStorage, localStorage, IndexedDB, service worker caches, downloads, printed pages, browser sync, and shared-device access.</li>
+<li>Server: databases, buckets, snapshots, backups, CDN/edge/security logs, IP addresses, user-agent, referrers, crash reports, metrics, and support tickets.</li>
+<li>External: fonts, scripts, analytics, embeds, CAPTCHA, advertisements, video hosting, cloud saves, email, payment providers, AI APIs, and tools making requests indirectly.</li>
+<li>Exports: PDFs, JSON, CSV, screenshots, public share URLs, teacher answer keys, rosters, and files that can leave institutional control.</li>
+</ul>
+<p><strong>For each data category, document:</strong> exact fields; why needed; legal basis where relevant; whether minors are involved; processing location; who receives it; access control; default retention and deletion mechanism; school/parent/student rights workflow; evidence source; whether facts are verified.</p>
+<p><strong>Browser-only is not automatically “zero data collection.”</strong> A website host can see normal request metadata; third-party assets can receive visitor data; scripts can transmit content; local files can remain on shared devices. Verify network traffic and host/CDN settings. Use honest language such as “Student answers are processed locally and are not intentionally uploaded by the application” <strong>only when testing supports it</strong>.</p>
+<p><strong>High-priority leak checks:</strong> student identifiers in URLs/query strings, referrer headers, analytics payloads, crash logs, public Git repositories, error messages, embedded files, source maps, browser console output, server access logs, clipboard/share links, and cached offline assets.</p>
+<h3 id="5-engineering-checks-the-ai-must-perform">5. Engineering checks the AI must perform</h3>
+<h4 id="5-1-security-and-privacy">5.1 Security and privacy</h4>
+<ul>
+<li>Search tracked source and deployment artifacts for passwords, private keys, API tokens, service-account JSON, credentials in URLs, and <code>.env</code> mistakes. Treat a key embedded in client JavaScript as public, even if obfuscated. Recommend rotation if exposed; never print the secret into the report.</li>
+<li>Review dependency advisories and abandoned packages; use lockfiles, pinned dependencies where appropriate, software supply-chain controls, and safe update paths. Avoid unnecessary external scripts.</li>
+<li>Trace input to output: defend against XSS, HTML injection, markdown rendering exploits, unsafe file imports, template injection, SQL/NoSQL injection, path traversal, and unsafe deserialization as applicable. Do not treat client validation as server authorization.</li>
+<li>Confirm HTTPS, secure cookies (Secure/HttpOnly/SameSite as appropriate), CSRF defenses for authenticated mutations, reasonable session expiry, rate limits, server-side authentication and object-level authorization, and protected backups.</li>
+<li>Review CORS, CSP, framing policy, content sniffing, and permissions policy for the actual site; do not paste headers that break necessary functionality. Use defense-in-depth for sensitive uploads and cross-origin embeds.</li>
+<li>In multi-user systems, test that a student cannot access another student's work, a teacher cannot access another school's data, and a public link cannot access a private answer key. <strong>Hiding a button or encrypting text with a key shipped to the browser is not access control.</strong></li>
+<li>If user uploads are accepted: validate type/content/size, limit storage, scan or sandbox as risk warrants, prevent public bucket exposure, and establish deletion rules.</li>
+<li>If local storage persists on shared school devices: warn users and provide an accessible <strong>Clear local work</strong> control. Do not use a generic “clear all browser data” instruction when a scoped deletion is possible.</li>
+<li>Never send identifiable school content to an unapproved Gen AI API. Check provider terms, retention, training use, subprocessor terms, region and permissions. Keep model keys server-side; restrict output permissions; review prompt injection and unsafe tool actions.</li>
+<li>For public student interaction: add moderation/escalation, abuse reporting, contact restrictions, age-appropriate defaults, and school oversight. Do not expose minors' user-generated content publicly by default.</li>
+<li>Define backups, restoration tests, security patch ownership, incident contact/escalation, and reasonable log retention for Mode C/D.</li>
+</ul>
+<p>Use current <a href="https://asvs.owasp.org/">OWASP ASVS</a> and <a href="https://csrc.nist.gov/pubs/sp/800/218/final">NIST SSDF</a> as technical references rather than asserting certification. Prioritize vulnerabilities that can expose student data.</p>
+<h4 id="5-2-accessibility-and-inclusive-use">5.2 Accessibility and inclusive use</h4>
+<ul>
+<li>Target <strong>WCAG 2.2 AA</strong> as the general engineering goal where practical; separately record the legally applicable accessibility standard, such as <strong>WCAG 2.1 AA</strong> in the DOJ Title II rule for covered U.S. public entities.</li>
+<li>Use semantic headings, labels, native buttons/forms, associated error messages, accessible names, descriptive links, logical heading and reading order, and language declarations.</li>
+<li>Test keyboard-only navigation, visible focus, keyboard traps, dialogs, drag-and-drop alternatives, timed activities, focus return, screen reader announcements, and accessible instructions.</li>
+<li>Check color contrast, 200% and 400% zoom/reflow where applicable, text spacing, mobile responsiveness, touch targets, reduced motion, captions/transcripts, meaningful alt text, and accessible documents/exports.</li>
+<li>Ensure quizzes, timers, games, graphic canvases, simulations, and charts have an equivalent route to complete the <strong>same learning task</strong> with assistive technology. Do not call an inaccessible separate experience an automatic legal exemption.</li>
+<li>Test error recovery, multilingual content/direction, plain language, and accommodations for accessible assessment.</li>
+<li>Run automated accessibility tools <strong>and</strong> manual keyboard and assistive-technology checks. Automated scans alone do not prove conformance.</li>
+<li>Publish an accessibility contact/feedback path and known limitations if relevant; never fabricate a VPAT/ACR, audit, or accessibility certification.</li>
+</ul>
+<h4 id="5-3-educational-trust-and-fairness">5.3 Educational trust and fairness</h4>
+<ul>
+<li>Make activity objectives, feedback, scoring rules, and teacher controls understandable.</li>
+<li>Do not infer disability, emotional state, ability, cheating, misconduct, or protected traits from ordinary classroom activity without an approved and justified process.</li>
+<li>If Gen AI generates feedback or grades, clearly disclose its role, assess error/bias risk, offer human review and contest paths, and avoid unsupported claims of accuracy.</li>
+<li>Give educators ways to verify content and adapt language demands; do not require disclosure of protected student circumstances to receive an accommodation.</li>
+<li>Keep teachers' private answer keys and administrative controls out of student-delivered bundles when confidentiality matters.</li>
+</ul>
+<h3 id="6-special-rules-by-feature">6. Special rules by feature</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Additional controls and release decisions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anonymous quiz/game</td>
+<td>Verify no student answers, identifiers, or telemetry leave the device; check host/CDN and asset calls; document local reset.</td>
+</tr>
+<tr>
+<td>Save/load or share links</td>
+<td>Inspect what the file/URL contains; do not put protected data in query strings or public share tokens; use expiration and authorization where needed.</td>
+</tr>
+<tr>
+<td>Login, class roster, grades</td>
+<td>Mode C minimum: school approval, secure access control, lifecycle management, FERPA review, potential DPA, deletion/export and audit evidence.</td>
+</tr>
+<tr>
+<td>AI chatbot/tutor</td>
+<td>Check prompts, outputs, vendor processing, training use, child safety, hallucinations, retention, moderation, and teacher oversight. Block unapproved student-data transmissions.</td>
+</tr>
+<tr>
+<td>Automated grading, admissions, proctoring</td>
+<td>Mode D: legal/privacy impact review, bias and validity analysis, accessibility alternatives, appeal process; EU AI Act classification if relevant.</td>
+</tr>
+<tr>
+<td>Photo, voice, video, biometrics, or location</td>
+<td>Mode D if sensitive or identifying; consider COPPA/consent, GDPR special-category conditions where relevant, state biometric laws, necessity, storage and deletion.</td>
+</tr>
+<tr>
+<td>Public profiles, chat, comments, or gallery</td>
+<td>Private by default for minors; authenticated school controls, moderation, reporting, restricted discovery, abuse response, content deletion.</td>
+</tr>
+<tr>
+<td>Surveys or well-being tools</td>
+<td>Screen PPRA, health/sensitivity, parent and institution approvals; remove questions that are unnecessary for the learning goal.</td>
+</tr>
+<tr>
+<td>Paid subscriptions or purchases</td>
+<td>Separate payment data from student content, use reputable payment processors, review consumer terms, PCI scope, applicable accessibility/e-commerce laws.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="7-documentation-to-generate-or-update-only-when-warranted">7. Documentation to generate or update (only when warranted)</h3>
+<p><strong>Do not generate empty legal pages solely to look official.</strong> Produce documents proportionate to the site and support every factual claim with evidence. A single <code>PRIVACY.md</code> can be sufficient for a simple local-only tool. A Mode C/D service ordinarily needs a more substantial contract and governance package. Unless the user requests otherwise, write only documents needed by the verified deployment.</p>
+<h4 id="7-1-privacy-notice-or-privacy-statement">7.1 Privacy notice or privacy statement</h4>
+<p>Include, as applicable: operator identity and <strong>verified contact</strong>; intended users/ages; specific data categories including logs and browser storage; processing purposes; lawful bases where GDPR applies; recipients/subprocessors; cookies and analytics; hosting and international transfers; retention/deletion; school/parent/eligible-student rights and contacts; security summary without revealing secrets; children/consent model; effective date and change notification; complaint/regulator information where required.</p>
+<p>For a truly local-first app, state exactly what remains on the device, what normal hosting requests still occur, and what user exports may reveal. Never say “we collect no information whatsoever” unless all relevant parties and requests have been checked.</p>
+<h4 id="7-2-terms-of-service-acceptable-use">7.2 Terms of service / acceptable use</h4>
+<p>Clarify who operates the service, permitted educational uses, age and school authorization, roles and account responsibility, prohibited misuse, intellectual property and user-created-content rights, narrowly scoped license needed to deliver the service, service changes/availability, reporting of abuse, support/contact, termination and deletion, and applicable dispute/legal provisions <strong>for review by the operator's counsel</strong>. Do not claim ownership of student work or obtain perpetual reuse rights by default. No terms may override applicable statutory rights or school contracts.</p>
+<h4 id="7-3-dpa-school-procurement-review-packet">7.3 DPA / school procurement review packet</h4>
+<p>If the service processes school-controlled personal data, prepare a <strong>fact sheet and contract checklist</strong>, not a falsely executed agreement. Where a school or lawyer requests a draft, label it <strong>DRAFT — REQUIRES LEGAL AND INSTITUTIONAL REVIEW</strong>. Include:</p>
+<ul>
+<li>Parties and roles; educational purposes; subject matter, duration, categories of data and data subjects.</li>
+<li>School instructions/direct control; restrictions on secondary use, re-identification, advertising, selling, and redisclosure.</li>
+<li>Confidentiality; appropriate technical/organizational safeguards; incident notices; audit/assurance rights; breach cooperation.</li>
+<li>Approved subprocessors, changes/notice, hosting and transfers, assistance with access/rights requests.</li>
+<li>Retention, backups, end-of-term return/deletion, verification, and any legal retention exceptions.</li>
+<li>Applicable state student-data terms; for EU processors, <strong>Article 28 GDPR-required terms</strong> and Chapter V transfers as separate issues.</li>
+<li>Signature/approval status clearly marked <code>NOT SIGNED</code> unless documentary evidence proves otherwise.</li>
+</ul>
+<p><strong>Never</strong> promise a district that its use is “FERPA approved,” “COPPA certified,” “GDPR certified,” “NDPA compliant,” or “DPA executed” merely because the software has a notice or template. NDPA is a contractual framework, not a blanket government certification.</p>
+<h4 id="7-4-internal-audit-record-can-be-in-the-final-report">7.4 Internal audit record (can be in the final report)</h4>
+<p>Maintain a data-flow table, vendor/subprocessor register, retention/deletion matrix, risk register, applicable-law mapping, access-role matrix, test results, open remediation, approval/signature status, and dated change log. For Mode D, add appropriate DPIA/risk assessment, AI classification and human-oversight assessment, threat model, educational validity, and reviewer decisions.</p>
+<h3 id="8-testing-and-release-gates">8. Testing and release gates</h3>
+<p>Before publishing a new version or changing how data is handled:</p>
+<ol>
+<li><strong>Static inspection:</strong> check source, configuration, dependencies, exposed secrets, scripts, data stores, and public assets. Cite paths and lines when possible.</li>
+<li><strong>Live behavior inspection:</strong> in a fresh browser session, inspect network requests, cookies/storage, third-party connections, redirects, referrers, telemetry, and export/shared-link payloads. Check browser-only and logged-in flows separately. If deployment is unavailable, explicitly mark it untested.</li>
+<li><strong>Security checks:</strong> run feasible secret scans, dependency/security checks, tests for injection, authorization, account separation, unsafe uploads, and retention controls. Do not run destructive tests on a live student system without authorization.</li>
+<li><strong>Accessibility checks:</strong> run at least one automated scanner, keyboard-only flows, responsive/zoom tests, and targeted screen-reader testing for important interactions. List gaps honestly.</li>
+<li><strong>Privacy operations:</strong> exercise data export, user-facing reset, school access/deletion requests, account termination, and backups/deletion reconciliation as applicable.</li>
+<li><strong>Legal/contract review:</strong> make a jurisdiction and user-age matrix; list unknowns and who must resolve them. Verify any claimed laws, implementation dates, school approvals, and vendor terms against current sources.</li>
+<li><strong>Policy-to-code comparison:</strong> every privacy, security, retention, or accessibility claim must point to supporting code, configuration, signed document, or verified operational evidence.</li>
+<li><strong>Final result:</strong> provide a concise <strong>risk-mode, evidence summary, issue table, fixed items, outstanding actions, and release decision</strong>.</li>
+</ol>
+<h4 id="critical-release-blockers">Critical release blockers</h4>
+<p>Mark <code>BLOCKED FOR STUDENT DATA</code> when any relevant item is unresolved:</p>
+<ul>
+<li>Personal/student records accessible to unauthorized users or placed in public URLs, assets, buckets, or repositories.</li>
+<li>Real credentials/secrets exposed; unsafe authentication or broken server-side authorization involving protected data.</li>
+<li>Identifiable student information sent to unapproved AI, analytics, advertising, or other third-party services.</li>
+<li>No lawful/school-authorized path established for planned collection of protected student data or under-13 processing where required.</li>
+<li>High-impact or sensitive feature has no necessary institutional, privacy, safety, or legal review.</li>
+<li>Known severe accessibility barriers prevent students with disabilities from completing a required activity without an appropriate equivalent means of access.</li>
+<li>No feasible incident response or deletion process for a remote system storing identifiable records.</li>
+<li>Materially false claims in published privacy/terms/security documents.</li>
+</ul>
+<p>A blocker may prevent live student-data deployment without preventing publication of a <strong>demonstration using synthetic data</strong> or a <strong>local-only version</strong> after the relevant risks are removed.</p>
+<h4 id="release-status-vocabulary">Release status vocabulary</h4>
+<ul>
+<li><code>READY FOR TECHNICAL PILOT WITH SYNTHETIC DATA</code> — suitable for controlled functional evaluation; not authorization to process student records.</li>
+<li><code>CONDITIONALLY READY FOR SCHOOL REVIEW</code> — technical issues addressed but institution/legal/contract approvals pending.</li>
+<li><code>BLOCKED FOR STUDENT DATA</code> — critical risk or required approval unresolved.</li>
+<li><code>RELEASE REVIEW COMPLETE</code> — checks and exceptions recorded; <strong>not</strong> a legal compliance certification. Actual deployment still needs the organization responsible for it to approve.</li>
+</ul>
+<h3 id="9-required-response-format-from-the-ai-assistant">9. Required response format from the AI assistant</h3>
+<p>After applying this file, return the following <strong>short review</strong>, plus code/document changes when requested:</p>
+<pre><code class="language-markdown"># Education Compliance Review — [Project]
+Review date: [YYYY-MM-DD]
+Risk mode: [A/B/C/D]
+Audience/regions: [verified or unverified]
+Deployment reviewed: [source only / live + source / etc.]
+
+## Decision
+[One of the release statuses above, and why.]
+
+## What the application actually does
+[Data flow and third-party/hosting facts; distinguish verified from unverified.]
+
+## Findings and remedies
+| Priority | Issue | Evidence | Fix/status | Owner |
+|---|---|---|---|---|
+| Critical/High/Medium/Low | ... | file:line, test, or UNVERIFIED | ... | ... |
+
+## Legal and institutional triggers
+[Which frameworks apply, may apply, or do not apply, with a source and a reason.]
+
+## Changes made and tests run
+[Specific files, commands, results. Do not invent tests.]
+
+## Documents and approvals
+[Privacy, terms, DPA/Article 28, accessibility, policies, school authorization, and their actual status.]
+
+## Before student use
+[Only unresolved actions, assigned to developer, institution, vendor, legal/privacy lead.]
+</code></pre>
+<p>For a small Mode A project with no findings, keep the response brief. For Mode C/D, include enough detail to support a school or university vendor review. <strong>Do not suppress a safety issue to fit the short format.</strong></p>
+<h3 id="10-maintenance-rules-for-this-instruction-file">10. Maintenance rules for this instruction file</h3>
+<ul>
+<li>Reapply on new features involving storage, user accounts, minors, AI, assessments, media, integrations, or public sharing; reassess when hosting or third-party vendors change.</li>
+<li>Recheck official legal references periodically and at release time; cite the retrieval date for time-sensitive conclusions. Do not rely on the version date of this instruction file as proof that laws remain unchanged.</li>
+<li>Keep legal and technical tests independent. Passing code scanners does not prove GDPR/FERPA/COPPA compliance; obtaining a DPA does not prove software is secure.</li>
+<li>Prefer a precise statement of what <strong>has been verified</strong> to any marketing phrase about being “fully compliant,” “district approved,” or “100% safe.”</li>
+<li>For urgent safety/privacy findings, minimize further processing and seek the authorized institution's incident/privacy/security process.</li>
+</ul>
+<h3 id="11-official-sources-to-verify-at-review-time">11. Official sources to verify at review time</h3>
+<p>Use official laws and regulators first; use institutional policy and executed contracts for local obligations. These links are research starting points and <strong>do not establish that every law applies to every project</strong>.</p>
+<p><strong>United States</strong></p>
+<ul>
+<li><a href="https://studentprivacy.ed.gov/faq/who-school-official-under-ferpa">U.S. Department of Education — FERPA school-official exception</a></li>
+<li><a href="https://studentprivacy.ed.gov/faq/i-want-use-online-tool-or-application-part-my-course-however-i-am-worried-it-violation-ferpa">U.S. Department of Education — online educational services guidance</a></li>
+<li><a href="https://studentprivacy.ed.gov/resources/protecting-student-privacy-while-using-online-educational-services-model-terms-service">U.S. Department of Education — model Terms of Service review checklist</a></li>
+<li><a href="https://studentprivacy.ed.gov/topic/protection-pupil-rights-amendment-ppra">U.S. Department of Education — PPRA</a></li>
+<li><a href="https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions">FTC — COPPA FAQs, including schools</a></li>
+<li><a href="https://www.ftc.gov/legal-library/browse/federal-register-notices/16-cfr-part-312-coppa-final-rule-amendments">FTC — COPPA rule and amendments</a></li>
+<li><a href="https://www.ada.gov/resources/2024-03-08-web-rule/">DOJ — ADA Title II web and mobile accessibility rule</a></li>
+<li><a href="https://csrc.nist.gov/pubs/sp/800/218/final">NIST — Secure Software Development Framework</a></li>
+<li><a href="https://asvs.owasp.org/">OWASP — Application Security Verification Standard</a></li>
+</ul>
+<p><strong>European Union / EEA</strong></p>
+<ul>
+<li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679">Official GDPR text — Regulation (EU) 2016/679</a></li>
+<li><a href="https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/legal-grounds-processing-data/are-there-any-specific-safeguards-data-about-children_en">European Commission — children's data and consent</a></li>
+<li><a href="https://commission.europa.eu/publications/standard-contractual-clauses-controllers-and-processors-eueea_en">European Commission — standard controller–processor clauses</a></li>
+<li><a href="https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en">European Data Protection Board — international transfers</a></li>
+<li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">European Commission — AI Act overview</a></li>
+<li><a href="https://eur-lex.europa.eu/eli/dir/2016/2102/oj">EU Web Accessibility Directive</a></li>
+<li><a href="https://eur-lex.europa.eu/eli/dir/2019/882/oj">European Accessibility Act</a></li>
+</ul>
+<p><strong>United Kingdom</strong></p>
+<ul>
+<li><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/introduction-to-the-childrens-code/">ICO — Children's Code</a></li>
+<li><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/">ICO — UK GDPR guidance</a></li>
+</ul>
+<p><strong>Accessibility technical standard</strong></p>
+<ul>
+<li><a href="https://www.w3.org/TR/WCAG22/">W3C — WCAG 2.2</a></li>
+</ul>
+<hr />
+<p><strong>End of instructions.</strong> Apply to the actual project; do not copy this reference verbatim into public-facing terms or claim these instructions themselves demonstrate compliance.</p>
+</article></main><footer class="site-footer"><div class="wrap footer-inner"><p>Vibe-Coding Center · <a href="https://mguhlin.org/">Miguel Guhlin</a></p><p><a href="../CREDITS.md">Credits &amp; reuse</a> · <a href="../SOURCES.md">Sources</a><br>Design refinement: <a href="https://github.com/heydamir/unslop">unslop by Damir Sokolovsky</a> (CC BY 4.0).</p></div></footer></body></html>
