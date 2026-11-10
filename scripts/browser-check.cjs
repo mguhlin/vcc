@@ -7,6 +7,8 @@ const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors
 const base=process.env.VCC_URL||'http://127.0.0.1:4186/';
 await page.goto(base,{waitUntil:'networkidle'});
 if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-desktop.png',fullPage:true});
+assert.equal(await page.locator('.foundation-art img').count(),3);
+for(const route of ['design','security','education']){await page.locator('.foundation-art[href="guides/'+route+'.html"]').click();assert.ok(page.url().endsWith('/guides/'+route+'.html'));assert.ok(await page.locator('.guide-explainer').isVisible());await page.goto(base);}
 assert.equal(await page.locator('[data-resource]:visible').count(),6);
 await page.locator('#resource-search').fill('privacy');assert.ok(await page.locator('[data-resource]:visible').count()>0);
 await page.locator('#resource-search').fill('zzzznomatch');assert.ok(await page.locator('#no-results').isVisible());
