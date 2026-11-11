@@ -20,6 +20,7 @@ Practical, educator-friendly guidance for creating websites with AI: purposeful 
 - Hero illustration, design playbook, and education compliance visual
 - A focused GitHub shelf with optional additions labeled by instruction-file coverage
 - Supplemental resource library, start, classroom-sharing, and blog pages in a shared navigation dropdown
+- An About page linked from every site footer
 - Resource notes preserving the decisions for the original supplied bookmarks
 - Static HTML/CSS/JS, Markdown sources, rebuild and packaging scripts
 
