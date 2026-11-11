@@ -1,0 +1,68 @@
+[
+  {
+    "category": "design",
+    "title": "Make the design fit the job",
+    "type": "Design · Core instruction file",
+    "description": "A classroom game, a lesson library, and a family information page need different layouts. Start with your audience and their task.",
+    "note": "Includes WEB_DESIGN.md and the visual design playbook",
+    "guide": "guides/design.html",
+    "guide_label": "Explore design guidance",
+    "download": "WEB_DESIGN.md",
+    "download_label": "Download WEB_DESIGN.md"
+  },
+  {
+    "category": "security",
+    "title": "Look beyond “it works”",
+    "type": "Security · Core instruction file",
+    "description": "Use SecureVCC to investigate exposed keys, access controls, unsafe inputs, dependencies, and the failures a quick demo can miss.",
+    "note": "The complete SecureVCC review and source materials",
+    "guide": "guides/security.html",
+    "guide_label": "Explore SecureVCC",
+    "download": "securevcc/securevcc.md",
+    "download_label": "Download securevcc.md"
+  },
+  {
+    "category": "privacy",
+    "title": "Put students’ needs first",
+    "type": "Education & privacy · Core instruction file",
+    "description": "Map what a site collects, check accessibility, and identify school privacy and approval questions before using real student information.",
+    "note": "K–16 guidance · U.S., EU/EEA, and UK considerations",
+    "guide": "guides/education.html",
+    "guide_label": "Explore education guidance",
+    "download": "EDU_COMPLIANCE.md",
+    "download_label": "Download EDU_COMPLIANCE.md"
+  },
+  {
+    "category": "planning",
+    "title": "Write a better starting brief",
+    "type": "Planning · Reusable template",
+    "description": "Name the learner, the learning task, the data boundaries, and what success looks like before asking for code.",
+    "note": "",
+    "guide": "guides/project-brief.html",
+    "guide_label": "Use the project brief",
+    "download": "templates/PROJECT_BRIEF.md",
+    "download_label": "Download the template"
+  },
+  {
+    "category": "launch",
+    "title": "Gather evidence before sharing",
+    "type": "Testing & launch · Reusable template",
+    "description": "Try the real task with a keyboard and a phone. Record what passed, what failed, and what needs a school decision.",
+    "note": "",
+    "guide": "guides/launch.html",
+    "guide_label": "Use the launch record",
+    "download": "templates/LAUNCH_REVIEW.md",
+    "download_label": "Download the template"
+  },
+  {
+    "category": "planning",
+    "title": "Keep the AI focused",
+    "type": "Planning · Reusable prompt pack",
+    "description": "Use ready-to-adapt prompts for a first build, a redesign, an accessibility pass, and a safer release.",
+    "note": "",
+    "guide": "guides/prompts.html",
+    "guide_label": "Open the prompt pack",
+    "download": "templates/PROMPTS.md",
+    "download_label": "Download the prompts"
+  }
+]

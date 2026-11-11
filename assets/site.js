@@ -1,7 +1,7 @@
 'use strict';
 // Preserve links to sections that now have their own supplemental pages.
 const movedSections={'#start':'guides/start.html','#before-sharing':'guides/before-sharing.html'};
-if(document.querySelector('#resource-list')&&movedSections[location.hash])location.replace(movedSections[location.hash]);
+if(document.querySelector('.hero')&&movedSections[location.hash])location.replace(movedSections[location.hash]);
 const search=document.querySelector('#resource-search');
 const category=document.querySelector('#resource-category');
 const entries=[...document.querySelectorAll('[data-resource]')];
