@@ -6,7 +6,7 @@ Practical, educator-friendly guidance for creating websites with AI: purposeful 
 
 ## Start with your project
 
-1. Read the educator introductions on the site.
+1. Read the educator introductions and open **Supplementals → Start here** on the site.
 2. Download `WEB_DESIGN.md`, `EDU_COMPLIANCE.md`, and `securevcc/securevcc.md` into your project root. The last file should be named `securevcc.md` there.
 3. Copy `templates/PROJECT_BRIEF.md` into your project root and complete it without student information.
 4. Explicitly ask your coding assistant to read and apply all three instruction files. If it cannot access files, attach or paste them. Presence alone is not activation.
@@ -18,7 +18,9 @@ Practical, educator-friendly guidance for creating websites with AI: purposeful 
 - All SecureVCC reference and provenance materials, including its original upstream archive
 - Project brief, prompt pack, launch review, and instruction-pointer examples
 - Hero illustration, design playbook, and education compliance visual
-- Supplemental repository recommendations and a decision for every supplied bookmark
+- A focused GitHub shelf with optional additions labeled by instruction-file coverage
+- Supplemental start, classroom-sharing, and blog pages in a shared navigation dropdown
+- Resource notes preserving the decisions for the original supplied bookmarks
 - Static HTML/CSS/JS, Markdown sources, rebuild and packaging scripts
 
 Third-party recommended repositories are linked, not installed or redistributed. See [CREDITS.md](CREDITS.md) for reuse details and [RESOURCE_REVIEW.md](RESOURCE_REVIEW.md) for review scope.
@@ -46,7 +48,7 @@ Packaging puts every project component except Git metadata, caches, development-
 
 ## Add a resource
 
-Add its Markdown source, introduction, and build mapping in `scripts/build.py`. Add a library entry in `index.html` with a category and download link. Document sources, licensing, the intended audience, and testing limits. Rebuild, validate, and package so online and downloaded copies agree. Keep public material free of maintenance timestamps and dated status labels.
+Add its Markdown source, introduction, and build mapping in `scripts/build.py`. Supplemental pages use `supplementals/` for Markdown and `guides/` for rendered HTML; add their links to `SUPPLEMENTALS` in the build script to update navigation everywhere. Add a library entry in `index.html` with a category and download link. Document sources, licensing, the intended audience, and testing limits. Rebuild, validate, and package so online and downloaded copies agree. Keep public material free of maintenance timestamps and dated status labels.
 
 VCC is a public/static resource library. It uses no visitor account, uploads, analytics, remote fonts, or application backend. GitHub Pages receives hosting requests. Search and reminder values remain in page memory. External services receive requests only when their links are followed.
 
@@ -54,4 +56,4 @@ VCC is a public/static resource library. It uses no visitor account, uploads, an
 
 VCC’s primary job is helping an educator find a useful guide or download in under a minute. A searchable field-guide library was chosen over a step-by-step wizard or a promotional landing page: visitors can enter at the task they already have, keep the full reference nearby, and download immediately. This is a design goal, not a measured user-study result.
 
-The character is practical, warm, and deliberate. The visual world is an educator’s workbench; one illustrated scene carries the richness while the interface uses silver-white, navy and denim blue, readable system text, and serif headings. Three compact original instruction-file thumbnails sit side by side immediately above search and link to distinct explanation pages; numbered field-guide entries organize the broader library. Spacing follows a 4-pixel scale, controls share clear focus states, and motion is unnecessary. Mobile stacks the same content in reading order. English is the authored interface language. The engineering accessibility target is WCAG 2.2 AA, without a conformance claim. The site is public/static (Tier 0) and has no student-data collection workflow.
+The character is practical, warm, and deliberate. The visual world is an educator’s workbench; one illustrated scene carries the richness while the interface uses silver-white, navy and denim blue, readable system text, and serif headings. Three compact original instruction-file thumbnails sit side by side immediately above search and link to distinct explanation pages; numbered field-guide entries organize the broader library. Supplemental workflows live on their own reading pages, reached through a native disclosure dropdown shared by the homepage and all guides. The homepage keeps the library and focused repository shelf easy to scan. Spacing follows a 4-pixel scale, controls share clear focus states, and motion is unnecessary. Mobile stacks the same content in reading order. English is the authored interface language. The engineering accessibility target is WCAG 2.2 AA, without a conformance claim. The site is public/static (Tier 0) and has no student-data collection workflow.

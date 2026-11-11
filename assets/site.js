@@ -1,4 +1,7 @@
 'use strict';
+// Preserve links to sections that now have their own supplemental pages.
+const movedSections={'#start':'guides/start.html','#before-sharing':'guides/before-sharing.html'};
+if(document.querySelector('#resource-list')&&movedSections[location.hash])location.replace(movedSections[location.hash]);
 const search=document.querySelector('#resource-search');
 const category=document.querySelector('#resource-category');
 const entries=[...document.querySelectorAll('[data-resource]')];
@@ -20,6 +23,10 @@ const checks=[...document.querySelectorAll('.checklist input')];
 function updateChecks(){const n=checks.filter(x=>x.checked).length;const el=document.querySelector('#check-summary');if(el)el.textContent=`${n} of ${checks.length} reminders marked. Use the full guides to gather release evidence.`;}
 checks.forEach(x=>x.addEventListener('change',updateChecks));
 document.querySelector('#reset-checks')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=false);updateChecks()});
-// Keep the scheduled companion discoverable without publishing a broken article link.
-const article=document.querySelector('[data-publication]');
-if(article&&Date.now()>=Date.parse(article.dataset.publication)){const a=document.createElement('a');a.href=article.dataset.href;a.textContent='Read the design article';article.replaceChildren(a);}
+const supplemental=document.querySelector('.supplement-nav');
+document.addEventListener('keydown',event=>{
+ if(event.key==='Escape'&&supplemental?.open){supplemental.open=false;supplemental.querySelector('summary').focus();}
+});
+document.addEventListener('click',event=>{
+ if(supplemental?.open&&(!supplemental.contains(event.target)||event.target.closest('a')))supplemental.open=false;
+});

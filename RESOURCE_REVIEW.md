@@ -1,16 +1,18 @@
 # Supplemental resource review
 
-## What was examined
+## Current shelf
 
-Every one of the 16 bookmarks in the supplied AI_Git_Hub.csv is accounted for below. Thirteen were GitHub repositories, one was a GitHub gist, and two were third-party project-directory pages. Five additional primary repositories support VCC’s design, security, and testing workflow.
+The homepage keeps unslop, UI UX Pro Max, Design Bites, axe-core, and Playwright. Gitleaks, ZAP, and Accessibility Insights for Web add focused security and accessible-interface tools that are not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`. They are optional external resources; their software and instructions are not bundled or automatically applied.
 
-Repository identity, public README, license metadata, archive status, intended role, and documented setup requirements were examined through GitHub. All 18 successfully inspected repositories were not archived in the inspected metadata. README claims were not treated as independently tested capabilities. No candidate software was installed, run, or subjected to a dependency or security audit as part of this vetting. No classroom deployment approval is implied.
+UI UX Pro Max, Design Bites, and axe-core are already referenced in `WEB_DESIGN.md`. Unslop and Playwright are also optional resources not named in the three instruction files. The core files cover relevant practices; a tool's absence does not mean the topic is missing.
 
-Revision links below pin the inspected repository state for traceability without publishing maintenance timestamps. Licenses shown are repository-level signals; assets, dependencies, model weights, and third-party examples may have separate terms. Read current upstream terms before installation.
+MarkItDown, Spec Kit, and Cloudflare's security-audit-skill have been removed from the homepage shelf. Cloudflare remains credited as a source of SecureVCC. Their original review entries are retained below as context.
 
-## Recommended shelf
+## Review scope
 
-Eight focused resources are linked from the main page. Other bookmarks remain in this ledger with an explanation rather than an unqualified recommendation.
+The original supplied AI_Git_Hub.csv contained 16 bookmarks: thirteen GitHub repositories, one GitHub gist, and two project-directory pages. Five additional primary repositories were examined for the original design, security, and testing shelf. The three optional additions below were examined against their primary repositories and official documentation.
+
+Repository identity, README, license signals, archive status, intended role, and setup limits inform these selections. Revision links identify inspected source without maintenance timestamps. Metadata and documentation are not an execution audit, proof of security, or classroom approval. Third-party assets and dependencies may have separate terms. Read current upstream terms before installation.
 
 ## heydamir/unslop
 
@@ -62,7 +64,7 @@ A desktop workspace for people already using coding-agent CLIs.
 
 ## microsoft/markitdown
 
-**Decision:** Recommended. **Source:** supplied bookmark export.
+**Decision:** Background reference; removed from the homepage shelf. **Source:** supplied bookmark export.
 
 Convert your own lesson notes and office documents into Markdown for a project.
 
@@ -122,7 +124,7 @@ Legal-workflow reference plugins, potentially relevant to institutional reviewer
 
 ## github/spec-kit
 
-**Decision:** Recommended. **Source:** supplied bookmark export.
+**Decision:** Background reference; removed from the homepage shelf. **Source:** supplied bookmark export.
 
 Write testable requirements and implementation plans before a larger build.
 
@@ -170,7 +172,7 @@ A memory system for sustained coding work, rather than a starter requirement.
 
 ## cloudflare/security-audit-skill
 
-**Decision:** Recommended. **Source:** additional primary reference.
+**Decision:** Background reference; removed from the homepage shelf. **Source:** additional primary reference.
 
 Primary security-audit methodology behind SecureVCC.
 
@@ -245,6 +247,42 @@ Make main-journey browser checks repeatable.
 **Source:** supplied export. **Decision:** excluded from recommendations.
 
 [Directory page](https://www.opensourceprojects.dev/post/73425c25-9968-46aa-8f02-29b2834e314c) describes an ebook downloader and links to jbiaojerry/ebook-treasure-chest. That primary repository and its licensing were not execution-audited or established by this directory-page review. Download rights, platform terms, and the narrow fit to VCC need separate investigation; the directory’s promotional claims are not evidence of authorization or safe operation.
+
+## gitleaks/gitleaks
+
+**Decision:** Optional addition to the homepage shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
+
+Search local files and Git history for possible exposed credentials. This provides a concrete tool for secret-review work described by the core guides.
+
+**Use limits:** Use redacted output and keep reports private. Matches need review; a clean scan is not proof that no secrets exist. Upstream describes the project as feature complete with security-patch releases. Detection does not revoke a leaked credential.
+
+**License signal:** MIT. **Archive status:** not archived in inspected metadata.
+
+**Evidence:** [repository and README](https://github.com/gitleaks/gitleaks/tree/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c) · [license and file tree](https://github.com/gitleaks/gitleaks).
+
+## zaproxy/zaproxy
+
+**Decision:** Optional addition to the homepage shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
+
+Inspect a running web application's requests and potential security weaknesses during development.
+
+**Use limits:** Use a disposable local or explicitly authorized staging target, synthetic data, and a tightly defined scope. Active tests can change state. Scanner alerts need validation and do not prove complete application security. See [ZAP scope guidance](https://www.zaproxy.org/docs/desktop/start/features/scope/).
+
+**License signal:** Apache-2.0. **Archive status:** not archived in inspected metadata.
+
+**Evidence:** [repository and README](https://github.com/zaproxy/zaproxy/tree/a1386d3e7bd9d1c7d2fb8d2eb6fee2ef855b728d) · [license and file tree](https://github.com/zaproxy/zaproxy).
+
+## microsoft/accessibility-insights-web
+
+**Decision:** Optional addition to the homepage shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
+
+Add guided keyboard and manual accessibility checks to automated interface testing using its browser extension.
+
+**Use limits:** Review extension permissions and telemetry settings before inspecting private school pages. The published assessment overview targets WCAG 2.1 AA; assess additional WCAG 2.2 requirements separately. Neither a scan nor the extension establishes full conformance. See [the official overview](https://accessibilityinsights.io/docs/web/overview/).
+
+**License signal:** MIT. **Archive status:** not archived in inspected metadata.
+
+**Evidence:** [repository and README](https://github.com/microsoft/accessibility-insights-web/tree/97ad835b33c8c15553c238da28aa3f614f12f287) · [license and file tree](https://github.com/microsoft/accessibility-insights-web).
 
 ## Before trying any linked tool
 

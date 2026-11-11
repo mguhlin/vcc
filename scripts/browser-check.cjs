@@ -10,20 +10,37 @@ if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-deskt
 assert.equal(await page.locator('.foundation img').count(),3);
 for(const route of ['design','security','education']){await page.locator('.foundation[href="guides/'+route+'.html"]').click();assert.ok(page.url().endsWith('/guides/'+route+'.html'));assert.ok(await page.locator('.guide-explainer').isVisible());await page.goto(base);}
 assert.equal(await page.locator('[data-resource]:visible').count(),6);
+assert.equal(await page.locator('#start,#before-sharing,.checklist,[data-copy]').count(),0);
+assert.equal(await page.getByRole('heading',{name:'From the blog',exact:true}).count(),0);
+assert.equal(await page.getByText('What did not make the recommended shelf?',{exact:true}).count(),0);
+assert.deepEqual(await page.locator('#repo-list h3').allTextContents(),['unslop','UI UX Pro Max','Design Bites','axe-core','Playwright','Gitleaks','ZAP','Accessibility Insights for Web']);
+const supplement=page.locator('.supplement-nav');
+await supplement.locator('summary').focus();await page.keyboard.press('Enter');assert.ok(await supplement.evaluate(el=>el.open));
+await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').textContent(),'Start here');
+await page.keyboard.press('Escape');assert.equal(await supplement.evaluate(el=>el.open),false);assert.equal(await page.locator(':focus').textContent(),'Supplementals');
+await supplement.locator('summary').click();await page.locator('h1').click();assert.equal(await supplement.evaluate(el=>el.open),false);
 await page.locator('#resource-search').fill('privacy');assert.ok(await page.locator('[data-resource]:visible').count()>0);
 await page.locator('#resource-search').fill('zzzznomatch');assert.ok(await page.locator('#no-results').isVisible());
 await page.locator('#clear-search').click();await page.locator('#resource-category').selectOption('security');assert.equal(await page.locator('[data-resource]:visible').count(),1);
 await page.locator('#clear-search').click();assert.equal(await page.locator('[data-resource]:visible').count(),6);
+await supplement.locator('summary').click();await supplement.getByRole('link',{name:'Start here',exact:true}).click();
+assert.ok(page.url().endsWith('/guides/start.html'));assert.ok(await page.getByRole('heading',{name:'What is PROJECT_BRIEF.md?',exact:true}).isVisible());
+assert.equal(await page.locator('.supplement-links [aria-current="page"]').textContent(),'Start here');
 await page.locator('[data-copy]').click();await page.waitForFunction(()=>document.querySelector('.copy-status').textContent.length>0);assert.equal(await page.locator('.copy-status').textContent(),'Prompt copied');
 assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('PROJECT_BRIEF.md'));
+assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('If the brief is missing'));
+await page.locator('.supplement-nav summary').click();await page.getByRole('link',{name:'Before sharing with a class',exact:true}).click();assert.ok(page.url().endsWith('/guides/before-sharing.html'));
 await page.locator('.checklist input').first().check();assert.ok((await page.locator('#check-summary').textContent()).startsWith('1 of 6'));
 await page.locator('#reset-checks').click();assert.equal(await page.locator('.checklist input:checked').count(),0);
 await page.reload();assert.equal(await page.locator('.checklist input:checked').count(),0);
+await page.goto(base+'#start');await page.waitForURL('**/guides/start.html');
+await page.goto(base+'#before-sharing');await page.waitForURL('**/guides/before-sharing.html');
+await page.goto(base);
 await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').textContent(),'Skip to content');await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>location.hash),'#main');
 await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
 let axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
 console.log('Home axe violations',JSON.stringify(axe.violations.map(x=>({id:x.id,impact:x.impact,nodes:x.nodes.map(n=>n.target)}))));assert.equal(axe.violations.length,0);
-for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting']){
+for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting','start','before-sharing','blog']){
  const response=await page.goto(base+'guides/'+route+'.html');assert.equal(response.status(),200);assert.equal(await page.locator('h1').count(),1);
  await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
  axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
@@ -31,13 +48,15 @@ for(const route of ['design','security','education','project-brief','launch','pr
 }
 await page.setViewportSize({width:390,height:844});await page.goto(base);if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-mobile.png',fullPage:true});
 assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+await page.locator('.supplement-nav summary').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.keyboard.press('Escape');
 await page.locator('#resource-category').selectOption('design');assert.equal(await page.locator('[data-resource]:visible').count(),1);
-for(const route of ['', 'guides/security.html','guides/education.html','guides/resource-vetting.html']){
+for(const route of ['', 'guides/security.html','guides/education.html','guides/resource-vetting.html','guides/start.html','guides/before-sharing.html','guides/blog.html']){
  await page.goto(base+route);await page.setViewportSize({width:320,height:800});await page.waitForFunction(()=>innerWidth===320);await page.evaluate(()=>new Promise(requestAnimationFrame));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route+' reflow');
+ await page.locator('.supplement-nav summary').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route+' open menu reflow');await page.keyboard.press('Escape');
 }
 await page.setViewportSize({width:1280,height:900});await page.goto(base);await page.evaluate(()=>document.body.style.fontSize='34px');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
 await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches),true);
 const download=await context.request.get(base+'downloads/vcc-complete.zip');assert.equal(download.status(),200);assert.ok((await download.body()).length>1000000);
-assert.deepEqual(errors,[]);console.log('PASS: search, filters, empty/reset, copy, reminders, keyboard skip, 8-page axe scan, mobile, 320px reflow, text resizing, reduced-motion context, ZIP, no runtime errors');
+assert.deepEqual(errors,[]);console.log('PASS: streamlined homepage, curated shelf, supplemental navigation and keyboard dismissal, search/filter/reset, project brief setup, prompt copy, classroom reminders, keyboard skip, 11-page axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
 await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>From idea to first review — Vibe-Coding Center</title><meta name="description" content="Set up a project plan and the three instruction files, then use a starting prompt that makes each file’s job clear."><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="canonical" href="https://mguhlin.github.io/vcc/guides/start.html"><link rel="stylesheet" href="../assets/site.css?v=supplementals"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><script src="../assets/site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span>VCC</span> Vibe-Coding Center</a><nav aria-label="Main"><a href="../#library">Resource library</a><a href="../#tools">Helpful GitHubs</a><details class="supplement-nav"><summary>Supplementals</summary><div class="supplement-links"><a href="../guides/start.html" aria-current="page">Start here</a><a href="../guides/project-brief.html">Project brief</a><a href="../guides/prompts.html">Prompt pack</a><a href="../guides/before-sharing.html">Before sharing with a class</a><a href="../guides/launch.html">Launch review</a><a href="../guides/blog.html">From the blog</a><a href="../guides/resource-vetting.html">Resource notes</a></div></details><a href="../#download">Download</a></nav></div></header><main class="wrap guide-layout" id="main"><aside class="guide-rail" aria-label="Guide navigation"><div><a href="../#library">← All resources</a><p><strong>In this guide</strong></p><a href="#overview">Overview</a><a href="#describe-one-useful-learning-task">Describe one useful learning task</a><a href="#what-is-project-brief-md">What is PROJECT_BRIEF.md?</a><a href="#put-the-instructions-in-your-project">Put the instructions in your project</a><a href="#ask-the-assistant-to-read-and-apply-them">Ask the assistant to read and apply them</a><a href="#test-document-and-get-the-right-approval">Test, document, and get the right approval</a></div></aside><article class="guide-content"><p class="eyebrow">Vibe-Coding Center / Field guide</p><h1 id="overview">From idea to first review</h1><p>Set up a project plan and the three instruction files, then use a starting prompt that makes each file’s job clear.</p><p><a class="button" href="../supplementals/START_HERE.md" download>Download START_HERE.md</a></p><p>Start with one useful task, invented examples, and a person responsible for release decisions. Use this page alongside the three core guides.</p>
+<h2 id="describe-one-useful-learning-task">Describe one useful learning task</h2>
+<p>For example: “A teacher can create a printable vocabulary activity without signing in or entering student names.” Set the audience, the data boundaries, and the evidence you want before asking for code.</p>
+<h2 id="what-is-project-brief-md">What is PROJECT_BRIEF.md?</h2>
+<p><code>PROJECT_BRIEF.md</code> is <strong>your project's plan</strong>, separate from the three instruction files. It records what you want to build, who it serves, what information it needs, and how you will know it works. <code>WEB_DESIGN.md</code> tells the assistant how to approach design; the brief tells it what this particular project needs.</p>
+<ol>
+<li><a href="../templates/PROJECT_BRIEF.md">Download the project brief template</a>.</li>
+<li>Save it in your project's main folder as <code>PROJECT_BRIEF.md</code>.</li>
+<li>Replace its questions with your decisions. Mark unknowns clearly and keep student information out of it.</li>
+</ol>
+<p><a href="../guides/project-brief.html">Read the project brief guide</a> for the full template and its questions.</p>
+<h2 id="put-the-instructions-in-your-project">Put the instructions in your project</h2>
+<p>Download these files into the same main folder:</p>
+<ul>
+<li><a href="../WEB_DESIGN.md">WEB_DESIGN.md</a>: design, structure, and interaction guidance.</li>
+<li><a href="../EDU_COMPLIANCE.md">EDU_COMPLIANCE.md</a>: education privacy, accessibility, and school-review guidance.</li>
+<li><a href="../securevcc/securevcc.md">securevcc.md</a>: security review guidance. Save this file as <code>securevcc.md</code> at the project root.</li>
+</ul>
+<p>Your folder should contain:</p>
+<pre><code class="language-text">your-project/
+  PROJECT_BRIEF.md      Your completed project plan
+  WEB_DESIGN.md         Design instructions
+  EDU_COMPLIANCE.md     Education privacy instructions
+  securevcc.md          Security instructions
+</code></pre>
+<p>Attach the files to your AI conversation if your assistant cannot read local files. A filename alone does not activate a guide.</p>
+<h2 id="ask-the-assistant-to-read-and-apply-them">Ask the assistant to read and apply them</h2>
+<p>Complete the brief first, then copy this prompt. For ongoing work, add the pointer from <a href="../templates/AGENTS.example.md">AGENTS.example.md</a> or <a href="../templates/CLAUDE.example.md">CLAUDE.example.md</a> to your existing project instructions.</p>
+<h3 id="a-starting-prompt-you-can-reuse">A starting prompt you can reuse</h3>
+<div class="prompt"><blockquote id="starter-prompt">
+<p>Read my completed PROJECT_BRIEF.md (the project plan), WEB_DESIGN.md (design instructions), EDU_COMPLIANCE.md (education privacy instructions), and securevcc.md (security instructions) before changing this project. If the brief is missing, help me create it from VCC's project brief template before writing code. Start with the educational purpose, audience, and actual data flows. Choose a layout that fits the task. Build with invented sample data and privacy-protective defaults. Test the main journey, keyboard access, mobile reflow, and relevant security controls. Report evidence, unresolved questions, and checks you could not run. Do not claim school approval or compliance without proof.</p>
+</blockquote><button class="button secondary copy-button" data-copy="starter-prompt" type="button">Copy starting prompt</button><span class="copy-status" role="status"></span></div>
+<p><a href="../guides/prompts.html">Open the full prompt pack</a> for redesign, accessibility, security, and release prompts.</p>
+<h2 id="test-document-and-get-the-right-approval">Test, document, and get the right approval</h2>
+<p>Try the actual educator or learner task. Ask for evidence of security and accessibility checks. If student records or sensitive features are involved, resolve school and vendor requirements before use.</p>
+<p>Use <a href="../guides/before-sharing.html">Before you share with a class</a> for quick reminders and <a href="../guides/launch.html">the launch review</a> to record evidence and unresolved decisions.</p>
+</article></main><footer class="site-footer"><div class="wrap footer-inner"><p>Vibe-Coding Center · <a href="https://mguhlin.org/">Miguel Guhlin</a></p><p><a href="../CREDITS.md">Credits &amp; reuse</a> · <a href="../SOURCES.md">Sources</a><br>Design refinement: <a href="https://github.com/heydamir/unslop">unslop by Damir Sokolovsky</a> (CC BY 4.0).</p></div></footer></body></html>

@@ -13,13 +13,13 @@
 Both local authoring files were read, including their publication metadata and article bodies:
 
 - [Securing Your Vibe-Coded Creation](https://mguhlin.org/blog/2026-11-08-securing-your-vibe-coded-creation/): use a reusable security instruction file; the article links to SecureVCC and Cloudflare’s source skill.
-- [Stop Letting AI Make Every Website Look the Same](https://mguhlin.org/blog/2026-11-10-stop-letting-ai-make-every-website-look-the-same/): match structure to function, provide design references, and build accessibility and privacy into the workflow. Its source was scheduled when incorporated. VCC provides a summary while withholding the direct article action until its publication time; it does not reproduce the full scheduled essay.
+- [Stop Letting AI Make Every Website Look the Same](https://mguhlin.org/blog/2026-11-10-stop-letting-ai-make-every-website-look-the-same/): match structure to function, provide design references, and build accessibility and privacy into the workflow. VCC links to the companion article from its supplemental blog page and does not reproduce the full essay.
 
 The article names and dates in their URLs are stable content identifiers, not VCC maintenance timestamps.
 
 ## Supplemental resources
 
-The supplied `AI_Git_Hub.csv` contained 16 bookmarks. Tracking parameters and exported bookmark metadata are excluded from VCC’s public recommendations. Every bookmark has a decision in [RESOURCE_REVIEW.md](RESOURCE_REVIEW.md), with additional primary design and test references. Repository metadata and READMEs were read through GitHub; no recommended software was installed or executed for vetting.
+The supplied `AI_Git_Hub.csv` contained 16 bookmarks. Tracking parameters and exported bookmark metadata are excluded from VCC’s public recommendations. Every bookmark has a decision in [RESOURCE_REVIEW.md](RESOURCE_REVIEW.md), with additional primary design and test references. The homepage shelf is narrower than that historical ledger; its optional additions are Gitleaks, ZAP, and Accessibility Insights for Web, each explicitly distinguished from references already named in the core instructions. Repository metadata and READMEs were read through GitHub; no recommended software was installed or executed for vetting.
 
 ## Official guidance consulted
 

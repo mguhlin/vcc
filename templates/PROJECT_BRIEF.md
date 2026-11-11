@@ -1,6 +1,8 @@
 # Project brief
 
-Copy this file to your project root as `PROJECT_BRIEF.md`. Replace the prompts below with your decisions. Keep student information out of the brief.
+This is your project's plan: what you are building, who it serves, its data boundaries, and the evidence of success. It is separate from `WEB_DESIGN.md`, which tells the assistant how to approach design.
+
+Copy this file to your project root as `PROJECT_BRIEF.md`. Replace the prompts below with your decisions. Keep student information out of the brief. Put it alongside `WEB_DESIGN.md`, `EDU_COMPLIANCE.md`, and `securevcc.md` before using the starting prompt.
 
 ## One useful task
 

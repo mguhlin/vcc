@@ -18,6 +18,7 @@ class Page(HTMLParser):
    if a.get(k):self.links.append(a[k])
   if tag=='img' and 'alt' not in a:errors.append('Image missing alt')
 for path in ROOT.rglob('*.html'):
+ if any(p in {'.git','node_modules','__pycache__'} for p in path.relative_to(ROOT).parts):continue
  page=Page();page.feed(path.read_text());pages[path]=page
  if not page.lang or not page.title or page.h1!=1:errors.append(f'{path.relative_to(ROOT)}: invalid document landmarks/title/h1')
  if len(page.ids)!=len(set(page.ids)):errors.append(f'{path}: duplicate IDs')
@@ -36,7 +37,7 @@ for path,page in pages.items():
   if target in pages and unquote(parsed.fragment) not in pages[target].ids:errors.append(f'{path.relative_to(ROOT)}: missing anchor {link}')
 pattern=re.compile(r'last[ -](?:updated|modified|reviewed)\s*[:：]|generated on\s*[:：]|(?:checked|reviewed|updated|modified)\s+(?:on\s+)?\d{4}-\d{2}-\d{2}',re.I)
 for path in ROOT.rglob('*'):
- if path.suffix not in {'.md','.html','.txt','.json','.yml'} or '.git' in path.parts:continue
+ if path.suffix not in {'.md','.html','.txt','.json','.yml'} or any(p in {'.git','node_modules','__pycache__'} for p in path.relative_to(ROOT).parts):continue
  if pattern.search(path.read_text(errors='replace')):errors.append(f'{path.relative_to(ROOT)}: public maintenance timestamp')
 # The complete security checklist must survive rendering.
 raw=(ROOT/'securevcc/securevcc.md').read_text();rendered=(ROOT/'guides/security.html').read_text()

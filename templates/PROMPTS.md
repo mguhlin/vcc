@@ -4,7 +4,9 @@ Place the three core instruction files in your project root. Download `securevcc
 
 ## First build
 
-> Read PROJECT_BRIEF.md, WEB_DESIGN.md, EDU_COMPLIANCE.md, and securevcc.md. Inspect the existing project before editing. Name the audience, educational task, and data flows. Compare three page structures and choose the one that makes the main task easiest. Build a small working version with no unnecessary accounts, trackers, or dependencies. Test the main journey and report evidence and unresolved decisions.
+First, copy `templates/PROJECT_BRIEF.md` from the VCC download into your project's main folder as `PROJECT_BRIEF.md` and complete it. This is your project plan, separate from the design instructions in `WEB_DESIGN.md`.
+
+> Read my completed PROJECT_BRIEF.md (the project plan), WEB_DESIGN.md (design instructions), EDU_COMPLIANCE.md (education privacy instructions), and securevcc.md (security instructions). If the brief is missing, help me create it from VCC's project brief template before writing code. Inspect the existing project before editing. Name the audience, educational task, and data flows. Compare three page structures and choose the one that makes the main task easiest. Build a small working version with no unnecessary accounts, trackers, or dependencies. Test the main journey and report evidence and unresolved decisions.
 
 ## Purposeful redesign
 
