@@ -3,6 +3,10 @@
 .guide-content h1,.guide-content h2,.guide-content h3,.guide-content h4,.guide-rail a{overflow-wrap:anywhere}
 
 /* Native disclosure keeps supplemental navigation available without scripts. */
+.repo-intro{display:grid;grid-template-columns:minmax(0,1fr) 300px;align-items:center;gap:48px;margin-bottom:24px}
+.repo-intro p{margin-bottom:0}
+.repo-illustration{width:100%;border-radius:var(--radius)}
+@media(max-width:800px){.repo-intro{grid-template-columns:1fr;gap:24px}.repo-illustration{max-width:300px;justify-self:center}}
 .supplement-nav{position:relative;border:0;padding:0}
 .supplement-nav summary{padding:12px 0;font-size:15px;font-weight:400;color:var(--secondary)}
 .supplement-links{position:absolute;right:0;top:100%;z-index:5;width:280px;padding:12px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius)}

@@ -12,7 +12,7 @@ The VCC design refinement follows unslop by Damir Sokolovsky (https://github.com
 
 ## Images
 
-The workbench hero was generated and revised to blue and silver using the built-in OpenAI image generation tool for this project. The image is an illustration, not a screenshot of a working application. The user supplied the AI Design Playbook for Education Websites and Education Compliance Guide visuals; VCC includes optimized WebP copies. No third-party brand or government certification is implied by those visuals.
+The workbench hero was generated and revised to blue and silver using the built-in OpenAI image generation tool for this project. The image is an illustration, not a screenshot of a working application. The Helpful GitHubs toolkit illustration was also created with built-in OpenAI image generation and optimized for this site; its prompt is in `assets/github-toolkit-prompt.txt`. The user supplied the AI Design Playbook for Education Websites and Education Compliance Guide visuals; VCC includes optimized WebP copies. No third-party brand or government certification is implied by those visuals.
 
 ## Linked resources
 
