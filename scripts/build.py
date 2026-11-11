@@ -17,8 +17,9 @@ GUIDES=[
 ('before-sharing','Before you share with a class','supplementals/BEFORE_SHARING.md','Try the classroom journey with invented data, organize your review, and keep a record of the evidence.','',''),
 ('blog','From the blog','supplementals/FROM_THE_BLOG.md','Read the articles behind VCC’s approach to purposeful design and safer AI-assisted websites.','',''),
 ('library','Resource library','supplementals/RESOURCE_LIBRARY.md','Browse all six guides and templates, with search, topic filters, and direct downloads.','',''),
-('about','About VCC','supplementals/ABOUT.md','Learn about the Vibe-Coding Center and its practical guidance for educators creating websites with AI.','','')]
-SUPPLEMENTALS=[('start','Start here'),('library','Resource library'),('project-brief','Project brief'),('prompts','Prompt pack'),('before-sharing','Before sharing with a class'),('launch','Launch review'),('blog','From the blog'),('resource-vetting','Resource notes')]
+('about','About VCC','supplementals/ABOUT.md','Learn about the Vibe-Coding Center and its practical guidance for educators creating websites with AI.','',''),
+('publishing','Publishing walkthroughs','supplementals/PUBLISHING.md','Illustrated GitHub Pages and Netlify routes from an AI-assisted project to a published site.','','')]
+SUPPLEMENTALS=[('start','Start here'),('library','Resource library'),('project-brief','Project brief'),('prompts','Prompt pack'),('before-sharing','Before sharing with a class'),('launch','Launch review'),('publishing','Publishing walkthroughs'),('blog','From the blog'),('resource-vetting','Resource notes')]
 def navigation(prefix='',current=''):
  links=''.join(f'<a href="{prefix}guides/{slug}.html"'+(' aria-current="page"' if slug==current else '')+f'>{label}</a>' for slug,label in SUPPLEMENTALS)
  return f'<nav aria-label="Main"><a href="{prefix}#core-guides">Core guides</a><a href="{prefix}#tools">Helpful GitHubs</a><details class="supplement-nav"><summary>Supplementals</summary><div class="supplement-links">{links}</div></details><a href="{prefix}#download">Download</a></nav>'
@@ -35,13 +36,23 @@ EXPLAINERS={
 'design': ('Use this when the layout feels generic—or before a first build', 'WEB_DESIGN.md asks your assistant to decide the audience, the main task, and the page structure before choosing colors and components. A lesson library should make browsing easy; a classroom game should get learners into the activity.', ['Write a small design brief with observable success criteria.', 'Compare different structures, then choose a consistent visual direction.', 'Check keyboard use, readability, reflow, data flows, and working behavior.'], 'Read WEB_DESIGN.md. Inspect this project and explain who it serves, what the visitor must accomplish, and which page structure best supports that task. Preserve working features and show how you will test the result.'),
 'security': ('Use this before release, and whenever a feature changes the risk', 'SecureVCC helps a coding assistant investigate what the application actually permits. For a static resource page, the review is small. Accounts, shared files, payments, or student records call for deeper checks appropriate to those features.', ['Start with private credentials, trust boundaries, and actual data access.', 'Validate suspected problems using safe, invented examples.', 'Separate confirmed vulnerabilities from suggestions and tests not run.'], 'Read securevcc.md. Review this project within the authorized scope. Inspect source and use safe local synthetic tests. Report evidence for confirmed findings, fix what you can safely fix, and identify checks that remain unverified.'),
 'education': ('Use this before a school or student is asked to trust the tool', 'EDU_COMPLIANCE.md brings education-specific questions into the build: ages, information collected, accessibility, vendors, retention, sharing, and who can authorize student use. It helps prepare for institutional review; it does not grant that approval.', ['Map information in forms, device storage, URLs, logs, and external services.', 'Identify applicable school, contract, privacy, and accessibility questions.', 'Document safeguards and unresolved decisions without inventing compliance claims.'], 'Read EDU_COMPLIANCE.md. Inspect what this project actually collects, stores, shares, and deletes. Classify its education and data risks. Prefer a prototype with invented data until required safeguards and school decisions are resolved. Report evidence and unknowns.')}
-HEADER='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} — Vibe-Coding Center</title><meta name="description" content="{desc}"><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="canonical" href="https://mguhlin.github.io/vcc/guides/{slug}.html"><link rel="stylesheet" href="../assets/site.css?v=core-guide-cards"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><script src="../assets/site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span>VCC</span> Vibe-Coding Center</a>{navigation}</div></header>'''
+HEADER='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} — Vibe-Coding Center</title><meta name="description" content="{desc}"><meta name="referrer" content="strict-origin-when-cross-origin"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><link rel="canonical" href="https://mguhlin.github.io/vcc/guides/{slug}.html"><link rel="stylesheet" href="../assets/site.css?v=cartoon-guides"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><script src="../assets/site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><a class="brand" href="../"><span>VCC</span> Vibe-Coding Center</a>{navigation}</div></header>'''
 for slug,title,source,intro,image,alt in GUIDES:
  raw=(ROOT/source).read_text()
  if raw.startswith('---\n'):raw=raw.split('---\n',2)[-1]
  supplemental=source.startswith('supplementals/')
  if supplemental:raw=re.sub(r'^# [^\n]+\n','',raw,count=1)
  body=md.render(raw)
+ # Keep the supplied comics uncropped, reserve their space, and load them on demand.
+ cartoon_sizes={'github-pages':(1983,793),'three-essential-checks':(1752,897),'netlify':(1916,821)}
+ def cartoon_image(match):
+  tag=match[0];name=re.search(r'/cartoons/([^/]+)\.webp',tag)
+  if not name or name[1] not in cartoon_sizes:return tag
+  width,height=cartoon_sizes[name[1]]
+  return re.sub(r'\s*/?>$',f' width="{width}" height="{height}" loading="lazy">',tag)
+ body=re.sub(r'<img\b[^>]*>',cartoon_image,body)
+ body=re.sub(r'<p>(<a href="[^"]+/cartoons/[^"]+"><img\b[^>]*></a>)</p>',r'<figure class="cartoon">\1</figure>',body)
+ body=re.sub(r'<a href="([^"]+/cartoons/[^"]+\.png)">(Download [^<]+)</a>',r'<a href="\1" download>\2</a>',body)
  if slug=='start':
   body=body.replace('<blockquote>','<div class="prompt"><blockquote id="starter-prompt">',1).replace('</blockquote>','</blockquote><button class="button secondary copy-button" data-copy="starter-prompt" type="button">Copy starting prompt</button><span class="copy-status" role="status"></span></div>',1)
  if slug=='before-sharing':
@@ -75,6 +86,8 @@ for slug,title,source,intro,image,alt in GUIDES:
   page=re.sub(r'<main .*?</main>',lambda m:f'<main class="wrap library-page" id="main"><h1>{title}</h1><div class="section-intro">{body}</div>{resource_library()}</main>',page,count=1,flags=re.S)
  if slug=='about':
   page=re.sub(r'<main .*?</main>',lambda m:f'<main class="wrap library-page" id="main"><h1>{title}</h1><div class="section-intro">{body}</div></main>',page,count=1,flags=re.S)
+ if slug=='publishing':
+  page=re.sub(r'<main .*?</main>',lambda m:f'<main class="wrap library-page" id="main"><h1>{title}</h1><p><a href="#github-pages">GitHub Pages</a> · <a href="#netlify-drop">Netlify Drop</a></p><article class="guide-content comic-page">{body}</article></main>',page,count=1,flags=re.S)
  (ROOT/'guides'/f'{slug}.html').write_text(page)
 home=ROOT/'index.html'
 home.write_text(re.sub(r'<nav aria-label="Main">.*?</nav>',navigation(),home.read_text(),count=1,flags=re.S))

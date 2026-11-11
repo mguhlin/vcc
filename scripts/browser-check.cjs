@@ -7,6 +7,8 @@ const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors
 const base=process.env.VCC_URL||'http://127.0.0.1:4186/';
 await page.goto(base,{waitUntil:'networkidle'});
 if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-desktop.png',fullPage:true});
+assert.ok((await page.locator('.hero img').getAttribute('src')).endsWith('/three-essential-checks.webp'));
+await page.getByRole('link',{name:'Read the cartoon as text',exact:true}).click();assert.ok(page.url().includes('/guides/before-sharing.html#the-cartoon-in-text'));assert.ok(await page.getByRole('heading',{name:'The cartoon in text',exact:true}).isVisible());await page.goto(base);
 assert.equal(await page.locator('.foundation img').count(),3);
 assert.equal(await page.getByRole('heading',{name:'What is VCC?',exact:true}).count(),0);
 await page.locator('footer').getByRole('link',{name:'About',exact:true}).click();
@@ -41,6 +43,8 @@ await page.locator('.supplement-nav summary').click();await page.getByRole('link
 await page.locator('.checklist input').first().check();assert.ok((await page.locator('#check-summary').textContent()).startsWith('1 of 6'));
 await page.locator('#reset-checks').click();assert.equal(await page.locator('.checklist input:checked').count(),0);
 await page.reload();assert.equal(await page.locator('.checklist input:checked').count(),0);
+await page.locator('.supplement-nav summary').click();await page.getByRole('link',{name:'Publishing walkthroughs',exact:true}).click();assert.ok(page.url().endsWith('/guides/publishing.html'));assert.equal(await page.locator('.cartoon img').count(),2);assert.ok(await page.getByRole('heading',{name:'The GitHub cartoon in text',exact:true}).isVisible());
+for(const name of ['github-pages','netlify','three-essential-checks']){const original=await context.request.get(base+'assets/cartoons/'+name+'.png');assert.equal(original.status(),200);assert.ok((await original.body()).length>1000000);}
 await page.goto(base+'#start');await page.waitForURL('**/guides/start.html');
 await page.goto(base+'#before-sharing');await page.waitForURL('**/guides/before-sharing.html');
 await page.goto(base+'#what');await page.waitForURL('**/guides/about.html');
@@ -49,7 +53,7 @@ await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').textC
 await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
 let axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
 console.log('Home axe violations',JSON.stringify(axe.violations.map(x=>({id:x.id,impact:x.impact,nodes:x.nodes.map(n=>n.target)}))));assert.equal(axe.violations.length,0);
-for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting','start','before-sharing','blog','library','about']){
+for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting','start','before-sharing','blog','library','about','publishing']){
  const response=await page.goto(base+'guides/'+route+'.html');assert.equal(response.status(),200);assert.equal(await page.locator('h1').count(),1);
  await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
  axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
@@ -60,13 +64,13 @@ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWid
 await page.locator('.supplement-nav summary').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.keyboard.press('Escape');
 await page.goto(base+'guides/library.html');
 await page.locator('#resource-category').selectOption('design');assert.equal(await page.locator('[data-resource]:visible').count(),1);
-for(const route of ['', 'guides/security.html','guides/education.html','guides/resource-vetting.html','guides/start.html','guides/before-sharing.html','guides/blog.html','guides/library.html','guides/about.html']){
+for(const route of ['', 'guides/security.html','guides/education.html','guides/resource-vetting.html','guides/start.html','guides/before-sharing.html','guides/blog.html','guides/library.html','guides/about.html','guides/publishing.html']){
  await page.goto(base+route);await page.setViewportSize({width:320,height:800});await page.waitForFunction(()=>innerWidth===320);await page.evaluate(()=>new Promise(requestAnimationFrame));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route+' reflow');
  await page.locator('.supplement-nav summary').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route+' open menu reflow');await page.keyboard.press('Escape');
 }
 await page.setViewportSize({width:1280,height:900});await page.goto(base);await page.evaluate(()=>document.body.style.fontSize='34px');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
 await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches),true);
 const download=await context.request.get(base+'downloads/vcc-complete.zip');assert.equal(download.status(),200);assert.ok((await download.body()).length>1000000);
-assert.deepEqual(errors,[]);console.log('PASS: About footer link and moved content, homepage guide cards and download order, supplemental library navigation/search/filter/reset, curated shelf, keyboard dismissal, project brief setup, prompt copy, classroom reminders, keyboard skip, 13-page axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
+assert.deepEqual(errors,[]);console.log('PASS: cartoon hero/text link, publishing navigation, original PNG downloads, About footer, guide cards and download order, library search/filter/reset, curated shelf, keyboard dismissal, prompt copy, classroom reminders, keyboard skip, 14-page axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
 await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

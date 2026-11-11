@@ -14,6 +14,10 @@ The VCC design refinement follows unslop by Damir Sokolovsky (https://github.com
 
 The workbench hero was generated and revised to blue and silver using the built-in OpenAI image generation tool for this project. The image is an illustration, not a screenshot of a working application. The Helpful GitHubs toolkit illustration was also created with built-in OpenAI image generation and optimized for this site; its prompt is in `assets/github-toolkit-prompt.txt`. The user supplied the AI Design Playbook for Education Websites and Education Compliance Guide visuals; VCC includes optimized WebP copies. No third-party brand or government certification is implied by those visuals.
 
+## Supplied cartoons
+
+Miguel Guhlin supplied the GitHub Pages, Netlify, and Three Essential Checks cartoons. Original PNG copies are preserved in `assets/cartoons/`, alongside full-resolution WebP versions optimized for page display. VCC includes text alternatives and links to the originals. Product names and logos within the supplied artwork retain their owners' rights; their appearance does not imply endorsement.
+
 ## Linked resources
 
 GitHub resources are linked references, not bundled or automatically installed. Each upstream license, dependency notice, asset right, and model license applies separately. A repository license does not grant rights to copied brand identities or every linked example. See RESOURCE_REVIEW.md for license signals and limitations.

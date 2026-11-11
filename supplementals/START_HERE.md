@@ -51,3 +51,7 @@ Complete the brief first, then copy this prompt. For ongoing work, add the point
 Try the actual educator or learner task. Ask for evidence of security and accessibility checks. If student records or sensitive features are involved, resolve school and vendor requirements before use.
 
 Use [Before you share with a class](../guides/before-sharing.html) for quick reminders and [the launch review](../guides/launch.html) to record evidence and unresolved decisions.
+
+## Publish a reviewed prototype
+
+See the [illustrated GitHub Pages and Netlify walkthroughs](../guides/publishing.html) for two ways to publish site files. Each cartoon includes a full-size image, an original PNG download, and a text walkthrough.

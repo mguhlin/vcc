@@ -17,6 +17,10 @@ Both local authoring files were read, including their publication metadata and a
 
 The article names and dates in their URLs are stable content identifiers, not VCC maintenance timestamps.
 
+## Illustrated walkthroughs
+
+Miguel Guhlin supplied `cartoon_github.png`, `cartoon_netlify.png`, and `Vibe-Coding Center_ Three Essential Checks.png`. VCC preserves the originals in `assets/cartoons/` and uses WebP copies for page display. The classroom-sharing guide includes the three-checks cartoon; the publishing walkthroughs pair the other cartoons with text versions and current official GitHub Pages and Netlify documentation. Cloudflare is identified as optional, and the Netlify action links to the service's actual Drop page rather than relying on the address drawn in the cartoon.
+
 ## Supplemental resources
 
 The supplied `AI_Git_Hub.csv` contained 16 bookmarks. Tracking parameters and exported bookmark metadata are excluded from VCC’s public recommendations. Every bookmark has a decision in [RESOURCE_REVIEW.md](RESOURCE_REVIEW.md), with additional primary design and test references. The homepage shelf is narrower than that historical ledger; its optional additions are Gitleaks, ZAP, and Accessibility Insights for Web, each explicitly distinguished from references already named in the core instructions. Repository metadata and READMEs were read through GitHub; no recommended software was installed or executed for vetting.
