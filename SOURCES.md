@@ -23,6 +23,8 @@ Miguel Guhlin supplied `cartoon_github.png`, `cartoon_netlify.png`, and `Vibe-Co
 
 ## Supplemental resources
 
+Miguel Guhlin supplied the [Vibe-Coded Apps Flipboard ezine](https://flipboard.com/@mguhlin/vibe-coded-apps-ai-free-dnmobc4ny) as an optional resource readers can follow for new apps, AI tools, and free resources. VCC links to the magazine without embedding its feed or redistributing its articles. [Flipboard’s help center](https://flipboard.helpshift.com/hc/en/1-flipboard/faq/990-organize-my-top-home-carousel-1671584878/) documents the magazine follow control; subscription is managed on Flipboard.
+
 The supplied `AI_Git_Hub.csv` contained 16 bookmarks. Tracking parameters and exported bookmark metadata are excluded from VCC’s public recommendations. Every bookmark has a decision in [RESOURCE_REVIEW.md](RESOURCE_REVIEW.md), with additional primary design and test references. The homepage shelf is narrower than that historical ledger; its optional additions are Gitleaks, ZAP, and Accessibility Insights for Web, each explicitly distinguished from references already named in the core instructions. Repository metadata and READMEs were read through GitHub; no recommended software was installed or executed for vetting.
 
 ## Official guidance consulted
