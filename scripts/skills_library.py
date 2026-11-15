@@ -110,13 +110,24 @@ def render_skills(md):
     intro,howto=intro.split('## From instructions to a working tool',1)
     opening=md.render(intro)
     help_text=md.render('## From instructions to a working tool'+howto)
-    links=[];panels=[]
+    links=[];panels=[];last_group=None
     for item in items:
         slug=item['slug'];e=lambda value:html.escape(value,quote=True)
-        concept_image(item)
+        group=item.get('group','Original collection')
+        if group!=last_group:
+            links.append(f'<li class="skill-group" data-skill-group-heading="{e(group)}">{e(group)}</li>')
+            last_group=group
+        if item.get('hero'):
+            art=next(p for p in json.loads((ROOT/'assets/skills/heroes/PROMPTS.json').read_text()) if p['slug']==slug)
+            image=item['hero'];width=art['width'];height=art['height'];alt=item['hero_alt']
+            caption=f'Concept artwork: {item["title"]}. An illustration of the workflow, not a working application.'
+        else:
+            concept_image(item)
+            image=f'assets/skills/{slug}.svg';width=960;height=520;alt=item['concept']
+            caption=f'Concept sketch: {item["project"]}. A possible interface, not a working app.'
         raw=(ROOT/'skills'/slug/'SKILL.md').read_text()
         prompt=(ROOT/'skills'/slug/'PROJECT_PROMPT.md').read_text()
-        links.append(f'<li data-skill-entry><a href="#{slug}" data-skill-link="{slug}"><span>{e(item["title"])}</span><small>{e(item["category"])}</small></a></li>')
+        links.append(f'<li data-skill-entry data-skill-group="{e(group)}"><a href="#{slug}" data-skill-link="{slug}"><span>{e(item["title"])}</span><small>{e(item["category"])}</small></a></li>')
         origin=f'{e(item["origin"])} · <a href="../skills/SOURCES.md">Sources &amp; reuse</a>'
         if item.get('source'):origin+=f' · <a href="{e(item["source"])}">Upstream skill (CC0)</a>'
         panels.append(f'''<article class="skill-panel" id="{slug}" data-skill-panel>
@@ -124,21 +135,22 @@ def render_skills(md):
 <p class="skill-summary">{e(item['summary'])}</p><p class="meta">{origin}</p>
 <div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a><a href="#{slug}-file">Read full skill</a><span class="skill-status" role="status"></span></div>
 {render_agent_instructions(slug,level=3)}
-<figure class="skill-concept"><a href="../assets/skills/{slug}.svg"><img src="../assets/skills/{slug}.svg" alt="{e(item['concept'])}" width="960" height="520" loading="lazy"></a><figcaption><strong>Concept sketch: {e(item['project'])}.</strong> A possible interface, not a working app.</figcaption></figure>
+<figure class="skill-concept"><a href="../{image}"><img src="../{image}" alt="{e(alt)}" width="{width}" height="{height}" loading="lazy"></a><figcaption>{e(caption)}</figcaption></figure>
 <section class="skill-prompt" aria-labelledby="{slug}-project"><h3 id="{slug}-project">Turn this skill into a project</h3>
 <p>Copy this prompt with the skill and VCC’s three instruction files. Adapt the audience and subject before building.</p>
 <label for="{slug}-prompt">Project prompt</label><textarea id="{slug}-prompt" readonly rows="12" spellcheck="false">{e(prompt)}</textarea>
 <pre class="skill-print-source">{e(prompt)}</pre><div class="skill-actions"><button type="button" class="button secondary" data-skill-copy="{slug}-prompt" data-copy-label="Project prompt">Copy project prompt</button><a href="../skills/{slug}/PROJECT_PROMPT.md" download>Download prompt</a><span class="skill-status" role="status"></span></div></section>
 <section class="skill-source" aria-labelledby="{slug}-file"><h3 id="{slug}-file">Full skill file</h3><label for="{slug}-raw">{slug}/SKILL.md</label><textarea id="{slug}-raw" readonly rows="18" spellcheck="false">{e(raw)}</textarea><pre class="skill-print-source">{e(raw)}</pre><p class="meta">Read or select the full Markdown here. The Copy skill button copies the entire file.</p></section>
 </article>''')
-    content=f'''<main class="wrap skills-page" id="main"><header class="skills-intro"><h1>Reusable skills</h1>{opening}
+    content=f'''<main class="wrap skills-page" id="main"><header class="skills-intro"><div class="skills-intro-copy"><h1>Reusable skills</h1>{opening}</div>
+<img class="skills-intro-art" src="../assets/skills/library-intro.webp" alt="Instruction sheets unfold from a navy toolbox into a small browser window beside a pencil and gold gear" width="800" height="600">
 <details class="skills-help"><summary>How to use these skills and prompts</summary>{help_text}</details></header>
 <div class="skills-layout" data-skills><aside class="skills-sidebar" aria-label="Skill browser"><div class="skills-sidebar-inner">
 <div class="skill-filter" hidden><label for="skill-search">Find a skill</label><input id="skill-search" type="search" placeholder="Try writing or evidence" autocomplete="off"><button class="skill-clear" type="button">Clear search</button><p class="meta" id="skill-count" role="status">{len(items)} skills</p></div>
-<nav aria-label="Reusable skills"><ul>{''.join(links[:7])}<li class="skill-group">Adapted from repositories</li>{''.join(links[7:])}</ul></nav><p class="skill-empty" hidden>No matching skills. Clear the search to see all nine.</p>
-<p><a href="../downloads/reusable-skills.zip" download>Download all nine skills</a></p></div></aside>
+<nav aria-label="Reusable skills"><ul>{''.join(links)}</ul></nav><p class="skill-empty" hidden>No matching skills. Clear the search to see all {len(items)}.</p>
+<p><a href="../downloads/reusable-skills.zip" download>Download all {len(items)} skills</a></p></div></aside>
 <div class="skills-workspace">{''.join(panels)}</div></div></main>'''
-    paths=sorted((ROOT/'skills').rglob('*'))+sorted((ROOT/'assets/skills').glob('*.svg'))+[ROOT/'supplementals/REUSABLE_SKILLS.md']
+    paths=sorted((ROOT/'skills').rglob('*'))+sorted((ROOT/'assets/skills').rglob('*'))+[ROOT/'supplementals/REUSABLE_SKILLS.md']
     with zipfile.ZipFile(ROOT/'downloads/reusable-skills.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
         for path in paths:
             if not path.is_file():continue

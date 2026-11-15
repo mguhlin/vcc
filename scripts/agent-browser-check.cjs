@@ -2,7 +2,8 @@
 const assert=require('node:assert/strict');
 module.exports=async function({page,context,base}){
  const response=await context.request.get(base+'agent-skills.json');assert.equal(response.status(),200);
- const manifest=await response.json();assert.equal(manifest.skills.length,13);assert.equal(new Set(manifest.skills.map(s=>s.name)).size,13);
+ const catalog=await (await context.request.get(base+'skills/catalog.json')).json();
+ const manifest=await response.json();assert.equal(manifest.skills.length,catalog.length+4);assert.equal(new Set(manifest.skills.map(s=>s.name)).size,catalog.length+4);
  const index=await context.request.get(base+'llms.txt');assert.equal(index.status(),200);const indexText=await index.text();
  for(const skill of manifest.skills){
   const relativeGuide=new URL(skill.guide_url).pathname.replace('/vcc/','')+new URL(skill.guide_url).hash;
@@ -23,6 +24,6 @@ module.exports=async function({page,context,base}){
  await block.getByRole('button',{name:'Copy skill setup prompt',exact:true}).click();assert.equal(await block.locator('.agent-copy [role=status]').first().textContent(),'Text selected. Use your device’s copy command.');assert.ok((await page.evaluate(()=>window.getSelection().toString())).includes('vibe-code-rescue'));
  await page.goto(base);await page.locator('#ai-agent-instructions summary').click();await page.getByRole('button',{name:'Copy VCC agent prompt',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#ai-agent-instructions [role=status]').textContent==='VCC agent prompt copied');assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('agent-skills.json'));
  const bundle=await context.request.get(base+'downloads/vcc-agent-skills.zip');assert.equal(bundle.status(),200);assert.ok((await bundle.body()).length>10000);
- const nojs=await context.browser().newContext({javaScriptEnabled:false});const plain=await nojs.newPage();await plain.goto(base+'guides/skills.html');assert.equal(await plain.locator('.agent-instructions').count(),9);await plain.goto(base+'guides/rescue.html');await plain.locator('.agent-instructions summary').click();assert.ok(await plain.getByRole('link',{name:'Download agent-ready SKILL.md',exact:true}).isVisible());await nojs.close();
- console.log('PASS: 13 agent exports and page directions, keyboard disclosures, 26 exact clipboard prompts, fallback selection, plain-text discovery, homepage entry, open-prompt mobile reflow, no-JS directions, all-skills ZIP');
+ const nojs=await context.browser().newContext({javaScriptEnabled:false});const plain=await nojs.newPage();await plain.goto(base+'guides/skills.html');assert.equal(await plain.locator('.agent-instructions').count(),catalog.length);await plain.goto(base+'guides/rescue.html');await plain.locator('.agent-instructions summary').click();assert.ok(await plain.getByRole('link',{name:'Download agent-ready SKILL.md',exact:true}).isVisible());await nojs.close();
+ console.log(`PASS: ${manifest.skills.length} agent exports and page directions, keyboard disclosures, ${manifest.skills.length*2} exact clipboard prompts, fallback selection, plain-text discovery, homepage entry, open-prompt mobile reflow, no-JS directions, all-skills ZIP`);
 };

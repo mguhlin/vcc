@@ -3,7 +3,8 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit,unquote
-import re,sys
+import re,sys,json,zipfile
+from project_files import LOCAL_DIRS
 ROOT=Path(__file__).resolve().parents[1]
 errors=[];pages={}
 class Page(HTMLParser):
@@ -18,7 +19,7 @@ class Page(HTMLParser):
    if a.get(k):self.links.append(a[k])
   if tag=='img' and 'alt' not in a:errors.append('Image missing alt')
 for path in ROOT.rglob('*.html'):
- if any(p in {'.git','node_modules','__pycache__'} for p in path.relative_to(ROOT).parts):continue
+ if any(p in LOCAL_DIRS for p in path.relative_to(ROOT).parts):continue
  page=Page();page.feed(path.read_text());pages[path]=page
  if not page.lang or not page.title or page.h1!=1:errors.append(f'{path.relative_to(ROOT)}: invalid document landmarks/title/h1')
  if len(page.ids)!=len(set(page.ids)):errors.append(f'{path}: duplicate IDs')
@@ -37,11 +38,32 @@ for path,page in pages.items():
   if target in pages and unquote(parsed.fragment) not in pages[target].ids:errors.append(f'{path.relative_to(ROOT)}: missing anchor {link}')
 pattern=re.compile(r'last[ -](?:updated|modified|reviewed)\s*[:：]|generated on\s*[:：]|(?:checked|reviewed|updated|modified)\s+(?:on\s+)?\d{4}-\d{2}-\d{2}',re.I)
 for path in ROOT.rglob('*'):
- if path.suffix not in {'.md','.html','.txt','.json','.yml'} or any(p in {'.git','node_modules','__pycache__'} for p in path.relative_to(ROOT).parts):continue
+ if path.suffix not in {'.md','.html','.txt','.json','.yml'} or any(p in LOCAL_DIRS for p in path.relative_to(ROOT).parts):continue
  if pattern.search(path.read_text(errors='replace')):errors.append(f'{path.relative_to(ROOT)}: public maintenance timestamp')
 # The complete security checklist must survive rendering.
 raw=(ROOT/'securevcc/securevcc.md').read_text();rendered=(ROOT/'guides/security.html').read_text()
 checks=re.findall(r'^- \*\*([A-Z][A-Z0-9]*-\d{2}) —',raw,re.M)
 if len(checks)!=len(set(checks)) or any(c not in rendered for c in checks):errors.append('Security checklist lost during rendering')
+# Catalog, distribution copies, and source files must describe the same collection.
+catalog=json.loads((ROOT/'skills/catalog.json').read_text())
+slugs=[item['slug'] for item in catalog]
+folders={p.parent.name for p in (ROOT/'skills').glob('*/SKILL.md')}
+if len(slugs)!=len(set(slugs)) or set(slugs)!=folders:errors.append('Reusable skill catalog does not match source folders')
+manifest=json.loads((ROOT/'agent-skills.json').read_text())
+if len(manifest['skills'])!=len(catalog)+4:errors.append('Agent directory count does not match the collection')
+with zipfile.ZipFile(ROOT/'downloads/reusable-skills.zip') as bundle:
+ for item in catalog:
+  for name in ['SKILL.md','PROJECT_PROMPT.md']:
+   path=ROOT/'skills'/item['slug']/name
+   if bundle.read('vcc/'+path.relative_to(ROOT).as_posix())!=path.read_bytes():errors.append(f'Stale reusable skill bundle: {path}')
+  if item.get('hero'):
+   if bundle.read('vcc/'+item['hero'])!=(ROOT/item['hero']).read_bytes():errors.append(f'Stale hero: {item["slug"]}')
+   raw=(ROOT/'skills'/item['slug']/'SKILL.md').read_text()
+   prompt=(ROOT/'skills'/item['slug']/'PROJECT_PROMPT.md').read_text()
+   if re.search(r'\b(?:TCEA|GPTs?|bots?)\b',raw+'\n'+prompt,re.I):errors.append(f'Legacy assistant branding in {item["slug"]}')
+with zipfile.ZipFile(ROOT/'downloads/vcc-agent-skills.zip') as bundle:
+ for entry in manifest['skills']:
+  path=ROOT/'agent-skills'/entry['name']/'SKILL.md'
+  if bundle.read(f'vcc-agent-skills/{entry["name"]}/SKILL.md')!=path.read_bytes():errors.append(f'Stale agent bundle: {entry["name"]}')
 if errors:print('\n'.join(errors));sys.exit(1)
 print(f'Validated {len(pages)} HTML pages, local links/anchors, image labels, document structure, timestamp hygiene, and {len(checks)} security checks')

@@ -69,12 +69,12 @@
     "category": "skills",
     "title": "Reusable skills",
     "type": "Skills · Project starters",
-    "description": "Browse nine reusable workflows with complete Markdown, project prompts, and concept sketches for turning instructions into classroom tools.",
-    "note": "Seven supplied skills and two attributed repository adaptations",
+    "description": "Browse 23 reusable workflows with complete Markdown, project prompts, concept sketches, and hero artwork for turning instructions into useful tools.",
+    "note": "Seven original supplied skills, two repository adaptations, and 14 creator adaptations",
     "guide": "guides/skills.html",
     "guide_label": "Browse reusable skills",
     "download": "downloads/reusable-skills.zip",
-    "download_label": "Download all nine skills"
+    "download_label": "Download all 23 skills"
   },
   {
     "category": "rescue",

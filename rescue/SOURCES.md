@@ -18,7 +18,7 @@ The original archive is not a second maintained download. Its source identity is
 - [SecureVCC](../securevcc/securevcc.md) incorporates the security-repair baseline, reproducible review setup, and privacy-preserving diagnostic checks. Existing detailed permissions, exposed-credential response, synthetic validation, and realistic severity rules remain in place. SecureVCC retains its MIT notice.
 - [Vibe-Code Rescue](VIBE_CODE_RESCUE.md) keeps troubleshooting, repair, release-gate, and repair/rebuild/retire triage workflows in a separate self-contained file. It includes minimum safety rules and points to SecureVCC for detailed audits.
 - The adaptation respects authorization already established by the user and repository, preserves unrelated work, separates uncertainty from severity, and removes maintenance-date fields from report templates. A release verdict does not grant publication permission.
-- The four-part illustration is original VCC vector artwork representing a recovery workflow. It is not a screenshot or test result.
+- The four-part illustration originated as VCC vector artwork and has a colorful generated revision representing a recovery workflow. It is not a screenshot or test result.
 
 ## Reference material
 
@@ -29,3 +29,5 @@ Official references read for the technical adaptation:
 - [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html): enforce permissions at the trusted boundary on each request and validate allowed/denied cases.
 - [OWASP Logging Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html): exclude sensitive values, sanitize logs, and test logging failures without information disclosure.
 - [GitHub: Removing sensitive data](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository): revoke or rotate exposed credentials first; history rewriting has separate coordination risks.
+
+The colorful workbench artwork was generated as an edit of the original VCC SVG and includes a red plus coding-repair toolkit. Pages use `assets/rescue-workbench.webp`; `assets/rescue-workbench.svg` remains a self-contained compatibility image at its stable URL. The original vector is preserved at `assets/art-source/rescue-workbench-original.svg`. Image prompts are in `assets/ARTWORK_PROMPTS.json`.

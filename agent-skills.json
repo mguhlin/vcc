@@ -119,6 +119,132 @@
       "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#source-integrity",
       "skill_url": "https://mguhlin.github.io/vcc/agent-skills/source-integrity/SKILL.md",
       "license": "CC0-1.0"
+    },
+    {
+      "name": "signal-scout",
+      "title": "Signal Scout",
+      "description": "Use for claims & critical thinking. Evaluate claims through SIFT, FLOATER, CRITIC, or the Orwell Test while keeping evidence and uncertainty visible.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/signal-scout/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#signal-scout",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/signal-scout/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "northstar-decisions",
+      "title": "Northstar Decisions",
+      "description": "Use for ethics & decisions. Work through seven ETHICAL stages to separate facts, values, stakeholder perspectives, and authorized action.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/northstar-decisions/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#northstar-decisions",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/northstar-decisions/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "district-systems-compass",
+      "title": "District Systems Compass",
+      "description": "Use for technology planning. Review district technology plans with evidence-linked rubrics, risk priorities, KPIs, and practical implementation phases.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/district-systems-compass/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#district-systems-compass",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/district-systems-compass/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "workshop-foundry",
+      "title": "Workshop Foundry",
+      "description": "Use for workshop design. Turn a session idea into a timed, practical workshop with facilitator notes, activities, and visual suggestions.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/workshop-foundry/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#workshop-foundry",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/workshop-foundry/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "policy-forge",
+      "title": "Policy Forge",
+      "description": "Use for ai policy drafting. Draft an education AI policy through context gathering, gap analysis, stakeholder input, and an implementable rollout.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/policy-forge/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#policy-forge",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/policy-forge/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "policy-lens",
+      "title": "Policy Lens",
+      "description": "Use for ai governance review. Inspect an existing school AI policy for clarity, privacy, equity, human oversight, and practical accountability.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/policy-lens/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#policy-lens",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/policy-lens/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "session-lens",
+      "title": "Session Lens",
+      "description": "Use for proposal evaluation. Score a conference proposal with an explicit 100-point rubric and constructive, evidence-linked feedback.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/session-lens/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#session-lens",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/session-lens/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "proposal-spark",
+      "title": "Proposal Spark",
+      "description": "Use for proposal writing. Shape a session idea into a specific proposal with clear takeaways, realistic scope, and practical attendee value.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/proposal-spark/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#proposal-spark",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/proposal-spark/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "learning-loom",
+      "title": "Learning Loom",
+      "description": "Use for instructional synthesis. Create coherent workshop plans, learning one-pagers, or coaching analyses without inventing research evidence.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/learning-loom/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#learning-loom",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/learning-loom/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "wonder-weave",
+      "title": "Wonder Weave",
+      "description": "Use for creative storytelling. Collect one imaginative choice at a time, build a scene, and create an image only when the tools support it.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/wonder-weave/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#wonder-weave",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/wonder-weave/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "strategy-studio",
+      "title": "Strategy Studio",
+      "description": "Use for learning strategy coaching. Choose, adapt, and reflect on practical teaching strategies using goals, learning phases, and actual evidence.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/strategy-studio/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#strategy-studio",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/strategy-studio/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "daylight-pages",
+      "title": "Daylight Pages",
+      "description": "Use for daily learning calendars. Build an accessible one-page-per-day learning calendar with reliable date mapping, navigation, and classroom projection.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/daylight-pages/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#daylight-pages",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/daylight-pages/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "archive-harbor",
+      "title": "Archive Harbor",
+      "description": "Use for authorized video archiving. Plan and verify Vimeo library downloads through supported controls while distinguishing triggered downloads from files confirmed on disk.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/archive-harbor/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#archive-harbor",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/archive-harbor/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "clearcopy",
+      "title": "ClearCopy",
+      "description": "Use for text & file hygiene. Inspect and clean authorized text or file metadata while preserving meaning, multilingual text, attribution, and required disclosures.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/clearcopy/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#clearcopy",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/clearcopy/SKILL.md",
+      "license": "MIT"
     }
   ]
 }

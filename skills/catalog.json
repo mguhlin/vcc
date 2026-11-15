@@ -6,7 +6,8 @@
     "summary": "Work through Stop, Investigate, Find, and Trace before deciding what a claim deserves.",
     "project": "SIFT investigation desk",
     "concept": "A four-step investigation with a claim, evidence notes, original source, and an unresolved assessment.",
-    "origin": "Supplied collection"
+    "origin": "Supplied collection",
+    "group": "Original collection"
   },
   {
     "slug": "prism-thinking",
@@ -15,7 +16,8 @@
     "summary": "Use Patterns, Reasoning, Ideas, Situation, and Methods to move from noticing to explaining.",
     "project": "PRISM inquiry studio",
     "concept": "Five inquiry lenses surround a learner response, with one focused question and a synthesis challenge.",
-    "origin": "Supplied collection"
+    "origin": "Supplied collection",
+    "group": "Original collection"
   },
   {
     "slug": "outline-helper",
@@ -24,7 +26,8 @@
     "summary": "Organize discussion into a traditional outline while keeping decisions distinct from proposals.",
     "project": "Meeting-to-action workbench",
     "concept": "Source notes sit beside a Roman numeral outline, with decisions and action items separated below.",
-    "origin": "Supplied collection"
+    "origin": "Supplied collection",
+    "group": "Original collection"
   },
   {
     "slug": "quadrant-notes",
@@ -33,7 +36,8 @@
     "summary": "Connect main ideas to evidence, personal connections, and a short synthesis.",
     "project": "Four-part study notebook",
     "concept": "Four labeled writing areas link main ideas, evidence, personal connections, and synthesis, followed by retrieval questions.",
-    "origin": "Supplied collection"
+    "origin": "Supplied collection",
+    "group": "Original collection"
   },
   {
     "slug": "ai-citation-assistant",
@@ -42,7 +46,8 @@
     "summary": "Gather real source details, distinguish citation from AI disclosure, and expose missing metadata.",
     "project": "Citation and disclosure desk",
     "concept": "A source-details form leads to citation review and a separate AI-use disclosure, with missing fields visible.",
-    "origin": "Supplied collection"
+    "origin": "Supplied collection",
+    "group": "Original collection"
   },
   {
     "slug": "vocabulary-enhancement",
@@ -51,7 +56,8 @@
     "summary": "Move from word meanings to creative use, retrieval, and a quick check for understanding.",
     "project": "Vocabulary practice studio",
     "concept": "A word and meaning feed a four-panel comic plan, a context sentence, and a retrieval exit ticket.",
-    "origin": "Supplied collection"
+    "origin": "Supplied collection",
+    "group": "Original collection"
   },
   {
     "slug": "freewriting-coach",
@@ -60,7 +66,8 @@
     "summary": "Use FLOW to start writing, keep ideas moving, and reflect before revising.",
     "project": "FLOW writing room",
     "concept": "A quiet writing area pairs a chosen prompt with a pausable timer and optional reflection after writing.",
-    "origin": "Supplied collection"
+    "origin": "Supplied collection",
+    "group": "Original collection"
   },
   {
     "slug": "compare-options",
@@ -70,7 +77,8 @@
     "project": "Decision comparison table",
     "concept": "Options appear in a criteria table, with must-haves, unknowns, and a small next test.",
     "origin": "Repository adaptation",
-    "source": "https://github.com/mguhlin/creations/blob/main/architect/skills/packages/compare-options-skill/SKILL.md"
+    "source": "https://github.com/mguhlin/creations/blob/main/architect/skills/packages/compare-options-skill/SKILL.md",
+    "group": "Repository adaptations"
   },
   {
     "slug": "source-integrity",
@@ -80,6 +88,189 @@
     "project": "Claim-to-evidence ledger",
     "concept": "A ledger links each claim to its source location, finding, and remaining verification task.",
     "origin": "Repository adaptation",
-    "source": "https://github.com/mguhlin/creations/blob/main/architect/skills/packages/source-integrity-skill/SKILL.md"
+    "source": "https://github.com/mguhlin/creations/blob/main/architect/skills/packages/source-integrity-skill/SKILL.md",
+    "group": "Repository adaptations"
+  },
+  {
+    "slug": "signal-scout",
+    "title": "Signal Scout",
+    "category": "Claims & critical thinking",
+    "summary": "Evaluate claims through SIFT, FLOATER, CRITIC, or the Orwell Test while keeping evidence and uncertainty visible.",
+    "project": "Claim investigation studio",
+    "concept": "A compass and magnifying lens trace evidence trails toward a clear lighthouse signal.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/signal-scout.webp",
+    "hero_alt": "A compass and magnifying lens trace evidence trails toward a clear lighthouse signal.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "northstar-decisions",
+    "title": "Northstar Decisions",
+    "category": "Ethics & decisions",
+    "summary": "Work through seven ETHICAL stages to separate facts, values, stakeholder perspectives, and authorized action.",
+    "project": "Ethical decision journal",
+    "concept": "A compass, balanced scales, and seven stepping stones suggest a careful shared decision.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/northstar-decisions.webp",
+    "hero_alt": "A compass, balanced scales, and seven stepping stones suggest a careful shared decision.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "district-systems-compass",
+    "title": "District Systems Compass",
+    "category": "Technology planning",
+    "summary": "Review district technology plans with evidence-linked rubrics, risk priorities, KPIs, and practical implementation phases.",
+    "project": "District planning evidence desk",
+    "concept": "A fictional school campus links to a server cabinet, maintenance tools, and a protective shield.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/district-systems-compass.webp",
+    "hero_alt": "A fictional school campus links to a server cabinet, maintenance tools, and a protective shield.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "workshop-foundry",
+    "title": "Workshop Foundry",
+    "category": "Workshop design",
+    "summary": "Turn a session idea into a timed, practical workshop with facilitator notes, activities, and visual suggestions.",
+    "project": "Workshop run-of-show builder",
+    "concept": "A tactile planning table combines blank activity cards, an hourglass, and a small presentation stage.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/workshop-foundry.webp",
+    "hero_alt": "A tactile planning table combines blank activity cards, an hourglass, and a small presentation stage.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "policy-forge",
+    "title": "Policy Forge",
+    "category": "AI policy drafting",
+    "summary": "Draft an education AI policy through context gathering, gap analysis, stakeholder input, and an implementable rollout.",
+    "project": "School AI policy drafting desk",
+    "concept": "Layered policy pages, a compass, and stakeholder silhouettes form a collaborative drafting workbench.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/policy-forge.webp",
+    "hero_alt": "Layered policy pages, a compass, and stakeholder silhouettes form a collaborative drafting workbench.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "policy-lens",
+    "title": "Policy Lens",
+    "category": "AI governance review",
+    "summary": "Inspect an existing school AI policy for clarity, privacy, equity, human oversight, and practical accountability.",
+    "project": "AI policy review ledger",
+    "concept": "A silver lens examines layered policy sheets beside balanced scales and an open protective gate.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/policy-lens.webp",
+    "hero_alt": "A silver lens examines layered policy sheets beside balanced scales and an open protective gate.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "session-lens",
+    "title": "Session Lens",
+    "category": "Proposal evaluation",
+    "summary": "Score a conference proposal with an explicit 100-point rubric and constructive, evidence-linked feedback.",
+    "project": "Session proposal review desk",
+    "concept": "A proposal sheet, timing glass, inspection lens, and four scoring sliders suggest a careful review.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/session-lens.webp",
+    "hero_alt": "A proposal sheet, timing glass, inspection lens, and four scoring sliders suggest a careful review.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "proposal-spark",
+    "title": "Proposal Spark",
+    "category": "Proposal writing",
+    "summary": "Shape a session idea into a specific proposal with clear takeaways, realistic scope, and practical attendee value.",
+    "project": "Conference proposal drafting studio",
+    "concept": "An open notebook and paper pathway lead toward a presentation stage and a warm spark of light.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/proposal-spark.webp",
+    "hero_alt": "An open notebook and paper pathway lead toward a presentation stage and a warm spark of light.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "learning-loom",
+    "title": "Learning Loom",
+    "category": "Instructional synthesis",
+    "summary": "Create coherent workshop plans, learning one-pagers, or coaching analyses without inventing research evidence.",
+    "project": "Learning synthesis workbench",
+    "concept": "Three woven learning ribbons connect a book, a workshop plan, and a concise reflection guide.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/learning-loom.webp",
+    "hero_alt": "Three woven learning ribbons connect a book, a workshop plan, and a concise reflection guide.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "wonder-weave",
+    "title": "Wonder Weave",
+    "category": "Creative storytelling",
+    "summary": "Collect one imaginative choice at a time, build a scene, and create an image only when the tools support it.",
+    "project": "Story scene prompt playground",
+    "concept": "A friendly dragon, curious robot, floating island, and blank word tiles form a playful paper story world.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/wonder-weave.webp",
+    "hero_alt": "A friendly dragon, curious robot, floating island, and blank word tiles form a playful paper story world.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "strategy-studio",
+    "title": "Strategy Studio",
+    "category": "Learning strategy coaching",
+    "summary": "Choose, adapt, and reflect on practical teaching strategies using goals, learning phases, and actual evidence.",
+    "project": "Teaching strategy planning studio",
+    "concept": "A lesson map, concept threads, compass, and progressive stepping stones suggest purposeful coaching.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/strategy-studio.webp",
+    "hero_alt": "A lesson map, concept threads, compass, and progressive stepping stones suggest purposeful coaching.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "daylight-pages",
+    "title": "Daylight Pages",
+    "category": "Daily learning calendars",
+    "summary": "Build an accessible one-page-per-day learning calendar with reliable date mapping, navigation, and classroom projection.",
+    "project": "Daily opener calendar",
+    "concept": "A blank flip calendar, sunrise disk, pencil, and learning card suggest one useful idea each day.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/daylight-pages.webp",
+    "hero_alt": "A blank flip calendar, sunrise disk, pencil, and learning card suggest one useful idea each day.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "archive-harbor",
+    "title": "Archive Harbor",
+    "category": "Authorized video archiving",
+    "summary": "Plan and verify Vimeo library downloads through supported controls while distinguishing triggered downloads from files confirmed on disk.",
+    "project": "Video archive download ledger",
+    "concept": "Video frames and film canisters follow a short path into an archival box beside a checklist.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/archive-harbor.webp",
+    "hero_alt": "Video frames and film canisters follow a short path into an archival box beside a checklist.",
+    "license": "CC-BY-4.0"
+  },
+  {
+    "slug": "clearcopy",
+    "title": "ClearCopy",
+    "category": "Text & file hygiene",
+    "summary": "Inspect and clean authorized text or file metadata while preserving meaning, multilingual text, attribution, and required disclosures.",
+    "project": "Text and metadata inspection desk",
+    "concept": "An inspection lens and soft brush sit beside protected document sheets, suggesting careful file hygiene.",
+    "origin": "Creator adaptations",
+    "group": "Creator adaptations",
+    "hero": "assets/skills/heroes/clearcopy.webp",
+    "hero_alt": "An inspection lens and soft brush sit beside protected document sheets, suggesting careful file hygiene.",
+    "license": "MIT"
   }
 ]

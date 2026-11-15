@@ -103,7 +103,7 @@ No file or checklist can guarantee that every vulnerability will be found. This 
 | `build.py` | Website preview synchronization and checklist consistency check; not required to use the skill |
 | `index.html` | Accessible static landing page, installation guidance, prompts, download, and readable skill preview |
 | `assets/favicon.svg` | Local browser-tab icon |
-| `assets/securevcc-workstation.webp` | Optimized copy of the supplied retro workstation illustration |
+| `assets/securevcc-workstation.webp` | Optimized supplied retro workstation illustration, edited to show the VCC address |
 | `SOURCES.md` | Source notes, official reference links, and source-file checksums |
 | `sources/seccheck.md` | Original supplied website-security Markdown, preserved as provenance |
 | `sources/security-audit-skill-main.zip` | Original supplied Cloudflare audit-skill ZIP, preserved as provenance |

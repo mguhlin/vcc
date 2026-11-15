@@ -14,9 +14,9 @@ Practical, educator-friendly guidance for creating websites with AI: purposeful 
 
 ## What is included
 
-- Three core instruction files and readable HTML guides
-- A companion Vibe-Code Rescue workflow and fourth front-page guide for existing projects
-- Nine reusable skills with full Markdown, project prompts, original concept sketches, and a sidebar browser
+- Four featured Markdown guides: Web Design, Security, Education Privacy, and Vibe-Code Rescue
+- 23 reusable skills with full Markdown, project prompts, concept images, and a sidebar browser
+- 27 agent-ready skill exports with individual setup and use prompts
 - All SecureVCC reference and provenance materials, including its original upstream archive
 - Project brief, prompt pack, launch review, and instruction-pointer examples
 - Three-checks cartoon hero, design playbook, education compliance visual, and retained original workbench art
@@ -37,36 +37,37 @@ To preview with HTTP, run `python3 -m http.server 4186 --bind 127.0.0.1` from th
 
 ## Rebuild
 
-Python 3 and `markdown-it-py` (see `requirements.txt`) are needed to refresh the readable guides. They are build tools, not visitor dependencies.
+Python 3.10 or newer and `markdown-it-py` (see `requirements.txt`) are needed to refresh the readable guides. They are build tools, not visitor dependencies.
 
 ```sh
 python3 -m pip install -r requirements.txt
 python3 scripts/build.py
 python3 scripts/validate.py
 python3 scripts/package.py
+python3 scripts/verify_package.py
 ```
 
 Optional browser verification: install the development dependencies with `npm install`, install a Playwright Chromium browser with `npx playwright install chromium`, serve the site locally, and run `npm test`. Set `VCC_URL` to the local or authorized live site. `VCC_CHROME` can point to an existing Chrome executable. The browser checks cover primary interactions, a sampled keyboard flow, mobile/reflow, and automated axe scans; they do not replace assistive-technology or full WCAG review.
 
-Packaging puts every project component except Git metadata, caches, development-only browser dependencies, and the output archive itself into `downloads/vcc-complete.zip`, with a SHA-256 manifest. Do not include credentials or private project data.
+Packaging puts every public project component except Git metadata, caches, local environment files, Python/Node environments, and the output archive itself into `downloads/vcc-complete.zip`, with a SHA-256 manifest. Do not include credentials or private project data.
 
 ## AI agent setup and use
 
-The homepage's [AI agent entry point](https://mguhlin.github.io/vcc/#ai-agent-instructions) links to `AGENT_GUIDE.md`, generated `llms.txt`, and `agent-skills.json`. The four featured guides and each of the nine learning skills include a visible agent section with a direct `SKILL.md` download and separate copyable setup/use prompts. These prompts create local skill files only when requested and apply workflows within existing project instructions and user authorization.
+The homepage's [AI agent entry point](https://mguhlin.github.io/vcc/#ai-agent-instructions) links to `AGENT_GUIDE.md`, generated `llms.txt`, and `agent-skills.json`. The four featured guides and each of the 23 reusable skills include a visible agent section with a direct `SKILL.md` download and separate copyable setup/use prompts. These prompts create local skill files only when requested and apply workflows within existing project instructions and user authorization.
 
-Edit `AGENT_GUIDE.md`, `agent-resources/featured.json`, `agent-resources/HOME_PROMPT.md`, the original guide Markdown, and `skills/catalog.json` as appropriate. `scripts/agent_resources.py` generates all 13 `agent-skills/<name>/SKILL.md` exports, normalizing frontmatter and adding source/reuse footers. The original bodies and attribution are retained. Exported Web Design receives skill metadata; the Education report template uses a project revision field. The generated files are distribution copies, not independently maintained sources or skills installed in this checkout. Rebuild with `scripts/build.py` before validating and packaging.
+Edit `AGENT_GUIDE.md`, `agent-resources/featured.json`, `agent-resources/HOME_PROMPT.md`, the original guide Markdown, and `skills/catalog.json` as appropriate. `scripts/agent_resources.py` generates all 27 `agent-skills/<name>/SKILL.md` exports, normalizing frontmatter and adding source/reuse footers. The original bodies and attribution are retained. Exported Web Design receives skill metadata; the Education report template uses a project revision field. The generated files are distribution copies, not independently maintained sources or skills installed in this checkout. Rebuild with `scripts/build.py` before validating and packaging.
 
-`downloads/vcc-agent-skills.zip` contains all 13 exported skill folders, an agent readme, and the directory. The existing nine-skill project-starter ZIP remains available. The complete VCC bundle and SHA-256 manifest include both collections and the machine-readable entry points. Codex project/personal scope and invocation guidance cites OpenAI's documentation; other hosts should use their supported locations. No installer, dependency, backend, or external AI connection is added.
+`downloads/vcc-agent-skills.zip` contains all 27 exported skill folders, an agent readme, and the directory. The existing 23-skill project-starter ZIP remains available. The complete VCC bundle and SHA-256 manifest include both collections and the machine-readable entry points. Codex project/personal scope and invocation guidance cites OpenAI's documentation; other hosts should use their supported locations. No installer, dependency, backend, or external AI connection is added.
 
 ## Vibe-Code Rescue
 
-[Vibe-Code Rescue](https://mguhlin.github.io/vcc/guides/rescue.html) is the fourth front-page guide. Its maintained source is `rescue/VIBE_CODE_RESCUE.md`, adapted from the supplied ZIP; provenance and changes are in `rescue/SOURCES.md`. It focuses on reproducible setup, useful diagnostics, focused repairs, and repair/rebuild/retire decisions. The security-specific baseline and new `SUPPLY-03` / `OPS-04` checks are integrated into `securevcc/securevcc.md`, which generates the existing security page. Both guides link to each other and remain usable as standalone Markdown. The complete VCC ZIP and checksum manifest include the maintained files and original rescue illustration. The nine learning skills remain in their sidebar collection.
+[Vibe-Code Rescue](https://mguhlin.github.io/vcc/guides/rescue.html) is the fourth front-page guide. Its maintained source is `rescue/VIBE_CODE_RESCUE.md`, adapted from the supplied ZIP; provenance and changes are in `rescue/SOURCES.md`. It focuses on reproducible setup, useful diagnostics, focused repairs, and repair/rebuild/retire decisions. The security-specific baseline and new `SUPPLY-03` / `OPS-04` checks are integrated into `securevcc/securevcc.md`, which generates the existing security page. Both guides link to each other and remain usable as standalone Markdown. The complete VCC ZIP and checksum manifest include the maintained files and original rescue illustration. The 23 reusable skills remain in their sidebar collection.
 
 ## Reusable skills
 
-Open [Reusable skills](https://mguhlin.github.io/vcc/guides/skills.html). The seven supplied skill files live under `skills/<name>/SKILL.md`; Compare Options and Source Integrity adapt two CC0 files from mguhlin/creations. Each folder includes an authored `PROJECT_PROMPT.md`. The catalog lives in `skills/catalog.json`; the introduction is `supplementals/REUSABLE_SKILLS.md`. Edit these Markdown and catalog sources before rebuilding. `scripts/skills_library.py` renders the workspace, original SVG wireframes, and a deterministic `downloads/reusable-skills.zip`. The complete archive includes all of them. Attribution and adaptation notes are in `skills/SOURCES.md`.
+Open [Reusable skills](https://mguhlin.github.io/vcc/guides/skills.html). The seven original supplied files, two CC0 repository adaptations, and 14 creator adaptations live under `skills/<name>/SKILL.md`. Each folder includes an authored `PROJECT_PROMPT.md`. The catalog lives in `skills/catalog.json`; the introduction is `supplementals/REUSABLE_SKILLS.md`. Edit these Markdown and catalog sources before rebuilding. `scripts/skills_library.py` renders the workspace and original SVG wireframes, includes the new WebP hero artwork, and creates a deterministic `downloads/reusable-skills.zip`. The complete archive includes all of them. Attribution and adaptation notes are in `skills/SOURCES.md`.
 
-The skills workspace uses a left reading rail on desktop and a bounded list above the skill on phones. Copy buttons preserve the complete source; the fallback selects text for manual copying. Direct fragment links, browser history, search, individual downloads, and a no-JavaScript reading route keep the collection usable. Existing navy, denim, silver-white, serif-heading and system-body tokens carry through. Alternatives considered were an accordion and a sequential wizard; the sidebar supports repeated browsing and copying with fewer steps. Concept sketches are original vector interface plans with prose alternatives, not working application screenshots. The library remains public/static (Tier 0); filter state stays in memory, and clipboard writes occur only on request. The proposed projects default to local manual scaffolds and require separate review before external AI integration.
+The skills workspace uses a left reading rail on desktop and a bounded list above the skill on phones. Copy buttons preserve the complete source; the fallback selects text for manual copying. Direct fragment links, browser history, search, individual downloads, and a no-JavaScript reading route keep the collection usable. Existing navy, denim, silver-white, serif-heading and system-body tokens carry through. Alternatives considered were an accordion and a sequential wizard; the sidebar supports repeated browsing and copying with fewer steps. The original nine entries retain vector interface plans; the 14 additions use generated editorial hero artwork with descriptive alternatives. Neither represents a working application. Hero generation prompts are preserved in `assets/skills/heroes/PROMPTS.json`. The library remains public/static (Tier 0); filter state stays in memory, and clipboard writes occur only on request. The proposed projects default to local manual scaffolds and require separate review before external AI integration.
 
 ## Add a resource
 
@@ -83,3 +84,7 @@ The character is practical, warm, and deliberate. The interface uses silver-whit
 The rescue addition extends the established guide layout and palette. The primary educator tasks are choosing audit versus repair, downloading the workflow, and reaching detailed security checks. The existing reading rail, native links, and a copyable audit prompt support those tasks without new dependencies, accounts, or data collection. Verification covers the fourth card, linked guides and downloads, copy action, keyboard access, narrow-screen reflow, and automated accessibility checks.
 
 The Web Design featured guide incorporates a focused Modern Web Guidance adaptation in `WEB_DESIGN.md` and an educator explanation in `supplementals/MODERN_WEB_GUIDANCE.md`. It covers platform features, browser targets, fallbacks, text scaling, and measured loading/interaction improvements. The same source flows into `agent-skills/vcc-web-design/SKILL.md` and the all-skills bundle. Upstream code and CLI packages are linked resources, not runtime dependencies.
+
+The Reusable Skills introduction pairs its explanation with compact toolbox artwork, capped at 320 CSS pixels on desktop and 280 on stacked layouts. It uses the open space beside the copy without enlarging the page hero.
+
+See [MAINTAINING.md](MAINTAINING.md) for isolated setup, maintained-versus-generated file boundaries, diagnostics, complete-archive verification, publishing checks, and recovery without discarding work.

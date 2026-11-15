@@ -16,9 +16,10 @@ if(skillsRoot){
    if(link.dataset.skillLink===panel.id)link.setAttribute('aria-current','true');
    else link.removeAttribute('aria-current');
   }
-  const list=skillsRoot.querySelector('.skills-sidebar nav');
+  const nav=skillsRoot.querySelector('.skills-sidebar nav');
+  const list=nav.scrollHeight>nav.clientHeight?nav:skillsRoot.querySelector('.skills-sidebar-inner');
   const active=links.find(link=>link.dataset.skillLink===panel.id);
-  if(list.scrollHeight>list.clientHeight)list.scrollTop=Math.max(0,active.offsetTop-(list.clientHeight-active.offsetHeight)/2);
+  if(list.scrollHeight>list.clientHeight)list.scrollTop+=active.getBoundingClientRect().top-list.getBoundingClientRect().top-(list.clientHeight-active.offsetHeight)/2;
   // Clear stale copy messages when changing the displayed skill.
   for(const status of skillsRoot.querySelectorAll('.skill-status'))status.textContent='';
   if(focus)panel.querySelector('.skill-title').focus({preventScroll:true});
@@ -44,7 +45,12 @@ if(skillsRoot){
   }
   skillsRoot.querySelector('#skill-count').textContent=`${count} of ${links.length} skills`;
   skillsRoot.querySelector('.skill-empty').hidden=count!==0;
-  skillsRoot.querySelector('.skill-group').hidden=!links.slice(7).some(link=>!link.closest('li').hidden);
+  for(const heading of skillsRoot.querySelectorAll('[data-skill-group-heading]')){
+   heading.hidden=!links.some(link=>{
+    const entry=link.closest('li');
+    return entry.dataset.skillGroup===heading.dataset.skillGroupHeading&&!entry.hidden;
+   });
+  }
  }
  search.addEventListener('input',filterSkills);
  skillsRoot.querySelector('.skill-clear').addEventListener('click',()=>{search.value='';filterSkills();search.focus();});

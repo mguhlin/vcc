@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Vibe-Code Rescue workbench</title>
+<desc id="desc">An original blue-and-silver illustration of a laptop with a broken workflow, a magnifying glass, a wrench, and a test checklist. The repair path is reproduce, diagnose, repair, and verify.</desc>
+<rect width="1600" height="900" fill="#e2e7ed"/>
+<path d="M100 690H1500M100 698H1500" stroke="#8b9daf" stroke-width="4"/>
+<rect x="120" y="100" width="1360" height="600" rx="16" fill="#f1f3f5" stroke="#8b9daf" stroke-width="5"/>
+<path d="M180 160H1420M180 640H1420" stroke="#ced7e0" stroke-width="3"/>
+<g stroke="#182e46" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M330 600V236Q330 215 352 215H1020Q1042 215 1042 236V600" fill="#214f7f"/>
+<rect x="362" y="248" width="648" height="321" rx="5" fill="#fff" stroke-width="5"/>
+<path d="M280 603H1092L1130 652H242Z" fill="#ced7e0"/>
+<path d="M598 603L580 626H793L776 603" fill="#8b9daf" stroke-width="5"/>
+</g>
+<path d="M398 300H970M398 340H600M398 368H560" stroke="#ced7e0" stroke-width="12"/>
+<path d="M425 451H535M625 451H705M795 451H945" stroke="#8b9daf" stroke-width="7" stroke-dasharray="14 10"/>
+<g fill="#f1f3f5" stroke="#214f7f" stroke-width="6">
+<circle cx="435" cy="451" r="31"/><circle cx="610" cy="451" r="31"/><circle cx="780" cy="451" r="31"/><circle cx="946" cy="451" r="31"/>
+</g>
+<path d="M419 451L431 464L452 438M594 436L626 467M626 436L594 467" fill="none" stroke="#214f7f" stroke-width="7" stroke-linecap="round"/>
+<path d="M780 437V466M766 451H794M931 451L942 464L962 438" fill="none" stroke="#214f7f" stroke-width="7" stroke-linecap="round"/>
+<g stroke="#182e46" stroke-width="7" stroke-linejoin="round">
+<rect x="1120" y="310" width="250" height="335" rx="8" fill="#fff"/>
+<rect x="1183" y="286" width="125" height="45" rx="5" fill="#8b9daf"/>
+<path d="M1156 378L1172 394L1200 361M1156 447L1172 463L1200 430M1156 516L1172 532L1200 499" fill="none" stroke="#214f7f"/>
+<path d="M1220 383H1334M1220 452H1334M1220 521H1334M1156 586H1334" stroke="#8b9daf" stroke-width="6"/>
+</g>
+<g transform="translate(210 220) rotate(-25)">
+<path d="M0 0V-54" stroke="#182e46" stroke-width="28" stroke-linecap="round"/>
+<circle cx="0" cy="-125" r="72" fill="#e2e7ed" fill-opacity=".8" stroke="#214f7f" stroke-width="12"/>
+<path d="M-30-145L-10-164M-42-119L4-165" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+</g>
+<path d="M1245 166C1225 145 1216 125 1227 100L1262 135L1297 100C1320 142 1296 176 1273 179L1196 256C1182 270 1163 251 1177 237Z" fill="#8b9daf" stroke="#182e46" stroke-width="7" stroke-linejoin="round"/>
+<g font-family="system-ui,sans-serif" font-size="45" fill="#182e46" text-anchor="middle">
+<text x="249" y="799">Reproduce</text><text x="620" y="799">Diagnose</text><text x="997" y="799">Repair</text><text x="1342" y="799">Verify</text>
+</g>
+<g fill="none" stroke="#214f7f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M408 782H452L440 770M452 782L440 794M785 782H830L818 770M830 782L818 794M1121 782H1166L1154 770M1166 782L1154 794"/>
+</g>
+</svg>

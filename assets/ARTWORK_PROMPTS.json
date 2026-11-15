@@ -1,0 +1,20 @@
+[
+  {
+    "asset": "assets/skills/library-intro.webp",
+    "prompt": "Create a compact landscape editorial hero illustration for the Reusable Skills introduction of Vibe-Coding Center, an educator's practical resource library. A small navy open toolbox holds several clean folded instruction sheets; one silver paper strip unfolds into a simple miniature browser window beside a pencil and a small warm-gold gear. Convey reusable instructions becoming useful projects. Only a few large, clear objects, composed as one quiet still life with generous margins, readable at just 300 pixels wide. Pale silver-white background, navy and denim blue palette with a restrained warm gold accent. Tactile paper and crafted objects, dimensional editorial illustration, calm studio lighting, matching an educational field guide. No lettering, no numbers, no logos, no badges, no people. Landscape 4:3 composition. This is conceptual artwork, not an application screenshot.",
+    "role": "Compact Reusable Skills introduction artwork",
+    "tool": "OpenAI image generation"
+  },
+  {
+    "asset": "assets/rescue-workbench.webp",
+    "prompt": "Edit this Vibe-Code Rescue workbench illustration to be much more colorful while preserving its clear laptop, broken-workflow, magnifying glass, wrench and verification-checklist composition. Add a prominent red cross-shaped plus motif on a small white-and-red first-aid style repair toolkit next to the laptop, clearly suggesting first aid for coding projects. Use rich denim blue, teal, warm gold, coral red, and fresh green accents against a pale silver-white background. Keep it polished and educator-friendly, with dimensional crafted-paper illustration and clean large shapes; avoid medical people, official seals or logos. Keep the exact four bottom words, in this order, with arrows: Reproduce → Diagnose → Repair → Verify. Preserve a 16:9 wide layout with readable type and uncluttered composition. This is conceptual software-repair artwork.",
+    "role": "Colorful repair-workbench edit of the original VCC SVG",
+    "tool": "OpenAI image generation"
+  },
+  {
+    "asset": "securevcc/assets/securevcc-workstation.webp",
+    "prompt": "Edit only the bottom URL line on the green CRT monitor in this image. Replace the obsolete visible address 'mguhlin.github.io/creations/securevcc' with exactly 'mguhlin.github.io/vcc'. Retain the green terminal prompt chevron before the URL and the cursor after it. Keep the same bright green pixel lettering, baseline, perspective, glow, and dark green CRT background. Preserve every other detail of the original illustration: the Secure Vibe-Coded Creations title, all code and security-checklist text, monitor casing, keyboard, plants, lamp, books, notes, mug, floppy disk, original composition, proportions and colors. No other text, layout or style changes.",
+    "role": "URL correction to the creator-supplied SecureVCC artwork",
+    "tool": "OpenAI image generation"
+  }
+]

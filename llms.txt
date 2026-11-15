@@ -1,6 +1,6 @@
 # Vibe-Coding Center
 
-> Thirteen instruction-only skills: four featured guides and nine learning/productivity workflows.
+> 27 instruction-only skills: 4 featured guides and 23 reusable workflows.
 
 Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the skill matching the task. Follow the user's project instructions and existing authorization.
 
@@ -8,7 +8,7 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 
 - [Agent directions](https://mguhlin.github.io/vcc/AGENT_GUIDE.md): selection, creation, validation, and use.
 - [Structured directory](https://mguhlin.github.io/vcc/agent-skills.json): names, descriptions, sources, guides, and skill URLs.
-- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): thirteen local skill folders; no executable installer.
+- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): 27 local skill folders; no executable installer.
 
 ## Featured guides
 
@@ -28,3 +28,17 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 - [Freewriting Coach](https://mguhlin.github.io/vcc/agent-skills/freewriting-coach/SKILL.md): `freewriting-coach`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#freewriting-coach).
 - [Compare Options](https://mguhlin.github.io/vcc/agent-skills/compare-options/SKILL.md): `compare-options`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#compare-options).
 - [Source Integrity](https://mguhlin.github.io/vcc/agent-skills/source-integrity/SKILL.md): `source-integrity`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#source-integrity).
+- [Signal Scout](https://mguhlin.github.io/vcc/agent-skills/signal-scout/SKILL.md): `signal-scout`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#signal-scout).
+- [Northstar Decisions](https://mguhlin.github.io/vcc/agent-skills/northstar-decisions/SKILL.md): `northstar-decisions`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#northstar-decisions).
+- [District Systems Compass](https://mguhlin.github.io/vcc/agent-skills/district-systems-compass/SKILL.md): `district-systems-compass`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#district-systems-compass).
+- [Workshop Foundry](https://mguhlin.github.io/vcc/agent-skills/workshop-foundry/SKILL.md): `workshop-foundry`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#workshop-foundry).
+- [Policy Forge](https://mguhlin.github.io/vcc/agent-skills/policy-forge/SKILL.md): `policy-forge`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#policy-forge).
+- [Policy Lens](https://mguhlin.github.io/vcc/agent-skills/policy-lens/SKILL.md): `policy-lens`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#policy-lens).
+- [Session Lens](https://mguhlin.github.io/vcc/agent-skills/session-lens/SKILL.md): `session-lens`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#session-lens).
+- [Proposal Spark](https://mguhlin.github.io/vcc/agent-skills/proposal-spark/SKILL.md): `proposal-spark`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#proposal-spark).
+- [Learning Loom](https://mguhlin.github.io/vcc/agent-skills/learning-loom/SKILL.md): `learning-loom`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#learning-loom).
+- [Wonder Weave](https://mguhlin.github.io/vcc/agent-skills/wonder-weave/SKILL.md): `wonder-weave`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#wonder-weave).
+- [Strategy Studio](https://mguhlin.github.io/vcc/agent-skills/strategy-studio/SKILL.md): `strategy-studio`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#strategy-studio).
+- [Daylight Pages](https://mguhlin.github.io/vcc/agent-skills/daylight-pages/SKILL.md): `daylight-pages`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#daylight-pages).
+- [Archive Harbor](https://mguhlin.github.io/vcc/agent-skills/archive-harbor/SKILL.md): `archive-harbor`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#archive-harbor).
+- [ClearCopy](https://mguhlin.github.io/vcc/agent-skills/clearcopy/SKILL.md): `clearcopy`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#clearcopy).

@@ -37,3 +37,11 @@ The generated `agent-skills/` distribution retains each maintained source's attr
 ## Modern Web Guidance
 
 The Web Design guide adapts documentation by the [Modern Web Guidance contributors](https://github.com/GoogleChrome/modern-web-guidance-src), under CC BY 4.0. VCC paraphrases its responsive layout, native controls, image priority, text scaling, and scoped modernization guidance and adds education-focused selection/testing requirements. Attribution travels in `WEB_DESIGN.md`, the readable guide, and the generated agent skill. Upstream software is Apache-2.0; no upstream code, installer, or CLI is bundled. See SOURCES.md for the exact guides and adaptation boundaries.
+
+## Expanded reusable collection
+
+Fourteen creator adaptations expand the sidebar collection to 23 reusable workflows. Organization-specific branding, account/subscription language, and recurring feedback-form requests have been removed. Framework attribution remains in the relevant files. The new educational instructions and project prompts follow VCC’s CC BY 4.0 terms, except ClearCopy’s adapted skill body, which retains the supplied project’s MIT notice. No upstream watermark service code, model weights, or dependencies are bundled.
+
+The 14 new hero illustrations were created with OpenAI image generation for VCC, then optimized as WebP. Their prompts and dimensions are preserved in `assets/skills/heroes/PROMPTS.json`. VCC makes these original visual assets available under its CC BY 4.0 educational visual terms; generated artwork does not depict working applications or establish exclusive rights. See [skill sources and adaptations](skills/SOURCES.md).
+
+The compact skills-introduction artwork and colorful Vibe-Code Rescue illustration were made with OpenAI image generation. The rescue edit adds a red plus coding-repair toolkit and retains the reproduce/diagnose/repair/verify sequence. Its original vector source is preserved at `assets/art-source/rescue-workbench-original.svg`; the established SVG URL contains a self-contained image for compatibility, while pages use optimized WebP. The creator-supplied SecureVCC workstation artwork was edited to show `mguhlin.github.io/vcc` on the monitor. Prompts are in `assets/ARTWORK_PROMPTS.json`. Existing attribution and visual reuse terms remain applicable.

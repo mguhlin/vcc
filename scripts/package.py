@@ -2,8 +2,9 @@
 """Package every VCC component; stable archive metadata avoids maintenance dates."""
 from pathlib import Path
 import hashlib,zipfile
+from project_files import public_files
 ROOT=Path(__file__).resolve().parents[1]
-files=sorted(p for p in ROOT.rglob('*') if p.is_file() and not any(s in {'.git','__pycache__','node_modules'} for s in p.relative_to(ROOT).parts) and p.name not in {'.DS_Store','vcc-complete.zip','SHA256SUMS.txt'})
+files=public_files(ROOT)
 manifest=''.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(ROOT).as_posix()}\n' for p in files)
 (ROOT/'downloads/SHA256SUMS.txt').write_text(manifest)
 archive=ROOT/'downloads/vcc-complete.zip'

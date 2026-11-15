@@ -15,7 +15,7 @@ def skill_entries():
     for entry in featured:
         entries.append(dict(entry))
     for item in json.loads((ROOT/'skills/catalog.json').read_text()):
-        entries.append(dict(name=item['slug'],key=item['slug'],title=item['title'],source=f"skills/{item['slug']}/SKILL.md",guide=f"guides/skills.html#{item['slug']}",description=f"Use for {item['category'].lower()}. {item['summary']}",license='CC0-1.0' if item.get('source') else 'CC-BY-4.0',use=f"Use {item['title']} for the task and material I supply in this conversation. Follow its workflow and safeguards, ask for essential missing inputs, and distinguish verified evidence from examples or uncertainty. If I ask for a vibe-coded application, use the matching project prompt from VCC and the project's existing design, education, and security instructions."))
+        entries.append(dict(name=item['slug'],key=item['slug'],title=item['title'],source=f"skills/{item['slug']}/SKILL.md",guide=f"guides/skills.html#{item['slug']}",description=f"Use for {item['category'].lower()}. {item['summary']}",license=item.get('license','CC0-1.0' if item.get('source') else 'CC-BY-4.0'),use=f"Use {item['title']} for the task and material I supply in this conversation. Follow its workflow and safeguards, ask for essential missing inputs, and distinguish verified evidence from examples or uncertainty. If I ask for a vibe-coded application, use the matching project prompt from VCC and the project's existing design, education, and security instructions."))
     for entry in entries:
         entry['skill_path']=f"agent-skills/{entry['name']}/SKILL.md"
         entry['skill_url']=BASE+entry['skill_path']
@@ -67,7 +67,7 @@ def render_agent_instructions(key,level=2,prefix='../'):
     return f'''<section class="agent-instructions" id="{ident}" aria-labelledby="{ident}-title">
 <h{level} id="{ident}-title">Use with an AI agent</h{level}>
 <p>Ask your agent to read this skill and use it on your own project or learning task. The Markdown contains instructions to follow; the webpage is a readable guide.</p>
-<p class="agent-links"><a href="{prefix}{entry['skill_path']}" download>Download agent-ready SKILL.md</a> · <a href="{prefix}AGENT_GUIDE.md">AI agent directions</a> · <a href="{prefix}llms.txt">All 13 skills</a></p>
+<p class="agent-links"><a href="{prefix}{entry['skill_path']}" download>Download agent-ready SKILL.md</a> · <a href="{prefix}AGENT_GUIDE.md">AI agent directions</a> · <a href="{prefix}llms.txt">All {len(skill_entries())} skills</a></p>
 <details class="agent-prompts"><summary>Create this skill or use it now</summary>
 <p><strong>Skill name:</strong> <code>{name}</code></p><p><strong>Create it for this project.</strong> Copy this prompt to save a reusable skill. Your agent checks existing files before writing.</p>
 <pre id="{setup_id}"><code>{esc(setup_prompt(entry))}</code></pre><div class="agent-copy"><button type="button" class="button secondary copy-button" data-copy="{setup_id}" data-copy-label="Setup prompt">Copy skill setup prompt</button><span class="copy-status" role="status"></span></div>
@@ -85,10 +85,12 @@ def write_agent_resources():
         path=ROOT/entry['skill_path'];path.parent.mkdir(parents=True,exist_ok=True);path.write_text(skill_export(entry));paths.append(path)
         manifest['skills'].append({k:entry[k] for k in ['name','title','description','source_url','guide_url','skill_url','license']})
     (ROOT/'agent-skills.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
-    index='# Vibe-Coding Center\n\n> Thirteen instruction-only skills: four featured guides and nine learning/productivity workflows.\n\nRead AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the skill matching the task. Follow the user\'s project instructions and existing authorization.\n\n## Agent entry points\n\n'
-    index+=f'- [Agent directions]({BASE}AGENT_GUIDE.md): selection, creation, validation, and use.\n- [Structured directory]({BASE}agent-skills.json): names, descriptions, sources, guides, and skill URLs.\n- [All skill files]({BASE}downloads/vcc-agent-skills.zip): thirteen local skill folders; no executable installer.\n\n## Featured guides\n\n'
+    featured_count=len(json.loads((ROOT/'agent-resources/featured.json').read_text()))
+    reusable_count=len(entries)-featured_count
+    index=f'# Vibe-Coding Center\n\n> {len(entries)} instruction-only skills: {featured_count} featured guides and {reusable_count} reusable workflows.\n\nRead AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the skill matching the task. Follow the user\'s project instructions and existing authorization.\n\n## Agent entry points\n\n'
+    index+=f'- [Agent directions]({BASE}AGENT_GUIDE.md): selection, creation, validation, and use.\n- [Structured directory]({BASE}agent-skills.json): names, descriptions, sources, guides, and skill URLs.\n- [All skill files]({BASE}downloads/vcc-agent-skills.zip): {len(entries)} local skill folders; no executable installer.\n\n## Featured guides\n\n'
     for i,entry in enumerate(entries):
-        if i==4:index+='\n## Learning and productivity\n\n'
+        if i==featured_count:index+='\n## Learning and productivity\n\n'
         index+=f"- [{entry['title']}]({entry['skill_url']}): `{entry['name']}`. [Readable guide]({entry['guide_url']}).\n"
     (ROOT/'llms.txt').write_text(index)
     with zipfile.ZipFile(ROOT/'downloads/vcc-agent-skills.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
@@ -101,4 +103,4 @@ def write_agent_resources():
 
 def render_home_agent_instructions():
     prompt=html.escape((ROOT/'agent-resources/HOME_PROMPT.md').read_text().strip())
-    return f'''<section id="ai-agent-instructions" class="section agent-instructions" aria-labelledby="home-agent-title"><h2 id="home-agent-title">Give VCC to your AI agent</h2><p class="section-intro">Send your coding assistant here to choose and read a skill for your task. All four featured guides and nine reusable skills have agent-ready files and their own setup and use prompts.</p><div class="agent-links"><a href="AGENT_GUIDE.md">AI agent directions</a> · <a href="llms.txt">Plain-text skill index</a> · <a href="agent-skills.json">Structured directory</a> · <a href="downloads/vcc-agent-skills.zip" download>Download all 13 agent skills</a></div><details class="agent-prompts"><summary>Copy a prompt for your agent</summary><pre id="vcc-agent-entry-prompt"><code>{prompt}</code></pre><div class="agent-copy"><button type="button" class="button secondary copy-button" data-copy="vcc-agent-entry-prompt" data-copy-label="VCC agent prompt">Copy VCC agent prompt</button><span class="copy-status" role="status"></span></div></details></section>'''
+    return f'''<section id="ai-agent-instructions" class="section agent-instructions" aria-labelledby="home-agent-title"><h2 id="home-agent-title">Give VCC to your AI agent</h2><p class="section-intro">Send your coding assistant here to choose and read a skill for your task. All four featured guides and {len(skill_entries())-4} reusable skills have agent-ready files and their own setup and use prompts.</p><div class="agent-links"><a href="AGENT_GUIDE.md">AI agent directions</a> · <a href="llms.txt">Plain-text skill index</a> · <a href="agent-skills.json">Structured directory</a> · <a href="downloads/vcc-agent-skills.zip" download>Download all {len(skill_entries())} agent skills</a></div><details class="agent-prompts"><summary>Copy a prompt for your agent</summary><pre id="vcc-agent-entry-prompt"><code>{prompt}</code></pre><div class="agent-copy"><button type="button" class="button secondary copy-button" data-copy="vcc-agent-entry-prompt" data-copy-label="VCC agent prompt">Copy VCC agent prompt</button><span class="copy-status" role="status"></span></div></details></section>'''
