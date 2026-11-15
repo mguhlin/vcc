@@ -25,3 +25,7 @@ GitHub resources are linked references, not bundled or automatically installed. 
 ## Reusable skills
 
 The seven user-supplied skills and VCC project prompts are educational prose by Miguel Guhlin under CC BY 4.0. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity adapt Miguel Guhlin's CC0-1.0 skill files in mguhlin/creations and retain CC0-1.0; each adaptation links to its source. The original vector concept sketches were drawn in code for VCC and follow its CC BY 4.0 educational visual terms. See [skill sources and changes](skills/SOURCES.md). No upstream executable code or image assets are bundled with the adaptations.
+
+## Vibe-Code Rescue
+
+Miguel Guhlin supplied the Vibe-Code Rescue skill archive for incorporation into VCC. The archive's source references and adaptation boundaries are recorded in [rescue/SOURCES.md](rescue/SOURCES.md); no separate license notice was included in the supplied archive. VCC's original explanations and repair-workbench SVG follow its CC BY 4.0 educational-prose and visual terms. SecureVCC's integrated security additions remain within its MIT-licensed file, with its existing notice preserved. The supplied skill's MakeUseOf background reference remains credited; no article text or imagery is redistributed.

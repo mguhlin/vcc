@@ -39,3 +39,7 @@ These are reference points, not endorsements or compliance certifications. The f
 ## Reusable skills
 
 The seven supplied Markdown files are preserved under `skills/`. Two additional standalone adaptations—Compare Options and Source Integrity—come from explicit CC0-1.0 files read through GitHub in mguhlin/creations. Discovery also covered public mglearn repositories; no mglearn material is redistributed. [Detailed provenance](skills/SOURCES.md) records source links, blob identifiers, and adaptation boundaries. VCC's prompts and original vector concept sketches translate each workflow into a possible project; they do not claim that these applications have been built or evaluated.
+
+## Rescue and security repair workflows
+
+The creator-supplied `vibe-code-rescue-skill.zip` was inspected as a one-file Markdown archive. VCC adapts its broader setup/diagnostics/maintainability workflow into `rescue/VIBE_CODE_RESCUE.md` and integrates its security repair baseline into the maintained SecureVCC source. [Detailed provenance](rescue/SOURCES.md) records source hashes, supplied attribution, scope, and editorial changes. OWASP authorization and logging guidance and GitHub's sensitive-data removal guidance were read for technical support. The linked MakeUseOf article could not be retrieved; attribution is preserved as stated in the supplied skill without treating the article as independently verified evidence.

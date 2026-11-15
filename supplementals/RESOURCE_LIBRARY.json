@@ -75,5 +75,16 @@
     "guide_label": "Browse reusable skills",
     "download": "downloads/reusable-skills.zip",
     "download_label": "Download all nine skills"
+  },
+  {
+    "category": "rescue",
+    "title": "Vibe-Code Rescue",
+    "type": "Troubleshooting · Repair workflow",
+    "description": "Reproduce setup, diagnose failures, protect working behavior, and repair a fragile project one verified change at a time.",
+    "note": "Audit, repair, release gate, and repair/rebuild/retire triage",
+    "guide": "guides/rescue.html",
+    "guide_label": "Explore Vibe-Code Rescue",
+    "download": "rescue/VIBE_CODE_RESCUE.md",
+    "download_label": "Download rescue workflow"
   }
 ]

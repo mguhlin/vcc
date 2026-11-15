@@ -15,7 +15,7 @@
 nav{align-items:start}
 @media(max-width:800px){.supplement-nav{position:static}.supplement-links{position:static;width:min(280px,100%);margin-bottom:8px}.header-inner nav{width:100%}}
 
-.foundation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0 0}
+.foundation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:24px 0 0}
 .foundation{display:flex;flex-direction:column;gap:16px;padding:20px 0;text-decoration:none;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
 .foundation strong{display:block;font-size:23px;font-weight:500;line-height:1.3}
 .foundation img{width:100%;aspect-ratio:16/9;object-fit:contain;background:var(--wash);border-radius:4px}
@@ -80,3 +80,7 @@ nav{align-items:start}
 .skill-print-source{display:none}
 @media print{.skill-panel textarea{display:none}.skill-print-source{display:block;white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.5 monospace}}
 .skills-sidebar nav{position:relative}
+
+/* Keep the rescue introduction within reach below its mobile contents list. */
+.rescue-guide .guide-rail:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+@media(max-width:800px){.rescue-guide .guide-rail>div{max-height:220px;overflow-y:auto;padding:4px 4px 16px}.rescue-guide .guide-rail{min-width:0}}

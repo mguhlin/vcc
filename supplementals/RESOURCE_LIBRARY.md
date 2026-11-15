@@ -6,6 +6,8 @@ The three core instruction files cover web design, security, and education priva
 
 The [reusable skills collection](skills.html) adds nine workflows with copyable instructions, project prompts, and concept sketches.
 
+Use [Vibe-Code Rescue](rescue.html) when an existing project keeps breaking. Its setup, diagnostics, and focused repair workflow complements the security guide.
+
 ## Stay up to date
 
 Follow Miguel Guhlin’s [Vibe-Coded Apps ezine on Flipboard](https://flipboard.com/@mguhlin/vibe-coded-apps-ai-free-dnmobc4ny) to keep up with vibe-coded apps, AI tools, and free resources. Open the ezine and choose **Follow** on Flipboard to subscribe to new additions.

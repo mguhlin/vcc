@@ -2,6 +2,8 @@
 
 Start with one useful task, invented examples, and a person responsible for release decisions. Use this page alongside the three core guides.
 
+Already have a project that keeps breaking? Use [Vibe-Code Rescue](../guides/rescue.html) to establish a baseline, diagnose failures, and plan a focused repair.
+
 ## Describe one useful learning task
 
 For example: “A teacher can create a printable vocabulary activity without signing in or entering student names.” Set the audience, the data boundaries, and the evidence you want before asking for code.

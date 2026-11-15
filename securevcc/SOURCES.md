@@ -65,3 +65,9 @@ e598e694aa506650c7192d5ea3be0e50aca0d356ea00551c53429f0b01eb6391  cloudflare-MIT
 The front-page illustration is the creator-supplied **Retro Secure Coding Workstation.png**, optimized to WebP without changing its composition. It illustrates the topic; its text is not executable code or verification evidence. Essential guidance is available as real page text and in the downloadable skill.
 
 The skill's MIT notice is included inside `securevcc.md`. Original source files, standards, and the illustration retain their own applicable terms. A general CC0 label elsewhere in the portfolio does not override this folder's MIT notice or third-party rights.
+
+## Vibe-Code Rescue integration
+
+The creator supplied a one-file Vibe-Code Rescue archive. [Source identity and adaptation notes](../rescue/SOURCES.md) record its hashes and references. SecureVCC adapts its recoverable repair baseline, reproducible review environment, safe diagnostic failure paths, and focused repair/retest approach. Existing security domains, realistic severity, secret-revocation guidance, and synthetic permission tests are preserved. Broad repair/rebuild/retire triage lives in the separate [rescue workflow](../rescue/VIBE_CODE_RESCUE.md).
+
+The integration adds `SUPPLY-03` and `OPS-04` and a baseline subsection before security repairs. It respects previously granted task authorization, avoids blanket critical ratings for public configuration, and requires no new tools or companion files. The [OWASP authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html), [logging](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html), and [GitHub sensitive-data removal](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) references support the scoped technical guidance.

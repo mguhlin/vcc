@@ -28,6 +28,10 @@ For a state-machine review:
 
 > Use SecureVCC to find the implicit state machines in this app. Map states, events, guards, side effects, persistence, failure, cancellation, retries, and recovery. Choose focused improvements that benefit the user experience (UX), developer experience (DX), and agent experience (AX) together. Preserve working behavior and public interfaces, explain tradeoffs, and verify normal, invalid, stale, and partially failed transitions with meaningful regression checks.
 
+## Before a security-sensitive repair
+
+Establish a recoverable baseline, preserve user changes, and repeat both the legitimate workflow and the relevant denied/error case after a fix. The skill includes reproducible review setup (`SUPPLY-03`) and safe diagnostic failure checks (`OPS-04`). For broader troubleshooting and repair/rebuild/retire decisions, use [Vibe-Code Rescue](../guides/rescue.html).
+
 ## Practical questions to ask
 
 Prefix a focused request with “Use SecureVCC.” Ask for source evidence and safe synthetic tests, not just reassurance.
