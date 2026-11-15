@@ -3,6 +3,7 @@ import html
 import json
 import zipfile
 from pathlib import Path
+from agent_resources import render_agent_instructions
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -122,6 +123,7 @@ def render_skills(md):
 <h2 class="skill-title" id="{slug}-title" tabindex="-1">{e(item['title'])}</h2>
 <p class="skill-summary">{e(item['summary'])}</p><p class="meta">{origin}</p>
 <div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a><a href="#{slug}-file">Read full skill</a><span class="skill-status" role="status"></span></div>
+{render_agent_instructions(slug,level=3)}
 <figure class="skill-concept"><a href="../assets/skills/{slug}.svg"><img src="../assets/skills/{slug}.svg" alt="{e(item['concept'])}" width="960" height="520" loading="lazy"></a><figcaption><strong>Concept sketch: {e(item['project'])}.</strong> A possible interface, not a working app.</figcaption></figure>
 <section class="skill-prompt" aria-labelledby="{slug}-project"><h3 id="{slug}-project">Turn this skill into a project</h3>
 <p>Copy this prompt with the skill and VCC’s three instruction files. Adapt the audience and subject before building.</p>

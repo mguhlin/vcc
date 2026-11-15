@@ -17,7 +17,7 @@ search?.addEventListener('input',filterResources);category?.addEventListener('ch
 document.querySelector('#clear-search')?.addEventListener('click',()=>{search.value='';category.value='all';filterResources();search.focus()});
 for(const btn of document.querySelectorAll('[data-copy]'))btn.addEventListener('click',async()=>{
  const target=document.getElementById(btn.dataset.copy);const status=btn.parentElement.querySelector('[role=status]');
- try{await navigator.clipboard.writeText(target.textContent.trim());status.textContent='Prompt copied';}catch{status.textContent='Select and copy the prompt text above';}
+ try{await navigator.clipboard.writeText(target.textContent.trim());status.textContent=`${btn.dataset.copyLabel||'Prompt'} copied`;}catch{const range=document.createRange();range.selectNodeContents(target);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='Text selected. Use your device’s copy command.';}
 });
 const checks=[...document.querySelectorAll('.checklist input')];
 function updateChecks(){const n=checks.filter(x=>x.checked).length;const el=document.querySelector('#check-summary');if(el)el.textContent=`${n} of ${checks.length} reminders marked. Use the full guides to gather release evidence.`;}

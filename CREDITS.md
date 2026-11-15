@@ -29,3 +29,11 @@ The seven user-supplied skills and VCC project prompts are educational prose by 
 ## Vibe-Code Rescue
 
 Miguel Guhlin supplied the Vibe-Code Rescue skill archive for incorporation into VCC. The archive's source references and adaptation boundaries are recorded in [rescue/SOURCES.md](rescue/SOURCES.md); no separate license notice was included in the supplied archive. VCC's original explanations and repair-workbench SVG follow its CC BY 4.0 educational-prose and visual terms. SecureVCC's integrated security additions remain within its MIT-licensed file, with its existing notice preserved. The supplied skill's MakeUseOf background reference remains credited; no article text or imagery is redistributed.
+
+## Agent skill exports
+
+The generated `agent-skills/` distribution retains each maintained source's attribution and notices. SecureVCC retains MIT; Compare Options and Source Integrity retain CC0-1.0; VCC educational prose and setup/use instructions follow CC BY 4.0. Rescue's supplied-source licensing boundary remains documented in `rescue/SOURCES.md`. The install/use presentation was informed by Unslop's README by Damir Sokolovsky; VCC's prompts and export builder are original additions, and no Unslop installer or skill implementation is bundled.
+
+## Modern Web Guidance
+
+The Web Design guide adapts documentation by the [Modern Web Guidance contributors](https://github.com/GoogleChrome/modern-web-guidance-src), under CC BY 4.0. VCC paraphrases its responsive layout, native controls, image priority, text scaling, and scoped modernization guidance and adds education-focused selection/testing requirements. Attribution travels in `WEB_DESIGN.md`, the readable guide, and the generated agent skill. Upstream software is Apache-2.0; no upstream code, installer, or CLI is bundled. See SOURCES.md for the exact guides and adaptation boundaries.

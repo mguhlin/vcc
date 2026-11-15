@@ -249,7 +249,7 @@ After applying this file, return the following **short review**, plus code/docum
 
 ```markdown
 # Education Compliance Review — [Project]
-Review date: [YYYY-MM-DD]
+Project revision: [revision or UNKNOWN]
 Risk mode: [A/B/C/D]
 Audience/regions: [verified or unverified]
 Deployment reviewed: [source only / live + source / etc.]

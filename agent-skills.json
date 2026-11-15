@@ -1,0 +1,124 @@
+{
+  "title": "VCC agent skill directory",
+  "instructions_url": "https://mguhlin.github.io/vcc/AGENT_GUIDE.md",
+  "bundle_url": "https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip",
+  "skills": [
+    {
+      "name": "vcc-web-design",
+      "title": "Web design",
+      "description": "Plan, review, or improve a website for its audience and task. Use function-first design, Modern Web Guidance, native browser features, responsive layout, accessibility, performance evidence, and tested compatibility.",
+      "source_url": "https://mguhlin.github.io/vcc/WEB_DESIGN.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/design.html",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/vcc-web-design/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "securevcc",
+      "title": "SecureVCC",
+      "description": "Review and harden vibe-coded applications with evidence-driven checks for credentials, permissions, data boundaries, deployment, and safe repair. Use for scoped security audits or authorized fixes.",
+      "source_url": "https://mguhlin.github.io/vcc/securevcc/securevcc.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/security.html",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/securevcc/SKILL.md",
+      "license": "MIT"
+    },
+    {
+      "name": "edu-compliance",
+      "title": "Education privacy",
+      "description": "Review and improve educational web projects for data minimization, accessibility, student safety, security, and institutional review. Distinguish engineering evidence from legal or school approval.",
+      "source_url": "https://mguhlin.github.io/vcc/EDU_COMPLIANCE.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/education.html",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/edu-compliance/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "vibe-code-rescue",
+      "title": "Vibe-Code Rescue",
+      "description": "Audit, stabilize, troubleshoot, and incrementally repair an existing vibe-coded application. Use for recurring bugs, unreliable setup, missing diagnostics, fragile code, and repair/rebuild/retire decisions.",
+      "source_url": "https://mguhlin.github.io/vcc/rescue/VIBE_CODE_RESCUE.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/rescue.html",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/vibe-code-rescue/SKILL.md",
+      "license": "SEE-SOURCE"
+    },
+    {
+      "name": "sift-approach",
+      "title": "SIFT Approach",
+      "description": "Use for source evaluation. Work through Stop, Investigate, Find, and Trace before deciding what a claim deserves.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/sift-approach/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#sift-approach",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/sift-approach/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "prism-thinking",
+      "title": "PRISM Thinking Coach",
+      "description": "Use for thinking & inquiry. Use Patterns, Reasoning, Ideas, Situation, and Methods to move from noticing to explaining.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/prism-thinking/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#prism-thinking",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/prism-thinking/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "outline-helper",
+      "title": "Outline Helper",
+      "description": "Use for meeting & planning. Organize discussion into a traditional outline while keeping decisions distinct from proposals.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/outline-helper/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#outline-helper",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/outline-helper/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "quadrant-notes",
+      "title": "Quadrant Note-Taking",
+      "description": "Use for reading & study. Connect main ideas to evidence, personal connections, and a short synthesis.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/quadrant-notes/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#quadrant-notes",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/quadrant-notes/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "ai-citation-assistant",
+      "title": "AI Citation Assistant",
+      "description": "Use for attribution & integrity. Gather real source details, distinguish citation from AI disclosure, and expose missing metadata.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/ai-citation-assistant/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#ai-citation-assistant",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/ai-citation-assistant/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "vocabulary-enhancement",
+      "title": "Vocabulary Enhancement",
+      "description": "Use for language & practice. Move from word meanings to creative use, retrieval, and a quick check for understanding.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/vocabulary-enhancement/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#vocabulary-enhancement",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/vocabulary-enhancement/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "freewriting-coach",
+      "title": "Freewriting Coach",
+      "description": "Use for writing & creativity. Use FLOW to start writing, keep ideas moving, and reflect before revising.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/freewriting-coach/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#freewriting-coach",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/freewriting-coach/SKILL.md",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "compare-options",
+      "title": "Compare Options",
+      "description": "Use for decisions & tradeoffs. Make priorities, constraints, evidence, and uncertainty visible before choosing.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/compare-options/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#compare-options",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/compare-options/SKILL.md",
+      "license": "CC0-1.0"
+    },
+    {
+      "name": "source-integrity",
+      "title": "Source Integrity",
+      "description": "Use for evidence & research. Check whether a source supports the actual claim, then record a correction or next check.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/source-integrity/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#source-integrity",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/source-integrity/SKILL.md",
+      "license": "CC0-1.0"
+    }
+  ]
+}

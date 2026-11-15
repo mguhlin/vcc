@@ -1,0 +1,42 @@
+[
+  {
+    "name": "vcc-web-design",
+    "key": "design",
+    "title": "Web design",
+    "source": "WEB_DESIGN.md",
+    "guide": "guides/design.html",
+    "description": "Plan, review, or improve a website for its audience and task. Use function-first design, Modern Web Guidance, native browser features, responsive layout, accessibility, performance evidence, and tested compatibility.",
+    "license": "CC-BY-4.0",
+    "use": "Review this project's audience, main task, page structure, and existing interactions. Apply the design workflow to the work I have requested and report relevant accessibility and browser checks. If I have requested review only, return findings before editing. Use the included Modern Web Guidance section to evaluate native controls, responsive layout, performance, and current browser compatibility while preserving deliberate fallbacks."
+  },
+  {
+    "name": "securevcc",
+    "key": "security",
+    "title": "SecureVCC",
+    "source": "securevcc/securevcc.md",
+    "guide": "guides/security.html",
+    "description": "Review and harden vibe-coded applications with evidence-driven checks for credentials, permissions, data boundaries, deployment, and safe repair. Use for scoped security audits or authorized fixes.",
+    "license": "MIT",
+    "use": "Perform a scoped source review of this project with safe local synthetic checks where authorized. Start with secrets and protected operations. Report confirmed findings separately from hypotheses and untested boundaries. Make repairs only within my existing authorization."
+  },
+  {
+    "name": "edu-compliance",
+    "key": "education",
+    "title": "Education privacy",
+    "source": "EDU_COMPLIANCE.md",
+    "guide": "guides/education.html",
+    "description": "Review and improve educational web projects for data minimization, accessibility, student safety, security, and institutional review. Distinguish engineering evidence from legal or school approval.",
+    "license": "CC-BY-4.0",
+    "use": "Inspect this educational project's real data flows, intended audience, accessibility, and school-review questions. Use synthetic examples and privacy-protective defaults. Report evidence and unknowns, and make only the changes I have requested or already authorized."
+  },
+  {
+    "name": "vibe-code-rescue",
+    "key": "rescue",
+    "title": "Vibe-Code Rescue",
+    "source": "rescue/VIBE_CODE_RESCUE.md",
+    "guide": "guides/rescue.html",
+    "description": "Audit, stabilize, troubleshoot, and incrementally repair an existing vibe-coded application. Use for recurring bugs, unreliable setup, missing diagnostics, fragile code, and repair/rebuild/retire decisions.",
+    "license": "SEE-SOURCE",
+    "use": "Use AUDIT mode on my current project. Preserve my work and report the most useful next actions for reproducible setup, diagnosable failures, security boundaries, and maintainability. If I explicitly request a repair, use REPAIR mode for that scope and verify the affected behavior. Keep deployment within existing authorization."
+  }
+]

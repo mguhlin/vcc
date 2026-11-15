@@ -43,3 +43,22 @@ The seven supplied Markdown files are preserved under `skills/`. Two additional 
 ## Rescue and security repair workflows
 
 The creator-supplied `vibe-code-rescue-skill.zip` was inspected as a one-file Markdown archive. VCC adapts its broader setup/diagnostics/maintainability workflow into `rescue/VIBE_CODE_RESCUE.md` and integrates its security repair baseline into the maintained SecureVCC source. [Detailed provenance](rescue/SOURCES.md) records source hashes, supplied attribution, scope, and editorial changes. OWASP authorization and logging guidance and GitHub's sensitive-data removal guidance were read for technical support. The linked MakeUseOf article could not be retrieved; attribution is preserved as stated in the supplied skill without treating the article as independently verified evidence.
+
+## Agent-facing installation and use directions
+
+[Unslop's README](https://github.com/heydamir/unslop/blob/main/README.md), by Damir Sokolovsky, was read through GitHub for its explicit install/use pattern. VCC provides its own directions and source-derived exports; upstream installation commands and skill code are not redistributed. [OpenAI's skill documentation](https://developers.openai.com/codex/skills/) supports the local `.agents/skills` locations, `SKILL.md` metadata, explicit invocation, and discovery guidance. The local Codex CLI README was inspected first but did not document these skill locations. Guidance remains subject to the actual assistant and environment.
+
+`AGENT_GUIDE.md` and per-page prompts distinguish skill creation, workflow use, and task authorization. The exported files preserve maintained source bodies and notices, with normalized frontmatter and a source/reuse footer. `llms.txt` is a convenient plain-text index, not a guarantee that every assistant reads it automatically.
+
+## Modern Web Guidance in Web Design
+
+The creator requested [GoogleChrome/modern-web-guidance-src](https://github.com/GoogleChrome/modern-web-guidance-src) for the Web Design featured item. Its README and Apache-2.0 code license were read, alongside its documentation license statement: guide content under `guides/` is CC BY 4.0. VCC paraphrases selected guidance and links the source; no executable code, demos, evaluation harness, or CLI is redistributed or executed.
+
+Focused guide files read through GitHub:
+
+- [Responsive design](https://github.com/GoogleChrome/modern-web-guidance-src/blob/main/guides/css/responsive-design/guide.md), source blob `7d4cb98c6e06740d34b6620142583fe167e54e69`.
+- [Dialog](https://github.com/GoogleChrome/modern-web-guidance-src/blob/main/guides/ui-components/dialog/guide.md), source blob `30828a93d61a14f2c496faee2706bbe0a65dbbcf`.
+- [Optimize image priority](https://github.com/GoogleChrome/modern-web-guidance-src/blob/main/guides/performance/optimize-image-priority/guide.md), source blob `7baed769516fa8d49393d615f8e7e6917f211024`.
+- [Respect OS text scale](https://github.com/GoogleChrome/modern-web-guidance-src/blob/main/guides/accessibility/respect-os-text-scale/guide.md), source blob `efd816d6593151836f565b346352fd91a6d8bfcc`.
+
+The [official overview](https://developer.chrome.com/docs/modern-web-guidance) and [modernization workflow](https://developer.chrome.com/docs/modern-web-guidance/modernization-workflow) were also read. VCC adapts their selection/verification approach without copying code, volatile feature counts, vendor evaluation results, or installation requirements. It qualifies browser availability, treats OS text-scale and other newer features as conditional, and preserves existing fallback behavior. CLI telemetry is described in the upstream README; the VCC site makes no calls to that CLI or its telemetry endpoints.

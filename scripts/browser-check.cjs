@@ -16,7 +16,7 @@ assert.ok(page.url().endsWith('/guides/about.html'));assert.equal(await page.loc
 await page.goto(base);
 for(const route of ['design','security','education','rescue']){await page.locator('.foundation[href="guides/'+route+'.html"]').click();assert.ok(page.url().endsWith('/guides/'+route+'.html'));assert.ok(await page.locator('.guide-explainer').isVisible());await page.goto(base);}
 assert.equal(await page.locator('[data-resource],#resource-search,#result-count').count(),0);
-assert.equal(await page.locator('#start,#before-sharing,.checklist,[data-copy]').count(),0);
+assert.equal(await page.locator('#start,#before-sharing,.checklist').count(),0);assert.equal(await page.locator('#ai-agent-instructions [data-copy]').count(),1);
 assert.ok(await page.evaluate(()=>Boolean(document.querySelector('#library').compareDocumentPosition(document.querySelector('#download'))&Node.DOCUMENT_POSITION_FOLLOWING)));
 assert.ok(await page.evaluate(()=>Boolean(document.querySelector('#download').compareDocumentPosition(document.querySelector('#tools'))&Node.DOCUMENT_POSITION_FOLLOWING)));
 assert.equal(await page.getByRole('heading',{name:'From the blog',exact:true}).count(),0);
@@ -77,10 +77,16 @@ assert.ok(await page.getByRole('heading',{name:'Before repairing an existing app
 await page.locator('.note').getByRole('link',{name:'Vibe-Code Rescue',exact:true}).click();
 assert.ok(page.url().endsWith('/guides/rescue.html'));
 await page.getByRole('button',{name:'Copy rescue audit prompt',exact:true}).focus();await page.keyboard.press('Enter');
-await page.waitForFunction(()=>document.querySelector('.copy-status').textContent==='Prompt copied');
+await page.waitForFunction(()=>document.querySelector('#rescue-audit-prompt').parentElement.querySelector('.copy-status').textContent==='Prompt copied');
 assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('Use AUDIT mode'));
 await page.locator('.note').getByRole('link',{name:'SecureVCC',exact:true}).click();assert.ok(page.url().endsWith('/guides/security.html'));
 const rescueDownload=await context.request.get(base+'rescue/VIBE_CODE_RESCUE.md');assert.equal(rescueDownload.status(),200);assert.ok((await rescueDownload.text()).includes('# Vibe-Code Rescue'));
+await page.goto(base+'guides/design.html#modern-web-guidance');
+assert.ok(await page.getByRole('heading',{name:'Modern Web Guidance',exact:true}).isVisible());
+await page.getByRole('button',{name:'Copy modernization prompt',exact:true}).click();
+await page.waitForFunction(()=>document.querySelector('#modern-web-prompt').parentElement.querySelector('.copy-status').textContent==='Modernization prompt copied');
+assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('verify compatibility'));
+await require('./agent-browser-check.cjs')({page,context,base});
 const download=await context.request.get(base+'downloads/vcc-complete.zip');assert.equal(download.status(),200);assert.ok((await download.body()).length>1000000);
 assert.deepEqual(errors,[]);console.log('PASS: cartoon hero/text link, publishing navigation, original PNG downloads, About footer, four guide cards, rescue/security links, rescue audit copy/download, and download order, library search/filter/reset, curated shelf, keyboard dismissal, prompt copy, classroom reminders, keyboard skip, 16-page axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
 await browser.close();

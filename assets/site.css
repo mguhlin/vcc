@@ -84,3 +84,17 @@ nav{align-items:start}
 /* Keep the rescue introduction within reach below its mobile contents list. */
 .rescue-guide .guide-rail:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
 @media(max-width:800px){.rescue-guide .guide-rail>div{max-height:220px;overflow-y:auto;padding:4px 4px 16px}.rescue-guide .guide-rail{min-width:0}}
+
+/* Agent directions share the reading layout and native disclosure behavior. */
+.agent-instructions{border-top:1px solid var(--line);padding:24px 0;margin:24px 0}
+.agent-instructions h2{font-size:30px;margin:0 0 16px}
+.agent-instructions h3{font-size:24px;margin:0 0 16px}
+.agent-instructions p{max-width:75ch;overflow-wrap:anywhere}
+.agent-instructions .agent-links{font-size:15px;line-height:2;overflow-wrap:anywhere}
+.agent-prompts{padding:8px 0}
+.agent-prompts summary{min-height:44px;color:var(--accent)}
+.agent-prompts pre{max-width:100%;padding:20px;background:var(--surface);border:1px solid var(--line);white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;border-radius:0;margin:16px 0}
+.agent-copy{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.agent-copy .copy-status{margin-left:0}
+.agent-prompts code{overflow-wrap:anywhere}
+@media print{.agent-copy{display:none}.agent-prompts{content-visibility:visible}.agent-instructions{break-inside:avoid}}
