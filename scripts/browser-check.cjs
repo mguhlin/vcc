@@ -28,11 +28,11 @@ await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').textC
 await page.keyboard.press('Escape');assert.equal(await supplement.evaluate(el=>el.open),false);assert.equal(await page.locator(':focus').textContent(),'Supplementals');
 await supplement.locator('summary').click();await page.locator('h1').click();assert.equal(await supplement.evaluate(el=>el.open),false);
 await supplement.locator('summary').click();await supplement.getByRole('link',{name:'Resource library',exact:true}).click();
-assert.ok(page.url().endsWith('/guides/library.html'));assert.equal(await page.locator('[data-resource]:visible').count(),6);
+assert.ok(page.url().endsWith('/guides/library.html'));assert.equal(await page.locator('[data-resource]:visible').count(),7);
 await page.locator('#resource-search').fill('privacy');assert.ok(await page.locator('[data-resource]:visible').count()>0);
 await page.locator('#resource-search').fill('zzzznomatch');assert.ok(await page.locator('#no-results').isVisible());
 await page.locator('#clear-search').click();await page.locator('#resource-category').selectOption('security');assert.equal(await page.locator('[data-resource]:visible').count(),1);
-await page.locator('#clear-search').click();assert.equal(await page.locator('[data-resource]:visible').count(),6);
+await page.locator('#clear-search').click();assert.equal(await page.locator('[data-resource]:visible').count(),7);
 await supplement.locator('summary').click();await supplement.getByRole('link',{name:'Start here',exact:true}).click();
 assert.ok(page.url().endsWith('/guides/start.html'));assert.ok(await page.getByRole('heading',{name:'What is PROJECT_BRIEF.md?',exact:true}).isVisible());
 assert.equal(await page.locator('.supplement-links [aria-current="page"]').textContent(),'Start here');
@@ -53,7 +53,7 @@ await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').textC
 await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
 let axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
 console.log('Home axe violations',JSON.stringify(axe.violations.map(x=>({id:x.id,impact:x.impact,nodes:x.nodes.map(n=>n.target)}))));assert.equal(axe.violations.length,0);
-for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting','start','before-sharing','blog','library','about','publishing']){
+for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting','start','before-sharing','blog','library','about','publishing','skills']){
  const response=await page.goto(base+'guides/'+route+'.html');assert.equal(response.status(),200);assert.equal(await page.locator('h1').count(),1);
  await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
  axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
@@ -64,13 +64,14 @@ assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWid
 await page.locator('.supplement-nav summary').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.keyboard.press('Escape');
 await page.goto(base+'guides/library.html');
 await page.locator('#resource-category').selectOption('design');assert.equal(await page.locator('[data-resource]:visible').count(),1);
-for(const route of ['', 'guides/security.html','guides/education.html','guides/resource-vetting.html','guides/start.html','guides/before-sharing.html','guides/blog.html','guides/library.html','guides/about.html','guides/publishing.html']){
+for(const route of ['', 'guides/security.html','guides/education.html','guides/resource-vetting.html','guides/start.html','guides/before-sharing.html','guides/blog.html','guides/library.html','guides/about.html','guides/publishing.html','guides/skills.html']){
  await page.goto(base+route);await page.setViewportSize({width:320,height:800});await page.waitForFunction(()=>innerWidth===320);await page.evaluate(()=>new Promise(requestAnimationFrame));assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route+' reflow');
  await page.locator('.supplement-nav summary').click();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),route+' open menu reflow');await page.keyboard.press('Escape');
 }
 await page.setViewportSize({width:1280,height:900});await page.goto(base);await page.evaluate(()=>document.body.style.fontSize='34px');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
 await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches),true);
+await require('./skills-browser-check.cjs')({page,context,base});
 const download=await context.request.get(base+'downloads/vcc-complete.zip');assert.equal(download.status(),200);assert.ok((await download.body()).length>1000000);
-assert.deepEqual(errors,[]);console.log('PASS: cartoon hero/text link, publishing navigation, original PNG downloads, About footer, guide cards and download order, library search/filter/reset, curated shelf, keyboard dismissal, prompt copy, classroom reminders, keyboard skip, 14-page axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
+assert.deepEqual(errors,[]);console.log('PASS: cartoon hero/text link, publishing navigation, original PNG downloads, About footer, guide cards and download order, library search/filter/reset, curated shelf, keyboard dismissal, prompt copy, classroom reminders, keyboard skip, 15-page axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
 await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

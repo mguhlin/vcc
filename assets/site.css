@@ -32,3 +32,51 @@ nav{align-items:start}
 .cartoon{margin:24px 0}
 .cartoon img{width:100%;height:auto}
 @media(max-width:800px){.foundation-grid{grid-template-columns:1fr;gap:24px}.foundation{gap:16px}.library-page>h1{font-size:36px}}
+
+/* Reusable skills: a reading rail and one working reference, with no card grid. */
+.skills-page{padding:40px 0 64px}
+.skills-intro{max-width:85ch;margin-bottom:32px}
+.skills-intro h1{font-size:44px}
+.skills-intro>p{max-width:78ch;color:var(--secondary)}
+.skills-help{padding:0 0 12px}
+.skills-help summary{min-height:44px;color:var(--accent)}
+.skills-help h2{font-size:28px;margin-top:28px}
+.skills-help p,.skills-help li{max-width:75ch}
+.skills-layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;align-items:start}
+.skills-sidebar{border-right:1px solid var(--line);padding-right:24px;font-size:15px;min-width:0}
+.skills-sidebar nav{display:block}
+.skills-sidebar ul{list-style:none;padding:0;margin:12px 0 24px}
+.skills-sidebar a{overflow-wrap:anywhere}
+.skills-sidebar li a{display:block;padding:10px 12px;color:var(--ink);border-left:3px solid transparent;text-decoration:none;line-height:1.4}
+.skills-sidebar li a:hover,.skills-sidebar a[aria-current]{background:var(--wash);border-left-color:var(--accent)}
+.skills-sidebar a[aria-current] span{font-weight:650}
+.skills-sidebar small{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.skill-group{font-size:13px;color:var(--secondary);padding:20px 12px 6px;border-top:1px solid var(--line);margin-top:12px}
+.skill-filter label{display:block;margin-bottom:8px}
+.skill-filter input{width:100%;min-width:0;min-height:44px;border:1px solid #8b9daf;background:var(--surface);color:var(--ink);padding:8px;font-size:16px;border-radius:4px}
+.skill-clear{display:block;border:0;background:transparent;color:var(--accent);text-decoration:underline;text-underline-offset:3px;min-height:44px;padding:8px 0;font-size:14px}
+.skill-filter .meta{margin:0}
+.skills-workspace{min-width:0}
+.skill-panel{scroll-margin-top:24px;padding-bottom:48px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.skills-enhanced .skill-panel{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.skill-title{font-size:36px;overflow-wrap:anywhere;scroll-margin-top:24px}
+.skill-title:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.skill-summary{font-size:19px;max-width:65ch}
+.skill-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin:20px 0}
+.skill-actions a{font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+.skill-status{font-size:14px;color:var(--secondary)}
+.skill-concept{margin:28px 0 32px}
+.skill-concept img{width:100%;height:auto;border:1px solid var(--line)}
+.skill-concept figcaption{font-size:14px;color:var(--muted);margin-top:8px;max-width:75ch}
+.skill-panel h3{font-size:25px;line-height:1.3;margin:28px 0 16px}
+.skill-panel label{display:block;font-size:14px;color:var(--secondary);margin-bottom:8px;overflow-wrap:anywhere}
+.skill-panel textarea{display:block;width:100%;min-width:0;max-width:100%;padding:20px;background:var(--surface);border:1px solid #8b9daf;border-radius:0;color:var(--ink);font:15px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;resize:vertical;white-space:pre-wrap;overflow-wrap:anywhere;tab-size:3}
+.skill-panel textarea:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.skill-source{border-top:1px solid var(--line);margin-top:32px}
+@media(min-width:1000px){.skills-sidebar-inner{position:sticky;top:20px;max-height:calc(100vh - 40px);overflow-y:auto;padding:4px 8px 4px 4px}.skills-sidebar{align-self:stretch}}
+@media(max-width:900px){.skills-layout{grid-template-columns:210px minmax(0,1fr);gap:24px}.skills-sidebar{padding-right:16px}}
+@media(max-width:680px){.skills-layout{grid-template-columns:minmax(0,1fr);gap:24px}.skills-sidebar{border-right:0;padding:0;border-bottom:1px solid var(--line)}.skills-enhanced .skills-sidebar nav{max-height:260px;overflow-y:auto;padding:4px}.skill-title{font-size:30px}.skills-intro h1{font-size:36px}.skill-panel textarea{padding:12px}.skills-help ol{padding-left:24px}}
+@media print{.skills-sidebar,.skill-actions,.skills-help{display:none}.skills-layout{display:block}.skills-page{padding:0}.skill-panel textarea{height:auto;overflow:visible}.skill-concept{max-width:600px}.skill-panel{break-before:page}}
+.skill-print-source{display:none}
+@media print{.skill-panel textarea{display:none}.skill-print-source{display:block;white-space:pre-wrap;overflow-wrap:anywhere;font:11px/1.5 monospace}}
+.skills-sidebar nav{position:relative}

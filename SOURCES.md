@@ -35,3 +35,7 @@ These are reference points, not endorsements or compliance certifications. The f
 - [U.S. Department of Education: FERPA school-official exception](https://studentprivacy.ed.gov/faq/who-school-official-under-ferpa): outsourcing education-record services involves specific conditions, not a generic software approval.
 - [FTC COPPA FAQs](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions): follow the FTC’s linked revised Rule for current requirements. A school context does not remove all operator responsibilities.
 - [Official GDPR text](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng): the primary legal source is linked, but automated retrieval encountered a browser verification challenge. VCC does not make a new legal interpretation from an unread page.
+
+## Reusable skills
+
+The seven supplied Markdown files are preserved under `skills/`. Two additional standalone adaptations—Compare Options and Source Integrity—come from explicit CC0-1.0 files read through GitHub in mguhlin/creations. Discovery also covered public mglearn repositories; no mglearn material is redistributed. [Detailed provenance](skills/SOURCES.md) records source links, blob identifiers, and adaptation boundaries. VCC's prompts and original vector concept sketches translate each workflow into a possible project; they do not claim that these applications have been built or evaluated.

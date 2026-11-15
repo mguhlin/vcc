@@ -64,5 +64,16 @@
     "guide_label": "Open the prompt pack",
     "download": "templates/PROMPTS.md",
     "download_label": "Download the prompts"
+  },
+  {
+    "category": "skills",
+    "title": "Reusable skills",
+    "type": "Skills · Project starters",
+    "description": "Browse nine reusable workflows with complete Markdown, project prompts, and concept sketches for turning instructions into classroom tools.",
+    "note": "Seven supplied skills and two attributed repository adaptations",
+    "guide": "guides/skills.html",
+    "guide_label": "Browse reusable skills",
+    "download": "downloads/reusable-skills.zip",
+    "download_label": "Download all nine skills"
   }
 ]

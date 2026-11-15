@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">Decision comparison table</title><desc id="desc">Options appear in a criteria table, with must-haves, unknowns, and a small next test.</desc>
+<rect width="960" height="520" fill="#e2e7ed"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">Decision comparison table</text>
+<text x="52" y="120" font-family="system-ui,sans-serif" font-size="24" fill="#182e46">What must this option do?</text>
+<text x="52" y="160" font-family="system-ui,sans-serif" font-size="21" fill="#445b70">Must-haves first. Preferences next.</text>
+<text x="52" y="218" font-family="system-ui,sans-serif" font-size="21" fill="#214f7f">Criterion</text>
+<text x="342" y="218" font-family="system-ui,sans-serif" font-size="21" fill="#214f7f">Option A</text>
+<text x="632" y="218" font-family="system-ui,sans-serif" font-size="21" fill="#214f7f">Option B</text>
+<path d="M52 236H908" stroke="#ced7e0" stroke-width="2"/>
+<text x="52" y="274" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Time available</text>
+<text x="342" y="274" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Evidence needed</text>
+<text x="632" y="274" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Evidence needed</text>
+<path d="M52 292H908" stroke="#ced7e0" stroke-width="2"/>
+<text x="52" y="330" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Device access</text>
+<text x="342" y="330" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Unknown</text>
+<text x="632" y="330" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Unknown</text>
+<path d="M52 348H908" stroke="#ced7e0" stroke-width="2"/>
+<text x="52" y="386" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Small trial</text>
+<text x="342" y="386" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Plan a test</text>
+<text x="632" y="386" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Plan a test</text>
+<path d="M52 404H908" stroke="#ced7e0" stroke-width="2"/>
+<text x="52" y="465" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">What unknown could change your choice?</text>
+</svg>

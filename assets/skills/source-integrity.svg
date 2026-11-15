@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">Claim-to-evidence ledger</title><desc id="desc">A ledger links each claim to its source location, finding, and remaining verification task.</desc>
+<rect width="960" height="520" fill="#e2e7ed"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">Claim-to-evidence ledger</text>
+<text x="52" y="122" font-family="system-ui,sans-serif" font-size="26" fill="#182e46">Keep the claim beside its evidence.</text>
+<text x="52" y="194" font-family="system-ui,sans-serif" font-size="22" fill="#214f7f">Original claim</text>
+<text x="342" y="194" font-family="system-ui,sans-serif" font-size="22" fill="#214f7f">Source + location</text>
+<text x="632" y="194" font-family="system-ui,sans-serif" font-size="22" fill="#214f7f">Finding</text>
+<path d="M52 216H908" stroke="#ced7e0" stroke-width="2"/>
+<text x="52" y="259" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">Claim one</text>
+<text x="342" y="259" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">Add evidence</text>
+<text x="632" y="259" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">Unresolved</text>
+<path d="M52 281H908" stroke="#ced7e0" stroke-width="2"/>
+<text x="52" y="324" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">Claim two</text>
+<text x="342" y="324" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">Add evidence</text>
+<text x="632" y="324" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">Unresolved</text>
+<path d="M52 346H908" stroke="#ced7e0" stroke-width="2"/>
+<text x="52" y="402" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Next verification action</text>
+<text x="52" y="438" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">What would resolve the uncertainty?</text>
+<path d="M52 466H882" stroke="#ced7e0" stroke-width="2"/>
+<path d="M52 495H847" stroke="#ced7e0" stroke-width="2"/>
+</svg>

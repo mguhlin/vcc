@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">FLOW writing room</title><desc id="desc">A quiet writing area pairs a chosen prompt with a pausable timer and optional reflection after writing.</desc>
+<rect width="960" height="520" fill="#e2e7ed"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">FLOW writing room</text>
+<text x="56" y="120" font-family="system-ui,sans-serif" font-size="26" fill="#214f7f">FLOW</text>
+<text x="635" y="120" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">05:00    Pause    Finish</text>
+<path d="M56 148H900" stroke="#ced7e0" stroke-width="2"/>
+<text x="56" y="193" font-family="Georgia,serif" font-size="28" fill="#182e46">The door opened and…</text>
+<path d="M56 250H870" stroke="#ced7e0" stroke-width="2"/>
+<path d="M56 292H900" stroke="#ced7e0" stroke-width="2"/>
+<path d="M56 334H740" stroke="#ced7e0" stroke-width="2"/>
+<path d="M56 367V399" stroke="#214f7f" stroke-width="3"/>
+<text x="56" y="455" font-family="system-ui,sans-serif" font-size="22" fill="#445b70">Keep ideas moving. Reflect when you choose to finish.</text>
+</svg>

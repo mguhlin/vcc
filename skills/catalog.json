@@ -1,0 +1,85 @@
+[
+  {
+    "slug": "sift-approach",
+    "title": "SIFT Approach",
+    "category": "Source evaluation",
+    "summary": "Work through Stop, Investigate, Find, and Trace before deciding what a claim deserves.",
+    "project": "SIFT investigation desk",
+    "concept": "A four-step investigation with a claim, evidence notes, original source, and an unresolved assessment.",
+    "origin": "Supplied collection"
+  },
+  {
+    "slug": "prism-thinking",
+    "title": "PRISM Thinking Coach",
+    "category": "Thinking & inquiry",
+    "summary": "Use Patterns, Reasoning, Ideas, Situation, and Methods to move from noticing to explaining.",
+    "project": "PRISM inquiry studio",
+    "concept": "Five inquiry lenses surround a learner response, with one focused question and a synthesis challenge.",
+    "origin": "Supplied collection"
+  },
+  {
+    "slug": "outline-helper",
+    "title": "Outline Helper",
+    "category": "Meeting & planning",
+    "summary": "Organize discussion into a traditional outline while keeping decisions distinct from proposals.",
+    "project": "Meeting-to-action workbench",
+    "concept": "Source notes sit beside a Roman numeral outline, with decisions and action items separated below.",
+    "origin": "Supplied collection"
+  },
+  {
+    "slug": "quadrant-notes",
+    "title": "Quadrant Note-Taking",
+    "category": "Reading & study",
+    "summary": "Connect main ideas to evidence, personal connections, and a short synthesis.",
+    "project": "Four-part study notebook",
+    "concept": "Four labeled writing areas link main ideas, evidence, personal connections, and synthesis, followed by retrieval questions.",
+    "origin": "Supplied collection"
+  },
+  {
+    "slug": "ai-citation-assistant",
+    "title": "AI Citation Assistant",
+    "category": "Attribution & integrity",
+    "summary": "Gather real source details, distinguish citation from AI disclosure, and expose missing metadata.",
+    "project": "Citation and disclosure desk",
+    "concept": "A source-details form leads to citation review and a separate AI-use disclosure, with missing fields visible.",
+    "origin": "Supplied collection"
+  },
+  {
+    "slug": "vocabulary-enhancement",
+    "title": "Vocabulary Enhancement",
+    "category": "Language & practice",
+    "summary": "Move from word meanings to creative use, retrieval, and a quick check for understanding.",
+    "project": "Vocabulary practice studio",
+    "concept": "A word and meaning feed a four-panel comic plan, a context sentence, and a retrieval exit ticket.",
+    "origin": "Supplied collection"
+  },
+  {
+    "slug": "freewriting-coach",
+    "title": "Freewriting Coach",
+    "category": "Writing & creativity",
+    "summary": "Use FLOW to start writing, keep ideas moving, and reflect before revising.",
+    "project": "FLOW writing room",
+    "concept": "A quiet writing area pairs a chosen prompt with a pausable timer and optional reflection after writing.",
+    "origin": "Supplied collection"
+  },
+  {
+    "slug": "compare-options",
+    "title": "Compare Options",
+    "category": "Decisions & tradeoffs",
+    "summary": "Make priorities, constraints, evidence, and uncertainty visible before choosing.",
+    "project": "Decision comparison table",
+    "concept": "Options appear in a criteria table, with must-haves, unknowns, and a small next test.",
+    "origin": "Repository adaptation",
+    "source": "https://github.com/mguhlin/creations/blob/main/architect/skills/packages/compare-options-skill/SKILL.md"
+  },
+  {
+    "slug": "source-integrity",
+    "title": "Source Integrity",
+    "category": "Evidence & research",
+    "summary": "Check whether a source supports the actual claim, then record a correction or next check.",
+    "project": "Claim-to-evidence ledger",
+    "concept": "A ledger links each claim to its source location, finding, and remaining verification task.",
+    "origin": "Repository adaptation",
+    "source": "https://github.com/mguhlin/creations/blob/main/architect/skills/packages/source-integrity-skill/SKILL.md"
+  }
+]

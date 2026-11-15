@@ -21,3 +21,7 @@ Miguel Guhlin supplied the GitHub Pages, Netlify, and Three Essential Checks car
 ## Linked resources
 
 GitHub resources are linked references, not bundled or automatically installed. Each upstream license, dependency notice, asset right, and model license applies separately. A repository license does not grant rights to copied brand identities or every linked example. See RESOURCE_REVIEW.md for license signals and limitations.
+
+## Reusable skills
+
+The seven user-supplied skills and VCC project prompts are educational prose by Miguel Guhlin under CC BY 4.0. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity adapt Miguel Guhlin's CC0-1.0 skill files in mguhlin/creations and retain CC0-1.0; each adaptation links to its source. The original vector concept sketches were drawn in code for VCC and follow its CC BY 4.0 educational visual terms. See [skill sources and changes](skills/SOURCES.md). No upstream executable code or image assets are bundled with the adaptations.

@@ -1,0 +1,64 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+module.exports=async function({page,context,base}){
+ const requests=[];
+ const record=request=>requests.push(request.url());
+ page.on('request',record);
+ await page.goto(base+'guides/skills.html');
+ assert.equal(await page.locator('[data-skill-link]').count(),9);
+ assert.equal(await page.locator('[data-skill-panel]:visible').count(),1);
+ const catalog=await (await context.request.get(base+'skills/catalog.json')).json();
+ for(const item of catalog){
+  await page.locator(`[data-skill-link="${item.slug}"]`).click();
+  const panel=page.locator('#'+item.slug);
+  assert.ok(await panel.isVisible());
+  assert.equal(await page.locator('[data-skill-panel]:visible').count(),1);
+  assert.equal(await page.locator('[data-skill-link][aria-current]').getAttribute('data-skill-link'),item.slug);
+  assert.equal(await page.locator(':focus').getAttribute('id'),item.slug+'-title');
+  const source=await context.request.get(base+'skills/'+item.slug+'/SKILL.md');assert.equal(source.status(),200);
+  const prompt=await context.request.get(base+'skills/'+item.slug+'/PROJECT_PROMPT.md');assert.equal(prompt.status(),200);
+  assert.equal(await panel.locator('textarea').last().inputValue(),await source.text());
+  assert.equal(await panel.locator('textarea').first().inputValue(),await prompt.text());
+  await panel.getByRole('button',{name:'Copy skill',exact:true}).click();
+  await page.waitForFunction(()=>[...document.querySelectorAll('.skill-status')].some(s=>s.textContent==='Skill copied'));
+  assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),await source.text());
+  await panel.getByRole('button',{name:'Copy project prompt',exact:true}).click();
+  await page.waitForFunction(()=>[...document.querySelectorAll('.skill-status')].some(s=>s.textContent==='Project prompt copied'));
+  assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),await prompt.text());
+  assert.ok(await panel.locator('img').evaluate(img=>img.complete&&img.naturalWidth>0));
+  await page.evaluate(fs.readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8'));
+  const axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
+  assert.deepEqual(axe.violations.map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)})),[],item.slug+' accessibility');
+ }
+ await page.locator('#skill-search').fill('WRITING');
+ assert.equal(await page.locator('[data-skill-entry]:visible').count(),1);
+ await page.locator('#skill-search').fill('zzzznomatch');assert.ok(await page.locator('.skill-empty').isVisible());
+ await page.getByRole('button',{name:'Clear search',exact:true}).click();assert.equal(await page.locator('[data-skill-entry]:visible').count(),9);
+ await page.goto(base+'guides/skills.html#quadrant-notes');assert.ok(await page.locator('#quadrant-notes').isVisible());
+ await page.locator('[data-skill-link="sift-approach"]').focus();await page.keyboard.press('Enter');assert.ok(await page.locator('#sift-approach').isVisible());
+ await page.locator('[data-skill-link="prism-thinking"]').click();await page.goBack();assert.ok(await page.locator('#sift-approach').isVisible());
+ await page.goForward();assert.ok(await page.locator('#prism-thinking').isVisible());
+ await page.reload();assert.ok(await page.locator('#prism-thinking').isVisible());
+ await page.goto(base+'guides/skills.html#outline-helper-file');assert.ok(await page.locator('#outline-helper').isVisible());
+ await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('Denied')}}}));
+ await page.locator('#outline-helper').getByRole('button',{name:'Copy skill',exact:true}).click();
+ assert.equal(await page.locator('#outline-helper .skill-status').first().textContent(),'Text selected. Use your device’s copy command.');
+ assert.ok(await page.locator('#outline-helper-raw').evaluate(el=>el.selectionEnd-el.selectionStart===el.value.length));
+ for(const width of [1440,768,390,320]){
+  await page.setViewportSize({width,height:900});await page.goto(base+'guides/skills.html#freewriting-coach');
+  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'skills reflow '+width);
+ }
+ if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-skills-mobile.png',fullPage:true});
+ await page.setViewportSize({width:1440,height:1100});await page.goto(base+'guides/skills.html#sift-approach');
+ if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-skills-desktop.png',fullPage:true});
+ await page.evaluate(()=>document.body.style.fontSize='34px');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches),true);
+ assert.deepEqual(await page.evaluate(()=>({local:localStorage.length,session:sessionStorage.length,cookies:document.cookie})),{local:0,session:0,cookies:''});
+ assert.ok(requests.every(url=>new URL(url).origin===new URL(base).origin),'no third-party requests');page.off('request',record);
+ const archive=await context.request.get(base+'downloads/reusable-skills.zip');assert.equal(archive.status(),200);assert.ok((await archive.body()).length>10000);
+ const nojs=await context.browser().newContext({javaScriptEnabled:false});
+ const plain=await nojs.newPage();await plain.goto(base+'guides/skills.html#freewriting-coach');
+ assert.equal(await plain.locator('[data-skill-panel]:visible').count(),9);assert.equal(await plain.locator('textarea').count(),18);await nojs.close();
+ console.log('PASS: nine skills, complete copy/download parity, nine axe states, source/prompt copy, clipboard fallback, search/reset, keyboard selection, direct links/history, concept images, 320–1440px reflow, resize, no storage/third-party requests, no-JS reading, collection ZIP');
+};
