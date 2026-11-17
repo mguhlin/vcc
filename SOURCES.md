@@ -19,7 +19,7 @@ The article names and dates in their URLs are stable content identifiers, not VC
 
 ## Illustrated walkthroughs
 
-Miguel Guhlin supplied `cartoon_github.png`, `cartoon_netlify.png`, and `Vibe-Coding Center_ Three Essential Checks.png`. VCC preserves the originals in `assets/cartoons/` and uses WebP copies for page display. The classroom-sharing guide includes the three-checks cartoon; the publishing walkthroughs pair the other cartoons with text versions and current official GitHub Pages and Netlify documentation. Cloudflare is identified as optional, and the Netlify action links to the service's actual Drop page rather than relying on the address drawn in the cartoon.
+Miguel Guhlin supplied `cartoon_github.png`, `cartoon_netlify.png`, and `Vibe-Coding Center_ Three Essential Checks.png`. VCC preserves the originals in `assets/cartoons/` and uses WebP copies for page display. The classroom-sharing guide shows the Four Checks remake and links to the original Three Essential Checks cartoon; the publishing walkthroughs pair the other cartoons with text versions and current official GitHub Pages and Netlify documentation. Cloudflare is identified as optional, and the Netlify action links to the service's actual Drop page rather than relying on the address drawn in the cartoon.
 
 ## Supplemental resources
 

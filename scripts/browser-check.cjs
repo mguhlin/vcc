@@ -7,9 +7,13 @@ const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors
 const base=process.env.VCC_URL||'http://127.0.0.1:4186/';
 await page.goto(base,{waitUntil:'networkidle'});
 if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-desktop.png',fullPage:true});
-assert.ok((await page.locator('.hero img').getAttribute('src')).endsWith('/three-essential-checks.webp'));
+assert.ok((await page.locator('.hero img').getAttribute('src')).endsWith('/four-checks.webp'));
 await page.getByRole('link',{name:'Read the cartoon as text',exact:true}).click();assert.ok(page.url().includes('/guides/before-sharing.html#the-cartoon-in-text'));assert.ok(await page.getByRole('heading',{name:'The cartoon in text',exact:true}).isVisible());await page.goto(base);
 assert.equal(await page.locator('.foundation img').count(),4);
+for(const img of await page.locator('.foundation img').all()){
+ await img.scrollIntoViewIfNeeded();
+ assert.ok(await img.evaluate(el=>el.complete&&el.naturalWidth===1600&&el.naturalHeight===900));
+}
 assert.equal(await page.getByRole('heading',{name:'What is VCC?',exact:true}).count(),0);
 await page.locator('footer').getByRole('link',{name:'About',exact:true}).click();
 assert.ok(page.url().endsWith('/guides/about.html'));assert.equal(await page.locator('h1').textContent(),'About VCC');assert.ok((await page.locator('main').textContent()).includes('a growing collection of guidance, reusable instructions'));
@@ -41,6 +45,8 @@ await page.locator('[data-copy]').click();await page.waitForFunction(()=>documen
 assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('PROJECT_BRIEF.md'));
 assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('If the brief is missing'));
 await page.locator('.supplement-nav summary').click();await page.getByRole('link',{name:'Before sharing with a class',exact:true}).click();assert.ok(page.url().endsWith('/guides/before-sharing.html'));
+assert.equal(await page.locator('#the-cartoon-in-text + ol > li').count(),4);
+assert.ok(await page.locator('a[download][href$="/four-checks.png"]').isVisible());
 await page.locator('.checklist input').first().check();assert.ok((await page.locator('#check-summary').textContent()).startsWith('1 of 6'));
 await page.locator('#reset-checks').click();assert.equal(await page.locator('.checklist input:checked').count(),0);
 await page.reload();assert.equal(await page.locator('.checklist input:checked').count(),0);

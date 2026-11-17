@@ -38,4 +38,4 @@ Manual uploads do not run a build command for you. See [Netlify's deployment ins
 
 ## Check before sharing
 
-Use [Three checks before you share](../guides/before-sharing.html#three-checks-before-you-share) to review education privacy, security, and design for function. Keep your evidence in [the launch review](../guides/launch.html).
+Use [Four checks before you share](../guides/before-sharing.html#four-checks-before-you-share) to review education privacy, security, web design, and how to repair a broken project. Keep your evidence in [the launch review](../guides/launch.html).

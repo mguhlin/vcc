@@ -18,6 +18,10 @@ The workbench hero was generated and revised to blue and silver using the built-
 
 Miguel Guhlin supplied the GitHub Pages, Netlify, and Three Essential Checks cartoons. Original PNG copies are preserved in `assets/cartoons/`, alongside full-resolution WebP versions optimized for page display. VCC includes text alternatives and links to the originals. Product names and logos within the supplied artwork retain their owners' rights; their appearance does not imply endorsement.
 
+## Four Checks and featured guide illustrations
+
+The Four Checks Before You Share cartoon was remade with OpenAI image generation from the supplied Three Essential Checks cartoon. The four matching workbench illustrations were generated for the featured guide cards and guides. Their prompts are in `assets/ARTWORK_PROMPTS.json`. The original guide artwork and cartoon files remain available at their existing asset paths.
+
 ## Linked resources
 
 GitHub resources are linked references, not bundled or automatically installed. Each upstream license, dependency notice, asset right, and model license applies separately. A repository license does not grant rights to copied brand identities or every linked example. See RESOURCE_REVIEW.md for license signals and limitations.

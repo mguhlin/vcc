@@ -2,17 +2,18 @@
 
 These reminders help organize your review. Ticking a box is not evidence that a site is safe or approved.
 
-## Three checks before you share
+## Four checks before you share
 
-[![Three-panel cartoon showing educators minimizing student data, inspecting an exposed API key, and replacing a distracting homepage with an exit ticket focused on the learning task.](../assets/cartoons/three-essential-checks.webp)](../assets/cartoons/three-essential-checks.png)
+[![Four-panel cartoon with educators discussing Education Privacy, Security, Web Design, and Vibe-Code Rescue.](../assets/cartoons/four-checks.webp)](../assets/cartoons/four-checks.png)
 
-[Open full-size Three Essential Checks cartoon](../assets/cartoons/three-essential-checks.png) · [Download original Three Essential Checks PNG](../assets/cartoons/three-essential-checks.png)
+[Open the full-size Four Checks cartoon](../assets/cartoons/four-checks.png) · [Download the Four Checks PNG](../assets/cartoons/four-checks.png) · [View the original Three Essential Checks cartoon](../assets/cartoons/three-essential-checks.png)
 
 ### The cartoon in text
 
-1. **Education privacy:** “Why collect names if the activity works without them?” An exit ticket asking for a full name, birth date, and email becomes a simpler learning question. Collect less and map where data goes. Use `EDU_COMPLIANCE.md`.
-2. **Security:** “It works. But is it safe to publish?” An educator and an IT colleague investigate an exposed API key and review secrets, inputs, access, and tests. Inspect code, test, and verify with `securevcc.md`.
-3. **Design for function:** “Students came to answer a question, not admire a homepage.” A distracting AI-themed start screen becomes a clear exit-ticket activity. Fit the design to the task with `WEB_DESIGN.md`.
+1. **Education privacy.** A woman points to an anonymous exit ticket and says, “Collect only what students need to share.” Use [Education Privacy](../guides/education.html) to decide what to collect and map where it goes.
+2. **Security.** A bald, bearded man points to a laptop with a shield and key and says, “Keep keys private. Test who can get in.” Use [Security](../guides/security.html) to review secrets and test access boundaries.
+3. **Web design.** A woman shows a simple classroom activity and says, “Make the learning task easy to find.” Use [Web Design](../guides/design.html) to organize the page around what learners need to do.
+4. **Vibe-Code Rescue.** A woman demonstrates a repair with a laptop and checklist and says, “Reproduce the bug. Fix it and test again.” Use [Vibe-Code Rescue](../guides/rescue.html) to record what fails, isolate the cause, and verify the repair.
 
 ## Try the classroom journey
 
@@ -29,4 +30,4 @@ Selections stay in this page's memory and reset when you reload. Nothing is save
 
 Use [the launch review template](../templates/LAUNCH_REVIEW.md) to record what passed, what failed, which checks were not run, and who must resolve school or vendor decisions. [Read the launch review guide](../guides/launch.html) for the complete record.
 
-Keep the full [web design](../guides/design.html), [security](../guides/security.html), and [education privacy](../guides/education.html) instructions nearby. They explain the checks behind these reminders.
+Keep the full instructions for all four guides nearby. They explain the checks behind these reminders.
