@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">Texas classroom crosswalk planner</title><desc id="desc">A three-column crosswalk pairs program connections with classroom examples and evidence teachers can document.</desc>
+<rect width="960" height="520" fill="#e2e7ed"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">Texas classroom crosswalk planner</text>
+<rect x="48" y="102" width="240" height="56" fill="#e2e7ed" stroke="#8b9daf"/>
+<text x="62" y="137" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Program connection</text>
+<rect x="48" y="158" width="240" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M62 194H264" stroke="#ced7e0" stroke-width="2"/>
+<path d="M62 223H230" stroke="#ced7e0" stroke-width="2"/>
+<rect x="48" y="258" width="240" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M62 294H264" stroke="#ced7e0" stroke-width="2"/>
+<path d="M62 323H230" stroke="#ced7e0" stroke-width="2"/>
+<rect x="48" y="358" width="240" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M62 394H264" stroke="#ced7e0" stroke-width="2"/>
+<path d="M62 423H230" stroke="#ced7e0" stroke-width="2"/>
+<rect x="288" y="102" width="300" height="56" fill="#e2e7ed" stroke="#8b9daf"/>
+<text x="302" y="137" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">Classroom example</text>
+<rect x="288" y="158" width="300" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M302 194H564" stroke="#ced7e0" stroke-width="2"/>
+<path d="M302 223H530" stroke="#ced7e0" stroke-width="2"/>
+<rect x="288" y="258" width="300" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M302 294H564" stroke="#ced7e0" stroke-width="2"/>
+<path d="M302 323H530" stroke="#ced7e0" stroke-width="2"/>
+<rect x="288" y="358" width="300" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M302 394H564" stroke="#ced7e0" stroke-width="2"/>
+<path d="M302 423H530" stroke="#ced7e0" stroke-width="2"/>
+<rect x="588" y="102" width="324" height="56" fill="#e2e7ed" stroke="#8b9daf"/>
+<text x="602" y="137" font-family="system-ui,sans-serif" font-size="21" fill="#182e46">What to document</text>
+<rect x="588" y="158" width="324" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M602 194H888" stroke="#ced7e0" stroke-width="2"/>
+<path d="M602 223H854" stroke="#ced7e0" stroke-width="2"/>
+<rect x="588" y="258" width="324" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M602 294H888" stroke="#ced7e0" stroke-width="2"/>
+<path d="M602 323H854" stroke="#ced7e0" stroke-width="2"/>
+<rect x="588" y="358" width="324" height="100" fill="#fff" stroke="#8b9daf"/>
+<path d="M602 394H888" stroke="#ced7e0" stroke-width="2"/>
+<path d="M602 423H854" stroke="#ced7e0" stroke-width="2"/>
+</svg>

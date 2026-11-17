@@ -59,3 +59,8 @@ The supplied files remain outside the public repository. Their content identitie
 The archive identifies [watermarks-remover](https://github.com/guillaumemeyer/watermarks-remover) as its upstream. Its README, two skill files, and MIT notice were inspected. No executable, HTTP service, Docker setup, model weights, or optional watermark-removal backends were run or redistributed. The adapted skill retains the full MIT notice from the archive. Optional dependencies require their own separate license and capability review before any future installation. Source skill hashes: `clean-user-facing-text/SKILL.md` is `2787e78b8332502d93519c57e087e10d9e09d6a5fe9867f15c0b11ced462618c`; `remove-ai-marks/SKILL.md` is `3f128e0cbd77ad170ac2be639ebe881afe4e02417ea8a7846b53b440e77c6495`.
 
 Archive Harbor does not infer successful downloads from button clicks or identical file sizes. It checks files only when an authorized filesystem capability exists. Daylight Pages treats collapsed teacher notes as present in the public document, not access-controlled. ClearCopy preserves multilingual controls, code, citations, and provenance unless a specific authorized change is justified; it makes no guarantee about undetectability or removal of hidden media marks.
+
+
+## Build Texas Classroom Crosswalk
+
+The user supplied `build-texas-classroom-crosswalk.zip` for VCC. Its skill instructions, framework reference with citations, icon, and agent metadata are preserved. The archive included no separate license notice. VCC’s project prompt and concept sketch follow its CC BY 4.0 terms.

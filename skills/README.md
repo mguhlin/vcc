@@ -1,6 +1,6 @@
 # Reusable skills for vibe-coded projects
 
-Open the [VCC skill browser](https://mguhlin.github.io/vcc/guides/skills.html) for 23 workflows, project prompts, and concept images.
+Open the [VCC skill browser](https://mguhlin.github.io/vcc/guides/skills.html) for 24 workflows, project prompts, and concept images.
 
 Each skill folder contains `SKILL.md` and a matching `PROJECT_PROMPT.md`. Read the skill, adapt the prompt to your audience, and explicitly ask your assistant to apply it. Download VCC's `WEB_DESIGN.md`, `EDU_COMPLIANCE.md`, and `securevcc.md` from the [core guides](https://mguhlin.github.io/vcc/#core-guides) before using the project prompt. These prompts describe possible applications; this collection does not include completed apps.
 

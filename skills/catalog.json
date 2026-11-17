@@ -272,5 +272,21 @@
     "hero": "assets/skills/heroes/clearcopy.webp",
     "hero_alt": "An inspection lens and soft brush sit beside protected document sheets, suggesting careful file hygiene.",
     "license": "MIT"
+  },
+  {
+    "slug": "build-texas-classroom-crosswalk",
+    "title": "Build Texas Classroom Crosswalk",
+    "category": "Classroom planning",
+    "summary": "Turn a Texas K–12 educator resource into a landscape crosswalk with classroom activities and evidence of student learning.",
+    "project": "Texas classroom crosswalk planner",
+    "concept": "A three-column crosswalk pairs program connections with classroom examples and evidence teachers can document.",
+    "origin": "Supplied skill archive",
+    "group": "Classroom planning",
+    "license": "SEE-SOURCE",
+    "support_files": [
+      "references/framework-decisions.md",
+      "agents/openai.yaml",
+      "assets/icon.svg"
+    ]
   }
 ]

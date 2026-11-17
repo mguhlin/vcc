@@ -245,6 +245,20 @@
       "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#clearcopy",
       "skill_url": "https://mguhlin.github.io/vcc/agent-skills/clearcopy/SKILL.md",
       "license": "MIT"
+    },
+    {
+      "name": "build-texas-classroom-crosswalk",
+      "title": "Build Texas Classroom Crosswalk",
+      "description": "Use for classroom planning. Turn a Texas K–12 educator resource into a landscape crosswalk with classroom activities and evidence of student learning.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/build-texas-classroom-crosswalk/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#build-texas-classroom-crosswalk",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/build-texas-classroom-crosswalk/SKILL.md",
+      "license": "SEE-SOURCE",
+      "support_files": [
+        "references/framework-decisions.md",
+        "agents/openai.yaml",
+        "assets/icon.svg"
+      ]
     }
   ]
 }

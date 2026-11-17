@@ -53,7 +53,7 @@ manifest=json.loads((ROOT/'agent-skills.json').read_text())
 if len(manifest['skills'])!=len(catalog)+4:errors.append('Agent directory count does not match the collection')
 with zipfile.ZipFile(ROOT/'downloads/reusable-skills.zip') as bundle:
  for item in catalog:
-  for name in ['SKILL.md','PROJECT_PROMPT.md']:
+  for name in ['SKILL.md','PROJECT_PROMPT.md',*item.get('support_files',[])]:
    path=ROOT/'skills'/item['slug']/name
    if bundle.read('vcc/'+path.relative_to(ROOT).as_posix())!=path.read_bytes():errors.append(f'Stale reusable skill bundle: {path}')
   if item.get('hero'):
@@ -65,5 +65,9 @@ with zipfile.ZipFile(ROOT/'downloads/vcc-agent-skills.zip') as bundle:
  for entry in manifest['skills']:
   path=ROOT/'agent-skills'/entry['name']/'SKILL.md'
   if bundle.read(f'vcc-agent-skills/{entry["name"]}/SKILL.md')!=path.read_bytes():errors.append(f'Stale agent bundle: {entry["name"]}')
+  for file in entry.get('support_files',[]):
+   support=path.parent/file
+   source=(ROOT/'skills'/entry['name']/file).read_bytes()
+   if bundle.read(f'vcc-agent-skills/{entry["name"]}/{file}')!=source or support.read_bytes()!=source:errors.append(f'Stale agent support file: {support}')
 if errors:print('\n'.join(errors));sys.exit(1)
 print(f'Validated {len(pages)} HTML pages, local links/anchors, image labels, document structure, timestamp hygiene, and {len(checks)} security checks')

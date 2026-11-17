@@ -1,0 +1,14 @@
+interface:
+  display_name: Texas Classroom Crosswalks
+  short_description: Turn educator resources into Texas classroom crosswalks
+  default_prompt: Use $build-texas-classroom-crosswalk to turn this resource into
+    a landscape Texas classroom infographic.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

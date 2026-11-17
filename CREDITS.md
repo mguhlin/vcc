@@ -26,6 +26,8 @@ GitHub resources are linked references, not bundled or automatically installed. 
 
 The seven user-supplied skills and VCC project prompts are educational prose by Miguel Guhlin under CC BY 4.0. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity adapt Miguel Guhlin's CC0-1.0 skill files in mguhlin/creations and retain CC0-1.0; each adaptation links to its source. The original vector concept sketches were drawn in code for VCC and follow its CC BY 4.0 educational visual terms. See [skill sources and changes](skills/SOURCES.md). No upstream executable code or image assets are bundled with the adaptations.
 
+Build Texas Classroom Crosswalk comes from the user-supplied skill archive. See [its source and reuse notes](skills/SOURCES.md#build-texas-classroom-crosswalk).
+
 ## Vibe-Code Rescue
 
 Miguel Guhlin supplied the Vibe-Code Rescue skill archive for incorporation into VCC. The archive's source references and adaptation boundaries are recorded in [rescue/SOURCES.md](rescue/SOURCES.md); no separate license notice was included in the supplied archive. VCC's original explanations and repair-workbench SVG follow its CC BY 4.0 educational-prose and visual terms. SecureVCC's integrated security additions remain within its MIT-licensed file, with its existing notice preserved. The supplied skill's MakeUseOf background reference remains credited; no article text or imagery is redistributed.
@@ -40,7 +42,7 @@ The Web Design guide adapts documentation by the [Modern Web Guidance contributo
 
 ## Expanded reusable collection
 
-Fourteen creator adaptations expand the sidebar collection to 23 reusable workflows. Organization-specific branding, account/subscription language, and recurring feedback-form requests have been removed. Framework attribution remains in the relevant files. The new educational instructions and project prompts follow VCC’s CC BY 4.0 terms, except ClearCopy’s adapted skill body, which retains the supplied project’s MIT notice. No upstream watermark service code, model weights, or dependencies are bundled.
+Fourteen creator adaptations are part of the sidebar collection. Organization-specific branding, account/subscription language, and recurring feedback-form requests have been removed. Framework attribution remains in the relevant files. The new educational instructions and project prompts follow VCC’s CC BY 4.0 terms, except ClearCopy’s adapted skill body, which retains the supplied project’s MIT notice. No upstream watermark service code, model weights, or dependencies are bundled.
 
 The 14 new hero illustrations were created with OpenAI image generation for VCC, then optimized as WebP. Their prompts and dimensions are preserved in `assets/skills/heroes/PROMPTS.json`. VCC makes these original visual assets available under its CC BY 4.0 educational visual terms; generated artwork does not depict working applications or establish exclusive rights. See [skill sources and adaptations](skills/SOURCES.md).
 

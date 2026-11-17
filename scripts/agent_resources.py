@@ -16,6 +16,8 @@ def skill_entries():
         entries.append(dict(entry))
     for item in json.loads((ROOT/'skills/catalog.json').read_text()):
         entries.append(dict(name=item['slug'],key=item['slug'],title=item['title'],source=f"skills/{item['slug']}/SKILL.md",guide=f"guides/skills.html#{item['slug']}",description=f"Use for {item['category'].lower()}. {item['summary']}",license=item.get('license','CC0-1.0' if item.get('source') else 'CC-BY-4.0'),use=f"Use {item['title']} for the task and material I supply in this conversation. Follow its workflow and safeguards, ask for essential missing inputs, and distinguish verified evidence from examples or uncertainty. If I ask for a vibe-coded application, use the matching project prompt from VCC and the project's existing design, education, and security instructions."))
+        if item.get('support_files'):
+            entries[-1]['support_files']=item['support_files']
     for entry in entries:
         entry['skill_path']=f"agent-skills/{entry['name']}/SKILL.md"
         entry['skill_url']=BASE+entry['skill_path']
@@ -47,12 +49,14 @@ def skill_export(entry):
         terms='VCC additions follow CC BY 4.0; the supplied source has no separate license notice. See the source and VCC credits for adaptation boundaries.'
     else:
         terms='VCC educational prose is CC BY 4.0. Attribute Miguel Guhlin and link to VCC; cited third-party material retains its own terms.'
-    return front+body.rstrip()+f"\n\n## VCC source and reuse\n\nMaintained source: {entry['source_url']}\n\nReadable guide: {entry['guide_url']}\n\n{terms}\n\nCredits and terms: {BASE}CREDITS.md\n"
+    references=''.join(f"[{file}]({BASE}agent-skills/{entry['name']}/{file})\n\n" for file in entry.get('support_files',[]) if file.startswith('references/'))
+    return front+body.rstrip()+f"\n\n## VCC source and reuse\n\nMaintained source: {entry['source_url']}\n\nReadable guide: {entry['guide_url']}\n\n{terms}\n\n{references}Credits and terms: {BASE}CREDITS.md\n"
 
 
 def setup_prompt(entry):
     name=entry['name']
-    return f"Read {BASE}AGENT_GUIDE.md and create the {name} skill from {entry['skill_url']}. Read the entire SKILL.md. Use this project's .agents/skills/{name}/SKILL.md for Codex project scope, or the current host's supported project skill location. Inspect any existing same-name skill first, reuse an identical copy, and preserve customized content until any needed merge/replace decision is resolved. Preserve the complete instructions, source attribution, and license notices. Validate the name, description, and saved content against the downloaded file. Report the actual file path and validation result. This request creates the skill files; I will specify the project or learning task separately."
+    support=''.join(f" Save {BASE}agent-skills/{name}/{file} as {file} relative to the skill folder." for file in entry.get('support_files',[]))
+    return f"Read {BASE}AGENT_GUIDE.md and create the {name} skill from {entry['skill_url']}. Read the entire SKILL.md. Use this project's .agents/skills/{name}/SKILL.md for Codex project scope, or the current host's supported project skill location. Inspect any existing same-name skill first, reuse an identical copy, and preserve customized content until any needed merge/replace decision is resolved. Preserve the complete instructions, source attribution, and license notices. Validate the name, description, and saved content against the downloaded file. Report the actual file path and validation result.{support} This request creates the skill files; I will specify the project or learning task separately."
 
 
 def use_prompt(entry):
@@ -83,7 +87,14 @@ def write_agent_resources():
     paths=[]
     for entry in entries:
         path=ROOT/entry['skill_path'];path.parent.mkdir(parents=True,exist_ok=True);path.write_text(skill_export(entry));paths.append(path)
+        for file in entry.get('support_files',[]):
+            dest=path.parent/file
+            dest.parent.mkdir(parents=True,exist_ok=True)
+            dest.write_bytes((ROOT/entry['source']).parent.joinpath(file).read_bytes())
+            paths.append(dest)
         manifest['skills'].append({k:entry[k] for k in ['name','title','description','source_url','guide_url','skill_url','license']})
+        if entry.get('support_files'):
+            manifest['skills'][-1]['support_files']=entry['support_files']
     (ROOT/'agent-skills.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
     featured_count=len(json.loads((ROOT/'agent-resources/featured.json').read_text()))
     reusable_count=len(entries)-featured_count
@@ -94,7 +105,7 @@ def write_agent_resources():
         index+=f"- [{entry['title']}]({entry['skill_url']}): `{entry['name']}`. [Readable guide]({entry['guide_url']}).\n"
     (ROOT/'llms.txt').write_text(index)
     with zipfile.ZipFile(ROOT/'downloads/vcc-agent-skills.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
-        files=[(f"vcc-agent-skills/{p.parent.name}/SKILL.md",p.read_bytes()) for p in paths]
+        files=[(f"vcc-agent-skills/{p.relative_to(ROOT / 'agent-skills').as_posix()}",p.read_bytes()) for p in paths]
         files += [('vcc-agent-skills/README.md',(ROOT/'AGENT_GUIDE.md').read_bytes()),('vcc-agent-skills/agent-skills.json',(ROOT/'agent-skills.json').read_bytes())]
         for name,data in files:
             info=zipfile.ZipInfo(name,date_time=(1980,1,1,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16;archive.writestr(info,data)

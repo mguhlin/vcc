@@ -91,6 +91,15 @@ def concept_image(item):
             for j,value in enumerate(row):text(52+j*290,y,value,21,'#214f7f' if i==0 else '#182e46')
             line(52,y+18,908)
         text(52,465,'What unknown could change your choice?',23)
+    elif slug == 'build-texas-classroom-crosswalk':
+        headings=['Program connection','Classroom example','What to document']
+        for x, width, heading in zip((48,288,588),(240,300,324),headings):
+            box(x,102,width,56,'#e2e7ed')
+            text(x+14,137,heading,21)
+            for y in (158,258,358):
+                box(x,y,width,100,'#fff')
+                line(x+14,y+36,x+width-24)
+                line(x+14,y+65,x+width-58)
     else:
         text(52,122,'Keep the claim beside its evidence.',26)
         rows=[['Original claim','Source + location','Finding'],['Claim one','Add evidence','Unresolved'],['Claim two','Add evidence','Unresolved']]
@@ -130,10 +139,14 @@ def render_skills(md):
         links.append(f'<li data-skill-entry data-skill-group="{e(group)}"><a href="#{slug}" data-skill-link="{slug}"><span>{e(item["title"])}</span><small>{e(item["category"])}</small></a></li>')
         origin=f'{e(item["origin"])} · <a href="../skills/SOURCES.md">Sources &amp; reuse</a>'
         if item.get('source'):origin+=f' · <a href="{e(item["source"])}">Upstream skill (CC0)</a>'
+        references=''.join(
+            f'<a href="../skills/{slug}/{e(file)}">Read {e(Path(file).stem.replace("-", " "))}</a>'
+            for file in item.get('support_files',[]) if file.startswith('references/')
+        )
         panels.append(f'''<article class="skill-panel" id="{slug}" data-skill-panel>
 <h2 class="skill-title" id="{slug}-title" tabindex="-1">{e(item['title'])}</h2>
 <p class="skill-summary">{e(item['summary'])}</p><p class="meta">{origin}</p>
-<div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a><a href="#{slug}-file">Read full skill</a><span class="skill-status" role="status"></span></div>
+<div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a><a href="#{slug}-file">Read full skill</a>{references}<span class="skill-status" role="status"></span></div>
 {render_agent_instructions(slug,level=3)}
 <figure class="skill-concept"><a href="../{image}"><img src="../{image}" alt="{e(alt)}" width="{width}" height="{height}" loading="lazy"></a><figcaption>{e(caption)}</figcaption></figure>
 <section class="skill-prompt" aria-labelledby="{slug}-project"><h3 id="{slug}-project">Turn this skill into a project</h3>
