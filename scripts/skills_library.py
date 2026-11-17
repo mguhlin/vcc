@@ -156,9 +156,10 @@ def render_skills(md):
 <img class="skills-intro-art" src="../assets/skills/library-intro.webp" alt="Instruction sheets unfold from a navy toolbox into a small browser window beside a pencil and gold gear" width="800" height="600">
 <details class="skills-help"><summary>How to use these skills and prompts</summary>{help_text}</details></header>
 <div class="skills-layout" data-skills><aside class="skills-sidebar" aria-label="Skill browser"><details class="skills-sidebar-inner" id="skill-browser" open><summary>Browse {len(items)} skills</summary><div class="skill-browser-body">
+<p class="skill-bundle"><a href="../downloads/reusable-skills.zip" download>Download all {len(items)} skills</a></p>
 <div class="skill-filter" hidden><label for="skill-search">Find a skill</label><input id="skill-search" type="search" placeholder="Try writing or evidence" autocomplete="off"><button class="skill-clear" type="button">Clear search</button><p class="meta" id="skill-count" role="status">{len(items)} skills</p></div>
 <nav aria-label="Reusable skills" tabindex="0"><ul>{''.join(links)}</ul></nav><p class="skill-empty" hidden>No matching skills. Clear the search to see all {len(items)}.</p>
-<p class="skill-bundle"><a href="../downloads/reusable-skills.zip" download>Download all {len(items)} skills</a></p></div></details></aside>
+</div></details></aside>
 <div class="skills-workspace">{''.join(panels)}</div></div></main>'''
     paths=sorted((ROOT/'skills').rglob('*'))+sorted((ROOT/'assets/skills').rglob('*'))+[ROOT/'supplementals/REUSABLE_SKILLS.md']
     with zipfile.ZipFile(ROOT/'downloads/reusable-skills.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:

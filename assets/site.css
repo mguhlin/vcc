@@ -64,7 +64,7 @@ nav{align-items:start}
 .skill-filter input{width:100%;min-width:0;min-height:44px;border:1px solid #8499b0;background:var(--surface);color:var(--ink);padding:8px;font-size:16px;border-radius:4px}
 .skill-clear{border:0;background:transparent;color:var(--accent);text-decoration:underline;text-underline-offset:3px;min-height:44px;padding:8px 0;font-size:14px}
 .skill-filter .meta{margin:0 0 0 12px;display:inline}
-.skill-bundle{margin:0;padding:8px 0 0;border-top:1px solid var(--line)}
+.skill-bundle{margin:0 0 8px;border-bottom:1px solid var(--line)}
 .skill-bundle a{display:inline-flex;align-items:center;min-height:44px}
 .skills-sidebar nav:focus-visible{outline:3px solid var(--focus);outline-offset:0}
 .skill-browse-return{display:inline-flex;align-items:center;min-height:44px;margin-bottom:8px}
