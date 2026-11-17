@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
 <title id="title">SIFT investigation desk</title><desc id="desc">A four-step investigation with a claim, evidence notes, original source, and an unresolved assessment.</desc>
-<rect width="960" height="520" fill="#e2e7ed"/>
-<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
-<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">SIFT investigation desk</text>
-<rect x="24" y="68" width="230" height="428" fill="#f1f3f5" stroke="#8b9daf"/>
-<rect x="24" y="88" width="230" height="60" fill="#e2e7ed" stroke="#8b9daf"/>
-<text x="48" y="128" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">1. Stop</text>
-<text x="48" y="204" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">2. Investigate</text>
-<text x="48" y="280" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">3. Find coverage</text>
-<text x="48" y="356" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">4. Trace</text>
-<text x="294" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">What claim are you checking?</text>
-<text x="294" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">Write the exact claim here.</text>
-<path d="M294 186H888" stroke="#ced7e0" stroke-width="2"/>
-<path d="M294 215H853" stroke="#ced7e0" stroke-width="2"/>
-<text x="294" y="290" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Pause before deciding</text>
-<text x="294" y="326" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">What was your first reaction?</text>
-<path d="M294 354H888" stroke="#ced7e0" stroke-width="2"/>
-<path d="M294 383H853" stroke="#ced7e0" stroke-width="2"/>
-<text x="294" y="465" font-family="system-ui,sans-serif" font-size="20" fill="#214f7f">Keep notes     /     Continue to Investigate</text>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">SIFT investigation desk</text>
+<rect x="24" y="68" width="230" height="428" fill="#edf1f6" stroke="#8499b0"/>
+<rect x="24" y="88" width="230" height="60" fill="#dce7f2" stroke="#8499b0"/>
+<text x="48" y="128" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">1. Stop</text>
+<text x="48" y="204" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">2. Investigate</text>
+<text x="48" y="280" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">3. Find coverage</text>
+<text x="48" y="356" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">4. Trace</text>
+<text x="294" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">What claim are you checking?</text>
+<text x="294" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">Write the exact claim here.</text>
+<path d="M294 186H888" stroke="#c5d1df" stroke-width="2"/>
+<path d="M294 215H853" stroke="#c5d1df" stroke-width="2"/>
+<text x="294" y="290" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Pause before deciding</text>
+<text x="294" y="326" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">What was your first reaction?</text>
+<path d="M294 354H888" stroke="#c5d1df" stroke-width="2"/>
+<path d="M294 383H853" stroke="#c5d1df" stroke-width="2"/>
+<text x="294" y="465" font-family="system-ui,sans-serif" font-size="20" fill="#1c528d">Keep notes     /     Continue to Investigate</text>
 </svg>

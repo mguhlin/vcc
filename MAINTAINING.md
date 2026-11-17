@@ -1,6 +1,6 @@
 # Maintaining and recovering VCC
 
-VCC is a public static library. Its visitor workflow is browse → read → copy or download. It has no backend, visitor accounts, student uploads, or external AI calls. A skill is documentation for an assistant; installing or applying it is a separate user task. Preserve the working sidebar, fragment links, clipboard fallback, no-JavaScript reading route, and relative downloads.
+VCC is a public static library. Its visitor workflow is browse → read → copy or download. It has no backend, visitor accounts, student uploads, or external AI calls. A skill is documentation for an assistant; installing or applying it is a separate user task. Preserve alphabetical sidebar order, the independently scrolling desktop list, the narrow-screen picker, fragment links, clipboard fallback, no-JavaScript reading route, and relative downloads.
 
 ## Recreate the build
 

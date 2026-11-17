@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
 <title id="title">Vocabulary practice studio</title><desc id="desc">A word and meaning feed a four-panel comic plan, a context sentence, and a retrieval exit ticket.</desc>
-<rect width="960" height="520" fill="#e2e7ed"/>
-<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
-<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">Vocabulary practice studio</text>
-<text x="54" y="120" font-family="system-ui,sans-serif" font-size="25" fill="#182e46">Word + intended meaning</text>
-<path d="M54 150H902" stroke="#ced7e0" stroke-width="2"/>
-<rect x="54" y="190" width="198" height="150" fill="#f1f3f5" stroke="#8b9daf"/>
-<text x="66" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#214f7f">1</text>
-<text x="66" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#182e46">Introduce</text>
-<rect x="270" y="190" width="198" height="150" fill="#f1f3f5" stroke="#8b9daf"/>
-<text x="282" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#214f7f">2</text>
-<text x="282" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#182e46">Show meaning</text>
-<rect x="486" y="190" width="198" height="150" fill="#f1f3f5" stroke="#8b9daf"/>
-<text x="498" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#214f7f">3</text>
-<text x="498" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#182e46">Use in context</text>
-<rect x="702" y="190" width="198" height="150" fill="#f1f3f5" stroke="#8b9daf"/>
-<text x="714" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#214f7f">4</text>
-<text x="714" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#182e46">New application</text>
-<text x="54" y="390" font-family="system-ui,sans-serif" font-size="25" fill="#182e46">Explain it without your notes.</text>
-<text x="54" y="435" font-family="system-ui,sans-serif" font-size="21" fill="#445b70">Retrieval exit ticket + teacher preparation notes</text>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Vocabulary practice studio</text>
+<text x="54" y="120" font-family="system-ui,sans-serif" font-size="25" fill="#152d48">Word + intended meaning</text>
+<path d="M54 150H902" stroke="#c5d1df" stroke-width="2"/>
+<rect x="54" y="190" width="198" height="150" fill="#edf1f6" stroke="#8499b0"/>
+<text x="66" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#1c528d">1</text>
+<text x="66" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#152d48">Introduce</text>
+<rect x="270" y="190" width="198" height="150" fill="#edf1f6" stroke="#8499b0"/>
+<text x="282" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#1c528d">2</text>
+<text x="282" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#152d48">Show meaning</text>
+<rect x="486" y="190" width="198" height="150" fill="#edf1f6" stroke="#8499b0"/>
+<text x="498" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#1c528d">3</text>
+<text x="498" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#152d48">Use in context</text>
+<rect x="702" y="190" width="198" height="150" fill="#edf1f6" stroke="#8499b0"/>
+<text x="714" y="223" font-family="system-ui,sans-serif" font-size="24" fill="#1c528d">4</text>
+<text x="714" y="313" font-family="system-ui,sans-serif" font-size="18" fill="#152d48">New application</text>
+<text x="54" y="390" font-family="system-ui,sans-serif" font-size="25" fill="#152d48">Explain it without your notes.</text>
+<text x="54" y="435" font-family="system-ui,sans-serif" font-size="21" fill="#3c546c">Retrieval exit ticket + teacher preparation notes</text>
 </svg>

@@ -2,7 +2,7 @@
 
 A skill is a reusable set of instructions for an AI assistant: what to do, which steps to follow, and what a useful result looks like. Skills save you from rewriting the same directions and help keep a workflow consistent. Review the result each time; a skill does not guarantee accuracy or run an application by itself.
 
-Choose a skill in the list, copy its Markdown, and use the project prompt to turn its workflow into a vibe-coded solution. The collection has 24 skills. Concept sketches suggest possible interfaces; the 14 new hero illustrations evoke their workflows. Neither is a finished app.
+Choose a skill in the alphabetical list, copy its Markdown, and use the project prompt to turn its workflow into a vibe-coded solution. The collection has 24 skills. Concept sketches suggest possible interfaces; the 14 new hero illustrations evoke their workflows. Neither is a finished app.
 
 Each entry also includes **Use with an AI agent**: an agent-ready file, a skill setup prompt, and a prompt for immediate use. The [agent directions](../AGENT_GUIDE.md) cover the 24 skills plus the four featured guides; [download all 28 agent skills](../downloads/vcc-agent-skills.zip) for local skill setup.
 

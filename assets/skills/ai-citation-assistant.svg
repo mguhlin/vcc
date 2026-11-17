@@ -1,27 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
 <title id="title">Citation and disclosure desk</title><desc id="desc">A source-details form leads to citation review and a separate AI-use disclosure, with missing fields visible.</desc>
-<rect width="960" height="520" fill="#e2e7ed"/>
-<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
-<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">Citation and disclosure desk</text>
-<rect x="24" y="68" width="390" height="428" fill="#f1f3f5" stroke="#8b9daf"/>
-<text x="52" y="120" font-family="system-ui,sans-serif" font-size="24" fill="#182e46">Source details</text>
-<text x="52" y="165" font-family="system-ui,sans-serif" font-size="20" fill="#182e46">Source type</text>
-<path d="M52 181H378" stroke="#ced7e0" stroke-width="2"/>
-<text x="52" y="225" font-family="system-ui,sans-serif" font-size="20" fill="#182e46">Author or organization</text>
-<path d="M52 241H378" stroke="#ced7e0" stroke-width="2"/>
-<text x="52" y="285" font-family="system-ui,sans-serif" font-size="20" fill="#182e46">Title</text>
-<path d="M52 301H378" stroke="#ced7e0" stroke-width="2"/>
-<text x="52" y="345" font-family="system-ui,sans-serif" font-size="20" fill="#182e46">Style and edition</text>
-<path d="M52 361H378" stroke="#ced7e0" stroke-width="2"/>
-<text x="52" y="405" font-family="system-ui,sans-serif" font-size="20" fill="#182e46">DOI or stable URL</text>
-<path d="M52 421H378" stroke="#ced7e0" stroke-width="2"/>
-<text x="454" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Citation draft</text>
-<text x="454" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">Verify style rules before formatting.</text>
-<path d="M454 186H884" stroke="#ced7e0" stroke-width="2"/>
-<path d="M454 215H849" stroke="#ced7e0" stroke-width="2"/>
-<text x="454" y="300" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">AI-use disclosure</text>
-<text x="454" y="336" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">Include only actions that occurred.</text>
-<path d="M454 364H884" stroke="#ced7e0" stroke-width="2"/>
-<path d="M454 393H849" stroke="#ced7e0" stroke-width="2"/>
-<text x="454" y="465" font-family="system-ui,sans-serif" font-size="20" fill="#214f7f">Missing details stay visible.</text>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Citation and disclosure desk</text>
+<rect x="24" y="68" width="390" height="428" fill="#edf1f6" stroke="#8499b0"/>
+<text x="52" y="120" font-family="system-ui,sans-serif" font-size="24" fill="#152d48">Source details</text>
+<text x="52" y="165" font-family="system-ui,sans-serif" font-size="20" fill="#152d48">Source type</text>
+<path d="M52 181H378" stroke="#c5d1df" stroke-width="2"/>
+<text x="52" y="225" font-family="system-ui,sans-serif" font-size="20" fill="#152d48">Author or organization</text>
+<path d="M52 241H378" stroke="#c5d1df" stroke-width="2"/>
+<text x="52" y="285" font-family="system-ui,sans-serif" font-size="20" fill="#152d48">Title</text>
+<path d="M52 301H378" stroke="#c5d1df" stroke-width="2"/>
+<text x="52" y="345" font-family="system-ui,sans-serif" font-size="20" fill="#152d48">Style and edition</text>
+<path d="M52 361H378" stroke="#c5d1df" stroke-width="2"/>
+<text x="52" y="405" font-family="system-ui,sans-serif" font-size="20" fill="#152d48">DOI or stable URL</text>
+<path d="M52 421H378" stroke="#c5d1df" stroke-width="2"/>
+<text x="454" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Citation draft</text>
+<text x="454" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">Verify style rules before formatting.</text>
+<path d="M454 186H884" stroke="#c5d1df" stroke-width="2"/>
+<path d="M454 215H849" stroke="#c5d1df" stroke-width="2"/>
+<text x="454" y="300" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">AI-use disclosure</text>
+<text x="454" y="336" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">Include only actions that occurred.</text>
+<path d="M454 364H884" stroke="#c5d1df" stroke-width="2"/>
+<path d="M454 393H849" stroke="#c5d1df" stroke-width="2"/>
+<text x="454" y="465" font-family="system-ui,sans-serif" font-size="20" fill="#1c528d">Missing details stay visible.</text>
 </svg>

@@ -8,7 +8,9 @@ module.exports=async function({page,context,base}){
  page.on('request',record);
  await page.goto(base+'guides/skills.html');
  const catalog=await (await context.request.get(base+'skills/catalog.json')).json();
- assert.equal(await page.locator('[data-skill-link]').count(),catalog.length);
+ const sortedTitles=[...catalog].sort((a,b)=>a.title.toLowerCase().localeCompare(b.title.toLowerCase())).map(item=>item.title);
+ assert.deepEqual(await page.locator('[data-skill-link] span').allTextContents(),sortedTitles);
+ const sidebarNav=page.getByRole('navigation',{name:'Reusable skills',exact:true});
  await page.setViewportSize({width:1440,height:1000});
  const introImage=page.locator('.skills-intro-art');
  await introImage.waitFor();
@@ -17,6 +19,14 @@ module.exports=async function({page,context,base}){
  assert.ok(artBox.width<=320&&artBox.x>=copyBox.x+copyBox.width,'compact artwork stays beside intro');
  if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-skills-intro-desktop.png'});
  assert.equal(await page.locator('[data-skill-panel]:visible').count(),1);
+ await sidebarNav.scrollIntoViewIfNeeded();
+ await sidebarNav.evaluate(el=>{el.scrollTop=el.scrollHeight;});
+ const lastLink=sidebarNav.locator('[data-skill-link]').last();
+ const listScroll=await sidebarNav.evaluate(el=>el.scrollTop);
+ assert.ok(listScroll>0,'desktop title list scrolls');
+ await lastLink.click();
+ assert.equal(await sidebarNav.evaluate(el=>el.scrollTop),listScroll,'selecting a visible title preserves the list position');
+ assert.ok(await page.locator('#skill-search').evaluate(el=>el.getBoundingClientRect().top>=0),'search stays in view');
  for(const item of catalog){
   await page.locator(`[data-skill-link="${item.slug}"]`).click();
   const panel=page.locator('#'+item.slug);
@@ -61,6 +71,14 @@ module.exports=async function({page,context,base}){
   assert.ok(imageBox.width<=320,'intro hero remains constrained '+width);
   if(width<=800){const textBox=await page.locator('.skills-intro-copy').boundingBox();assert.ok(imageBox.y>=textBox.y+textBox.height,'intro artwork stacks below copy');}
  }
+ const picker=page.locator('#skill-browser');
+ assert.equal(await picker.evaluate(el=>el.open),false,'mobile deep links start with the picker collapsed');
+ await page.locator('#freewriting-coach').getByRole('link',{name:'Browse skills',exact:true}).click();
+ assert.equal(await page.locator(':focus').getAttribute('id'),'skill-search');
+ assert.equal(await sidebarNav.evaluate(el=>getComputedStyle(el).overflowY),'visible','the page scrolls the mobile list');
+ await sidebarNav.locator('[data-skill-link]').last().click();
+ assert.equal(await picker.evaluate(el=>el.open),false,'mobile selection closes the picker');
+ assert.ok(await page.locator('.skill-title:focus').isVisible(),'mobile selection focuses the skill heading');
  if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-skills-mobile.png',fullPage:true});
  await page.setViewportSize({width:1440,height:1100});await page.goto(base+'guides/skills.html#sift-approach');
  if(process.env.VCC_SCREENSHOTS==='1')await page.screenshot({path:'/tmp/vcc-skills-desktop.png',fullPage:true});

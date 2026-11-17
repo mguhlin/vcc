@@ -5,6 +5,34 @@ if(skillsRoot){
  const panels=[...skillsRoot.querySelectorAll('[data-skill-panel]')];
  const links=[...skillsRoot.querySelectorAll('[data-skill-link]')];
  const search=skillsRoot.querySelector('#skill-search');
+ const browser=skillsRoot.querySelector('#skill-browser');
+ const nav=browser.querySelector('nav');
+ const narrow=matchMedia('(max-width: 800px)');
+ const browseLinks=skillsRoot.querySelectorAll('.skill-browse-return');
+
+ function syncBrowserLayout(){
+  browser.open=!narrow.matches;
+  nav.tabIndex=narrow.matches?-1:0;
+  for(const link of browseLinks)link.hidden=!narrow.matches;
+ }
+ narrow.addEventListener('change',syncBrowserLayout);
+ syncBrowserLayout();
+
+ for(const link of browseLinks)link.addEventListener('click',event=>{
+  if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+  event.preventDefault();
+  browser.open=true;
+  search.focus();
+ });
+
+ function revealCurrentSkill(){
+  const active=nav.querySelector('[aria-current]');
+  if(!active||active.closest('li').hidden||!browser.open||narrow.matches)return;
+  const row=active.getBoundingClientRect();
+  const list=nav.getBoundingClientRect();
+  if(row.top<list.top+4)nav.scrollTop+=row.top-list.top-4;
+  else if(row.bottom>list.bottom-4)nav.scrollTop+=row.bottom-list.bottom+4;
+ }
  function panelForHash(){
   let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return null;}
   const target=document.getElementById(id);
@@ -16,24 +44,23 @@ if(skillsRoot){
    if(link.dataset.skillLink===panel.id)link.setAttribute('aria-current','true');
    else link.removeAttribute('aria-current');
   }
-  const nav=skillsRoot.querySelector('.skills-sidebar nav');
-  const list=nav.scrollHeight>nav.clientHeight?nav:skillsRoot.querySelector('.skills-sidebar-inner');
-  const active=links.find(link=>link.dataset.skillLink===panel.id);
-  if(list.scrollHeight>list.clientHeight)list.scrollTop+=active.getBoundingClientRect().top-list.getBoundingClientRect().top-(list.clientHeight-active.offsetHeight)/2;
+  revealCurrentSkill();
   // Clear stale copy messages when changing the displayed skill.
   for(const status of skillsRoot.querySelectorAll('.skill-status'))status.textContent='';
   if(focus)panel.querySelector('.skill-title').focus({preventScroll:true});
  }
  skillsRoot.classList.add('skills-enhanced');
- showSkill(panelForHash()||panels[0]);
  skillsRoot.querySelector('.skill-filter').hidden=false;
+ showSkill(panelForHash()||panels[0]);
  for(const link of links)link.addEventListener('click',event=>{
   if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
   event.preventDefault();
   const panel=document.getElementById(link.dataset.skillLink);
+  if(narrow.matches)browser.open=false;
   showSkill(panel,true);
-  if(location.hash!==link.hash)location.hash=link.hash;
-  else panel.scrollIntoView({block:'start'});
+  if(location.hash!==link.hash)history.pushState(null,'',link.hash);
+  const top=panel.getBoundingClientRect().top;
+  if(narrow.matches||top<0||top>innerHeight/2)panel.scrollIntoView({block:'start'});
  });
  addEventListener('hashchange',()=>showSkill(panelForHash()||panels[0],true));
  function filterSkills(){
@@ -45,12 +72,8 @@ if(skillsRoot){
   }
   skillsRoot.querySelector('#skill-count').textContent=`${count} of ${links.length} skills`;
   skillsRoot.querySelector('.skill-empty').hidden=count!==0;
-  for(const heading of skillsRoot.querySelectorAll('[data-skill-group-heading]')){
-   heading.hidden=!links.some(link=>{
-    const entry=link.closest('li');
-    return entry.dataset.skillGroup===heading.dataset.skillGroupHeading&&!entry.hidden;
-   });
-  }
+  nav.scrollTop=0;
+  revealCurrentSkill();
  }
  search.addEventListener('input',filterSkills);
  skillsRoot.querySelector('.skill-clear').addEventListener('click',()=>{search.value='';filterSkills();search.focus();});

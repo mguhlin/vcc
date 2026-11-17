@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
 <title id="title">Meeting-to-action workbench</title><desc id="desc">Source notes sit beside a Roman numeral outline, with decisions and action items separated below.</desc>
-<rect width="960" height="520" fill="#e2e7ed"/>
-<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
-<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">Meeting-to-action workbench</text>
-<path d="M470 92V398" stroke="#8b9daf" stroke-width="2"/>
-<text x="52" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Source notes</text>
-<text x="52" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">Paste nonconfidential sample notes.</text>
-<path d="M52 186H430" stroke="#ced7e0" stroke-width="2"/>
-<path d="M52 215H395" stroke="#ced7e0" stroke-width="2"/>
-<text x="510" y="122" font-family="system-ui,sans-serif" font-size="24" fill="#182e46">Traditional outline</text>
-<text x="510" y="174" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">I. Meeting context</text>
-<text x="540" y="216" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">A. Purpose</text>
-<text x="510" y="258" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">II. Discussion</text>
-<text x="540" y="300" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">A. Key topic</text>
-<text x="570" y="342" font-family="system-ui,sans-serif" font-size="22" fill="#182e46">1. Supporting detail</text>
-<path d="M52 410H908" stroke="#ced7e0" stroke-width="2"/>
-<text x="52" y="450" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Next steps</text>
-<text x="258" y="450" font-family="system-ui,sans-serif" font-size="20" fill="#445b70">Owner: Unassigned     /     Deadline: Not specified</text>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Meeting-to-action workbench</text>
+<path d="M470 92V398" stroke="#8499b0" stroke-width="2"/>
+<text x="52" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Source notes</text>
+<text x="52" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">Paste nonconfidential sample notes.</text>
+<path d="M52 186H430" stroke="#c5d1df" stroke-width="2"/>
+<path d="M52 215H395" stroke="#c5d1df" stroke-width="2"/>
+<text x="510" y="122" font-family="system-ui,sans-serif" font-size="24" fill="#152d48">Traditional outline</text>
+<text x="510" y="174" font-family="system-ui,sans-serif" font-size="22" fill="#152d48">I. Meeting context</text>
+<text x="540" y="216" font-family="system-ui,sans-serif" font-size="22" fill="#152d48">A. Purpose</text>
+<text x="510" y="258" font-family="system-ui,sans-serif" font-size="22" fill="#152d48">II. Discussion</text>
+<text x="540" y="300" font-family="system-ui,sans-serif" font-size="22" fill="#152d48">A. Key topic</text>
+<text x="570" y="342" font-family="system-ui,sans-serif" font-size="22" fill="#152d48">1. Supporting detail</text>
+<path d="M52 410H908" stroke="#c5d1df" stroke-width="2"/>
+<text x="52" y="450" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Next steps</text>
+<text x="258" y="450" font-family="system-ui,sans-serif" font-size="20" fill="#3c546c">Owner: Unassigned     /     Deadline: Not specified</text>
 </svg>

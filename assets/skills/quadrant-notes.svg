@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
 <title id="title">Four-part study notebook</title><desc id="desc">Four labeled writing areas link main ideas, evidence, personal connections, and synthesis, followed by retrieval questions.</desc>
-<rect width="960" height="520" fill="#e2e7ed"/>
-<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8b9daf" stroke-width="2"/>
-<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#182e46">Four-part study notebook</text>
-<path d="M480 92V460M48 280H912" stroke="#8b9daf" stroke-width="2"/>
-<text x="56" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Main ideas</text>
-<text x="56" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">Which ideas matter most?</text>
-<path d="M56 186H431" stroke="#ced7e0" stroke-width="2"/>
-<path d="M56 215H396" stroke="#ced7e0" stroke-width="2"/>
-<text x="510" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Supporting details</text>
-<text x="510" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">What evidence supports them?</text>
-<path d="M510 186H885" stroke="#ced7e0" stroke-width="2"/>
-<path d="M510 215H850" stroke="#ced7e0" stroke-width="2"/>
-<text x="56" y="322" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Personal connections</text>
-<text x="56" y="358" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">This reminds me of…</text>
-<path d="M56 386H431" stroke="#ced7e0" stroke-width="2"/>
-<path d="M56 415H396" stroke="#ced7e0" stroke-width="2"/>
-<text x="510" y="322" font-family="system-ui,sans-serif" font-size="23" fill="#182e46">Summary and synthesis</text>
-<text x="510" y="358" font-family="system-ui,sans-serif" font-size="19" fill="#445b70">How do the ideas fit together?</text>
-<path d="M510 386H885" stroke="#ced7e0" stroke-width="2"/>
-<path d="M510 415H850" stroke="#ced7e0" stroke-width="2"/>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Four-part study notebook</text>
+<path d="M480 92V460M48 280H912" stroke="#8499b0" stroke-width="2"/>
+<text x="56" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Main ideas</text>
+<text x="56" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">Which ideas matter most?</text>
+<path d="M56 186H431" stroke="#c5d1df" stroke-width="2"/>
+<path d="M56 215H396" stroke="#c5d1df" stroke-width="2"/>
+<text x="510" y="122" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Supporting details</text>
+<text x="510" y="158" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">What evidence supports them?</text>
+<path d="M510 186H885" stroke="#c5d1df" stroke-width="2"/>
+<path d="M510 215H850" stroke="#c5d1df" stroke-width="2"/>
+<text x="56" y="322" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Personal connections</text>
+<text x="56" y="358" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">This reminds me of…</text>
+<path d="M56 386H431" stroke="#c5d1df" stroke-width="2"/>
+<path d="M56 415H396" stroke="#c5d1df" stroke-width="2"/>
+<text x="510" y="322" font-family="system-ui,sans-serif" font-size="23" fill="#152d48">Summary and synthesis</text>
+<text x="510" y="358" font-family="system-ui,sans-serif" font-size="19" fill="#3c546c">How do the ideas fit together?</text>
+<path d="M510 386H885" stroke="#c5d1df" stroke-width="2"/>
+<path d="M510 415H850" stroke="#c5d1df" stroke-width="2"/>
 </svg>
