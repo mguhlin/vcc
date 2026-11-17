@@ -1,6 +1,6 @@
 'use strict';
 // Preserve links to sections that now have their own supplemental pages.
-const movedSections={'#what':'guides/about.html','#start':'guides/start.html','#before-sharing':'guides/before-sharing.html'};
+const movedSections={'#tools':'guides/helpful-githubs.html','#ai-agent-instructions':'guides/ai-agent.html#ai-agent-instructions','#what':'guides/about.html','#start':'guides/start.html','#before-sharing':'guides/before-sharing.html'};
 if(document.querySelector('.hero')&&movedSections[location.hash])location.replace(movedSections[location.hash]);
 const search=document.querySelector('#resource-search');
 const category=document.querySelector('#resource-category');

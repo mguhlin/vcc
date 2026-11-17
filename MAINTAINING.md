@@ -41,7 +41,7 @@ In another terminal, run `npm test`. The default target is `http://127.0.0.1:418
 | Image artwork | Optimized assets, `assets/ARTWORK_PROMPTS.json`, skill hero `PROMPTS.json` | Served directly and bundled |
 | Complete download | `scripts/package.py`, shared `project_files.py` | `downloads/vcc-complete.zip`, `SHA256SUMS.txt` |
 
-Do not maintain generated Markdown exports or guide HTML independently. The homepage is authored HTML except for build-owned navigation and the marked AI-agent entry section. Keep its download inventory aligned with the catalog. The old creations/SecureVCC site is a migration redirect, not another maintained copy.
+Do not maintain generated Markdown exports or guide HTML independently. The homepage is authored HTML except for build-owned navigation. Keep its download inventory aligned with the catalog. The old creations/SecureVCC site is a migration redirect, not another maintained copy.
 
 When adding a skill, give it a unique folder and matching catalog slug, a useful description, complete standalone instructions, a project prompt, category, group, provenance, and license. Optional `hero` and `hero_alt` fields refer to an optimized image and meaningful text description; record its dimensions and generation prompt in the hero metadata. Preserve third-party notices. Never imply that absent knowledge files, external services, research figures, or generated outputs are available.
 

@@ -69,7 +69,7 @@ module.exports=async function({page,context,base}){
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'skills reflow '+width);
   const imageBox=await page.locator('.skills-intro-art').boundingBox();
   assert.ok(imageBox.width<=320,'intro hero remains constrained '+width);
-  if(width<=800){const textBox=await page.locator('.skills-intro-copy').boundingBox();assert.ok(imageBox.y>=textBox.y+textBox.height,'intro artwork stacks below copy');}
+  if(width<=800)assert.ok(await introImage.evaluate(img=>img.getBoundingClientRect().top>=img.previousElementSibling.getBoundingClientRect().bottom),'intro artwork stacks below copy');
  }
  const picker=page.locator('#skill-browser');
  assert.equal(await picker.evaluate(el=>el.open),false,'mobile deep links start with the picker collapsed');

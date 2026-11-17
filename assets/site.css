@@ -124,3 +124,6 @@ nav{align-items:start}
 .agent-copy .copy-status{margin-left:0}
 .agent-prompts code{overflow-wrap:anywhere}
 @media print{.agent-copy{display:none}.agent-prompts{content-visibility:visible}.agent-instructions{break-inside:avoid}}
+
+.updates-section{align-items:center}
+.updates-preview{width:100%;height:auto;border:1px solid var(--line);border-radius:var(--radius)}

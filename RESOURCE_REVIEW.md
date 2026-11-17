@@ -6,7 +6,7 @@ The homepage keeps unslop, UI UX Pro Max, Design Bites, axe-core, and Playwright
 
 UI UX Pro Max, Design Bites, and axe-core are already referenced in `WEB_DESIGN.md`. Unslop and Playwright are also optional resources not named in the three instruction files. The core files cover relevant practices; a tool's absence does not mean the topic is missing.
 
-MarkItDown, Spec Kit, and Cloudflare's security-audit-skill have been removed from the homepage shelf. Cloudflare remains credited as a source of SecureVCC. Their original review entries are retained below as context.
+MarkItDown, Spec Kit, and Cloudflare's security-audit-skill have been removed from the Helpful GitHubs shelf. Cloudflare remains credited as a source of SecureVCC. Their original review entries are retained below as context.
 
 ## Review scope
 
@@ -64,7 +64,7 @@ A desktop workspace for people already using coding-agent CLIs.
 
 ## microsoft/markitdown
 
-**Decision:** Background reference; removed from the homepage shelf. **Source:** supplied bookmark export.
+**Decision:** Background reference; removed from the Helpful GitHubs shelf. **Source:** supplied bookmark export.
 
 Convert your own lesson notes and office documents into Markdown for a project.
 
@@ -124,7 +124,7 @@ Legal-workflow reference plugins, potentially relevant to institutional reviewer
 
 ## github/spec-kit
 
-**Decision:** Background reference; removed from the homepage shelf. **Source:** supplied bookmark export.
+**Decision:** Background reference; removed from the Helpful GitHubs shelf. **Source:** supplied bookmark export.
 
 Write testable requirements and implementation plans before a larger build.
 
@@ -172,7 +172,7 @@ A memory system for sustained coding work, rather than a starter requirement.
 
 ## cloudflare/security-audit-skill
 
-**Decision:** Background reference; removed from the homepage shelf. **Source:** additional primary reference.
+**Decision:** Background reference; removed from the Helpful GitHubs shelf. **Source:** additional primary reference.
 
 Primary security-audit methodology behind SecureVCC.
 
@@ -250,7 +250,7 @@ Make main-journey browser checks repeatable.
 
 ## gitleaks/gitleaks
 
-**Decision:** Optional addition to the homepage shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
+**Decision:** Optional addition to the Helpful GitHubs shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
 
 Search local files and Git history for possible exposed credentials. This provides a concrete tool for secret-review work described by the core guides.
 
@@ -262,7 +262,7 @@ Search local files and Git history for possible exposed credentials. This provid
 
 ## zaproxy/zaproxy
 
-**Decision:** Optional addition to the homepage shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
+**Decision:** Optional addition to the Helpful GitHubs shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
 
 Inspect a running web application's requests and potential security weaknesses during development.
 
@@ -274,7 +274,7 @@ Inspect a running web application's requests and potential security weaknesses d
 
 ## microsoft/accessibility-insights-web
 
-**Decision:** Optional addition to the homepage shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
+**Decision:** Optional addition to the Helpful GitHubs shelf. **Instruction-file coverage:** Not named in `WEB_DESIGN.md`, `securevcc/securevcc.md`, or `EDU_COMPLIANCE.md`; not included as software in the VCC bundle.
 
 Add guided keyboard and manual accessibility checks to automated interface testing using its browser extension.
 

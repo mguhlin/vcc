@@ -20,12 +20,22 @@ assert.ok(page.url().endsWith('/guides/about.html'));assert.equal(await page.loc
 await page.goto(base);
 for(const route of ['design','security','education','rescue']){await page.locator('.foundation[href="guides/'+route+'.html"]').click();assert.ok(page.url().endsWith('/guides/'+route+'.html'));assert.ok(await page.locator('.guide-explainer').isVisible());await page.goto(base);}
 assert.equal(await page.locator('[data-resource],#resource-search,#result-count').count(),0);
-assert.equal(await page.locator('#start,#before-sharing,.checklist').count(),0);assert.equal(await page.locator('#ai-agent-instructions [data-copy]').count(),1);
+assert.equal(await page.locator('#start,#before-sharing,.checklist').count(),0);assert.equal(await page.locator('#ai-agent-instructions,#tools').count(),0);
 assert.ok(await page.evaluate(()=>Boolean(document.querySelector('#library').compareDocumentPosition(document.querySelector('#download'))&Node.DOCUMENT_POSITION_FOLLOWING)));
-assert.ok(await page.evaluate(()=>Boolean(document.querySelector('#download').compareDocumentPosition(document.querySelector('#tools'))&Node.DOCUMENT_POSITION_FOLLOWING)));
 assert.equal(await page.getByRole('heading',{name:'From the blog',exact:true}).count(),0);
 assert.equal(await page.getByText('What did not make the recommended shelf?',{exact:true}).count(),0);
-assert.deepEqual(await page.locator('#repo-list h3').allTextContents(),['unslop','UI UX Pro Max','Design Bites','axe-core','Playwright','Gitleaks','ZAP','Accessibility Insights for Web']);
+assert.equal(await page.getByRole('heading',{name:'A center that can grow',exact:true}).count(),0);
+await page.locator('.supplement-nav summary').click();
+await page.locator('.supplement-links').getByRole('link',{name:'Helpful GitHubs',exact:true}).click();
+assert.ok(page.url().endsWith('/guides/helpful-githubs.html'));
+assert.deepEqual(await page.locator('main h2 a').allTextContents(),['unslop','UI UX Pro Max','Design Bites','axe-core','Playwright','Gitleaks','ZAP','Accessibility Insights for Web']);
+await page.locator('.supplement-nav summary').click();
+await page.locator('.supplement-links').getByRole('link',{name:'About',exact:true}).click();
+assert.ok(await page.getByRole('heading',{name:'A center that can grow',exact:true}).isVisible());
+assert.ok(await page.getByRole('link',{name:'Suggest a resource or report a problem',exact:true}).isVisible());
+await page.goto(base+'#tools');await page.waitForURL('**/guides/helpful-githubs.html');
+await page.goto(base+'#ai-agent-instructions');await page.waitForURL('**/guides/ai-agent.html#ai-agent-instructions');
+await page.goto(base);
 const supplement=page.locator('.supplement-nav');
 await supplement.locator('summary').focus();await page.keyboard.press('Enter');assert.ok(await supplement.evaluate(el=>el.open));
 await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').textContent(),'Start here');
@@ -60,7 +70,7 @@ await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').textC
 await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
 let axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
 console.log('Home axe violations',JSON.stringify(axe.violations.map(x=>({id:x.id,impact:x.impact,nodes:x.nodes.map(n=>n.target)}))));assert.equal(axe.violations.length,0);
-for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting','start','before-sharing','blog','library','about','publishing','skills','rescue']){
+for(const route of ['design','security','education','project-brief','launch','prompts','resource-vetting','start','before-sharing','blog','library','about','helpful-githubs','ai-agent','publishing','skills','rescue']){
  const response=await page.goto(base+'guides/'+route+'.html');assert.equal(response.status(),200);assert.equal(await page.locator('h1').count(),1);
  await page.evaluate(require('node:fs').readFileSync(process.env.VCC_AXE||require.resolve('axe-core/axe.min.js'),'utf8')); 
  axe=await page.evaluate(()=>axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}}));
@@ -94,6 +104,6 @@ await page.waitForFunction(()=>document.querySelector('#modern-web-prompt').pare
 assert.ok((await page.evaluate(()=>navigator.clipboard.readText())).includes('verify compatibility'));
 await require('./agent-browser-check.cjs')({page,context,base});
 const download=await context.request.get(base+'downloads/vcc-complete.zip');assert.equal(download.status(),200);assert.ok((await download.body()).length>1000000);
-assert.deepEqual(errors,[]);console.log('PASS: cartoon hero/text link, publishing navigation, original PNG downloads, About footer, four guide cards, rescue/security links, rescue audit copy/download, and download order, library search/filter/reset, curated shelf, keyboard dismissal, prompt copy, classroom reminders, keyboard skip, 16-page axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
+assert.deepEqual(errors,[]);console.log('PASS: cartoon hero/text link, publishing navigation, original PNG downloads, About footer, four guide cards, rescue/security links, rescue audit copy/download, and download order, library search/filter/reset, curated shelf, keyboard dismissal, prompt copy, classroom reminders, keyboard skip, site-wide axe scan, mobile/open-menu reflow, text resizing, reduced motion, ZIP, no runtime errors');
 await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});
