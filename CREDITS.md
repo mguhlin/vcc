@@ -38,6 +38,8 @@ Miguel Guhlin supplied the Vibe-Code Rescue skill archive for incorporation into
 
 ## Agent skill exports
 
+The creator-supplied `agysecurity.md` framework is preserved in `securevcc/sources/` with its identity and adaptation boundaries in [SecureVCC sources](securevcc/SOURCES.md#browser-local-audit-framework-integration). No separate license notice was supplied. Its browser-local audit ideas are paraphrased into the existing MIT-licensed SecureVCC adaptation; preservation of the original does not imply a new license grant for that input or its referenced material.
+
 The generated `agent-skills/` distribution retains each maintained source's attribution and notices. SecureVCC retains MIT; Compare Options and Source Integrity retain CC0-1.0; VCC educational prose and setup/use instructions follow CC BY 4.0. Rescue's supplied-source licensing boundary remains documented in `rescue/SOURCES.md`. The install/use presentation was informed by Unslop's README by Damir Sokolovsky; VCC's prompts and export builder are original additions, and no Unslop installer or skill implementation is bundled.
 
 ## Modern Web Guidance

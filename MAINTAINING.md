@@ -43,6 +43,8 @@ In another terminal, run `npm test`. The default target is `http://127.0.0.1:418
 
 Do not maintain generated Markdown exports or guide HTML independently. The homepage is authored HTML except for build-owned navigation. Keep its download inventory aligned with the catalog. The old creations/SecureVCC site is a migration redirect, not another maintained copy.
 
+The four featured guide titles display `vN`, where N counts commits changing that guide's maintained Markdown source, including its initial addition. Counts start from this repository's Git history, not the earlier Creations repository. Before committing a source revision, set its `version` in `agent-resources/featured.json` to the current `git rev-list --count HEAD -- <source-path>` plus one for the pending source change. A single commit with several edits counts once. Do not increment for styling, rebuilds, metadata, or provenance-only changes. The builder reads these recorded integers so rebuilds and downloaded bundles do not need Git. It synchronizes homepage card labels and guide headings; keep generated labels out of the source Markdown to avoid counting numbering-only edits. Use revision numbers without public maintenance dates or timestamps.
+
 When adding a skill, give it a unique folder and matching catalog slug, a useful description, complete standalone instructions, a project prompt, category, group, provenance, and license. Optional `hero` and `hero_alt` fields refer to an optimized image and meaningful text description; record its dimensions and generation prompt in the hero metadata. Preserve third-party notices. Never imply that absent knowledge files, external services, research figures, or generated outputs are available.
 
 ## Diagnose failures without losing work

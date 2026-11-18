@@ -7,6 +7,7 @@ The later prompt collections were supplied by the creator; one pasted excerpt wa
 ## Original supplied files
 
 - [seccheck.md](sources/seccheck.md): practical web assessment, authorization boundaries, database policies, secrets, OWASP verification, accessibility, vendor evidence, and creator-ready reporting.
+- [agysecurity.md](sources/agysecurity.md): creator-supplied **Universal Security & Privacy Audit Framework for Vibe-Coded Applications**, preserved byte-for-byte. It supplies the browser-local five-phase workflow, 12-domain matrix, examples, report outline, and audit prompt. No separate author or license notice appears in the supplied file; its preservation does not grant new rights to independently sourced material.
 - [security-audit-skill-main.zip](sources/security-audit-skill-main.zip): the original source archive from [Cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill). Its methodology covers reconnaissance, planned coverage, vulnerability investigation, validation, severity, and reporting, with specialist domains for browser/HTTP/authentication, AI, cloud, supply chain, protocols, data lifecycle, availability, native code, and local applications.
 - [Cloudflare MIT license](sources/cloudflare-MIT-LICENSE.txt): the archive's original license. The full notice is also retained inside `securevcc.md` so the skill can travel as one file.
 
@@ -56,6 +57,7 @@ SHA-256 identifies the preserved input bytes; it does not establish the trustwor
 
 ```text
 f7f1fcb4960bfac454148bf35f3dc1ee1c8949b39d5232805cfa2ac7ebd0261f  seccheck.md
+e5c270b418818d796ecbaa7a331de1bc52b7c60cd464c5271dac2cc4f6c87880  agysecurity.md
 03978c2563b15b4ecb609f5f96029d89a12604e0457d0f2e69faf24a56c57ae1  security-audit-skill-main.zip
 e598e694aa506650c7192d5ea3be0e50aca0d356ea00551c53429f0b01eb6391  cloudflare-MIT-LICENSE.txt
 ```
@@ -73,3 +75,19 @@ The creator supplied a one-file Vibe-Code Rescue archive. [Source identity and a
 The integration adds `SUPPLY-03` and `OPS-04` and a baseline subsection before security repairs. It respects previously granted task authorization, avoids blanket critical ratings for public configuration, and requires no new tools or companion files. The [OWASP authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html), [logging](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html), and [GitHub sensitive-data removal](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository) references support the scoped technical guidance.
 
 The supplied retro workstation artwork was edited with OpenAI image generation to replace its obsolete footer address with `mguhlin.github.io/vcc`. The current optimized asset is `assets/securevcc-workstation.webp`; its edit prompt is in VCC’s `assets/ARTWORK_PROMPTS.json`. Other supplied provenance archives retain their original contents.
+
+## Browser-local audit framework integration
+
+SecureVCC incorporates `agysecurity.md` into its maintained single-file skill, with a five-phase review, eleven additional check IDs, a 12-domain crosswalk, fictional regression cases, and a portable audit prompt. Existing backend/BaaS and AI coverage remains conditional. The readable guide, agent export, all-skills ZIP, and complete VCC bundle derive from that maintained source.
+
+The adaptation preserves the original as provenance while qualifying its blanket instructions and examples:
+
+- Pattern scans identify candidates; reachable effects and actual impact determine findings and severity. A raw HTML sink is not automatically Critical, and a private-name leak is not automatically Low.
+- CSV import requires quote-aware parsing, explicit minimal column selection, and stale-read guards. Ambiguous private columns are not guessed into display items.
+- Spreadsheet export defenses depend on the named consumer and re-save behavior. The source's illustrative escaper is not copied as a universal solution; quoting alone does not neutralize formulas, and `|` is not treated as a universal formula prefix.
+- Masked display is distinguished from de-identification and complete backups. Clear-local-data behavior includes pending work, derived state, and truthful storage failures, with limits for copies outside the app's control.
+- CSP constrains supported browser paths; it does not prove universal zero egress or offline operation. Meta delivery cannot supply `frame-ancestors`, and broad inline execution is not prescribed as a default.
+- Bounded random draws validate their input, use the full `2 ** 32` range for rejection sampling, and never fall back silently to weak randomness for security operations. Fairness and security findings remain distinct.
+- The reusable prompt references `securevcc.md`, respects existing authorization, and requires no Desktop path. The existing report/coverage model replaces automatic severity labels and claims of exhaustive assurance.
+
+Implementation references consulted: [OWASP DOM XSS prevention](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html), [OWASP CSV injection](https://owasp.org/www-community/attacks/CSV_Injection), [RFC 4180](https://www.rfc-editor.org/rfc/rfc4180), [MDN CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy), and [MDN getRandomValues](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues). These are linked references, not redistributed implementations or certification evidence.

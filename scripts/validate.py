@@ -44,6 +44,12 @@ for path in ROOT.rglob('*'):
 raw=(ROOT/'securevcc/securevcc.md').read_text();rendered=(ROOT/'guides/security.html').read_text()
 checks=re.findall(r'^- \*\*([A-Z][A-Z0-9]*-\d{2}) —',raw,re.M)
 if len(checks)!=len(set(checks)) or any(c not in rendered for c in checks):errors.append('Security checklist lost during rendering')
+for entry in json.loads((ROOT/'agent-resources/featured.json').read_text()):
+ version=entry['version'];slug=entry['key']
+ label=f'<span class="guide-version" aria-label="Version {version}">v{version}</span>'
+ if type(version) is not int or version<1:errors.append(f'{slug}: invalid source revision count')
+ if not re.search(rf'<a class="foundation" href="guides/{slug}\.html"><strong>[^<]+ '+re.escape(label),(ROOT/'index.html').read_text()):errors.append(f'{slug}: homepage guide version is stale')
+ if label not in (ROOT/'guides'/f'{slug}.html').read_text():errors.append(f'{slug}: guide version is stale')
 # Catalog, distribution copies, and source files must describe the same collection.
 catalog=json.loads((ROOT/'skills/catalog.json').read_text())
 slugs=[item['slug'] for item in catalog]

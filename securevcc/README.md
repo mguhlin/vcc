@@ -28,6 +28,16 @@ For a state-machine review:
 
 > Use SecureVCC to find the implicit state machines in this app. Map states, events, guards, side effects, persistence, failure, cancellation, retries, and recovery. Choose focused improvements that benefit the user experience (UX), developer experience (DX), and agent experience (AX) together. Preserve working behavior and public interfaces, explain tradeoffs, and verify normal, invalid, stale, and partially failed transitions with meaningful regression checks.
 
+## Browser-local security and privacy
+
+The skill incorporates the creator-supplied `agysecurity.md` framework into a five-phase review and a 12-domain crosswalk. It adds checks for mismatched save/load limits, confidential CSV columns, spreadsheet exports, privacy-mode leaks, opt-in browser storage, complete local cleanup, stale imports, secondary browser inputs, network claims, randomness, and bounded processing. Backend/BaaS and AI checks remain conditional on actual features.
+
+Open the [browser-local audit section](../guides/security.html#browser-local-security-and-privacy-audit) for the controls, fictional regression cases, and a copyable prompt. The same instructions travel inside `securevcc.md` and its agent-ready export; no Desktop file is required. The [preserved input](sources/agysecurity.md) is provenance, with adaptation decisions in [SOURCES.md](SOURCES.md).
+
+For a focused review:
+
+> Use SecureVCC's browser-local five-phase review and 12-domain crosswalk on this project. Test save/reload and backup/restore, selected CSV columns, privacy-mode outputs, persistence and reset, stale callbacks, secondary inputs, network claims, randomness, and bounded work with fictional data. Report evidence and gaps; make repairs only within existing authorization.
+
 ## Before a security-sensitive repair
 
 Establish a recoverable baseline, preserve user changes, and repeat both the legitimate workflow and the relevant denied/error case after a fix. The skill includes reproducible review setup (`SUPPLY-03`) and safe diagnostic failure checks (`OPS-04`). For broader troubleshooting and repair/rebuild/retire decisions, use [Vibe-Code Rescue](../guides/rescue.html).
@@ -106,6 +116,7 @@ No file or checklist can guarantee that every vulnerability will be found. This 
 | `assets/securevcc-workstation.webp` | Optimized supplied retro workstation illustration, edited to show the VCC address |
 | `SOURCES.md` | Source notes, official reference links, and source-file checksums |
 | `sources/seccheck.md` | Original supplied website-security Markdown, preserved as provenance |
+| `sources/agysecurity.md` | Original supplied 12-domain browser-local security/privacy framework, preserved as provenance |
 | `sources/security-audit-skill-main.zip` | Original supplied Cloudflare audit-skill ZIP, preserved as provenance |
 | `sources/cloudflare-MIT-LICENSE.txt` | Original upstream MIT license |
 

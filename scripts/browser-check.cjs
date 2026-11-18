@@ -18,7 +18,14 @@ assert.equal(await page.getByRole('heading',{name:'What is VCC?',exact:true}).co
 await page.locator('footer').getByRole('link',{name:'About',exact:true}).click();
 assert.ok(page.url().endsWith('/guides/about.html'));assert.equal(await page.locator('h1').textContent(),'About VCC');assert.ok((await page.locator('main').textContent()).includes('a growing collection of guidance, reusable instructions'));
 await page.goto(base);
-for(const route of ['design','security','education','rescue']){await page.locator('.foundation[href="guides/'+route+'.html"]').click();assert.ok(page.url().endsWith('/guides/'+route+'.html'));assert.ok(await page.locator('.guide-explainer').isVisible());await page.goto(base);}
+const featured=await (await context.request.get(base+'agent-resources/featured.json')).json();
+for(const {key:route,version} of featured){
+ const card=page.locator('.foundation[href="guides/'+route+'.html"]');
+ assert.equal(await card.locator('strong .guide-version').textContent(),'v'+version);
+ assert.equal(await card.locator('.guide-version').getAttribute('aria-label'),'Version '+version);
+ await card.click();assert.ok(page.url().endsWith('/guides/'+route+'.html'));assert.ok(await page.locator('.guide-explainer').isVisible());
+ assert.equal(await page.locator('h1 .guide-version').textContent(),'v'+version);await page.goto(base);
+}
 assert.equal(await page.locator('[data-resource],#resource-search,#result-count').count(),0);
 assert.equal(await page.locator('#start,#before-sharing,.checklist').count(),0);assert.equal(await page.locator('#ai-agent-instructions,#tools').count(),0);
 assert.ok(await page.evaluate(()=>Boolean(document.querySelector('#library').compareDocumentPosition(document.querySelector('#download'))&Node.DOCUMENT_POSITION_FOLLOWING)));
@@ -89,6 +96,20 @@ await page.setViewportSize({width:1280,height:900});await page.goto(base);await 
 await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches),true);
 await require('./skills-browser-check.cjs')({page,context,base});
 await page.goto(base+'guides/security.html');
+await page.locator('.guide-rail').getByRole('link',{name:'Browser-local security and privacy audit',exact:true}).click();
+assert.ok(await page.getByRole('heading',{name:'Browser-local security and privacy audit',exact:true}).isVisible());
+await page.getByRole('button',{name:'Copy browser-local audit prompt',exact:true}).focus();await page.keyboard.press('Enter');
+await page.waitForFunction(()=>document.querySelector('#browser-local-audit-prompt').parentElement.querySelector('.copy-status').textContent==='Browser-local audit prompt copied');
+const browserAuditPrompt=(await page.locator('#browser-local-audit-prompt').textContent()).trim();
+assert.equal(await page.evaluate(()=>navigator.clipboard.readText()),browserAuditPrompt);
+assert.ok(browserAuditPrompt.includes('12-domain crosswalk'));assert.ok(!browserAuditPrompt.includes('~/Desktop/'));
+const securitySource=await (await context.request.get(base+'securevcc/securevcc.md')).text();
+const securityExport=await (await context.request.get(base+'agent-skills/securevcc/SKILL.md')).text();
+for(const content of [securitySource,securityExport]){
+ assert.ok(content.includes(browserAuditPrompt));
+ for(const id of ['INPUT-04','STATE-02','FILE-02','FILE-03','DATA-04','DATA-05','DATA-06','WEB-05','WEB-06','CRYPTO-02','LIMIT-02'])assert.ok(content.includes('**'+id+' —'));
+}
+assert.equal((await context.request.get(base+'securevcc/sources/agysecurity.md')).status(),200);
 assert.ok(await page.getByRole('heading',{name:'Before repairing an existing app',exact:true}).count());
 await page.locator('.note').getByRole('link',{name:'Vibe-Code Rescue',exact:true}).click();
 assert.ok(page.url().endsWith('/guides/rescue.html'));

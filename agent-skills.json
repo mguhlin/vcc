@@ -15,7 +15,7 @@
     {
       "name": "securevcc",
       "title": "SecureVCC",
-      "description": "Review and harden vibe-coded applications with evidence-driven checks for credentials, permissions, data boundaries, deployment, and safe repair. Use for scoped security audits or authorized fixes.",
+      "description": "Review and harden vibe-coded applications with evidence-driven checks for credentials, permissions, browser-local privacy, imports/exports, state consistency, deployment, and safe repair. Use for scoped security audits or authorized fixes.",
       "source_url": "https://mguhlin.github.io/vcc/securevcc/securevcc.md",
       "guide_url": "https://mguhlin.github.io/vcc/guides/security.html",
       "skill_url": "https://mguhlin.github.io/vcc/agent-skills/securevcc/SKILL.md",
