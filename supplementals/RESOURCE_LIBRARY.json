@@ -69,12 +69,12 @@
     "category": "skills",
     "title": "Reusable skills",
     "type": "Skills · Project starters",
-    "description": "Browse 23 reusable workflows with complete Markdown, project prompts, concept sketches, and hero artwork for turning instructions into useful tools.",
+    "description": "Browse 25 reusable workflows with complete Markdown, project prompts, and concept artwork, including a detailed Go app workflow for desktop, Android, and browsers.",
     "note": "Seven original supplied skills, two repository adaptations, and 14 creator adaptations",
     "guide": "guides/skills.html",
     "guide_label": "Browse reusable skills",
     "download": "downloads/reusable-skills.zip",
-    "download_label": "Download all 23 skills"
+    "download_label": "Download all 25 skills"
   },
   {
     "category": "rescue",

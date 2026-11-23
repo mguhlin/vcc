@@ -1,6 +1,6 @@
 # Vibe-Coding Center
 
-> 28 instruction-only skills: 4 featured guides and 24 reusable workflows.
+> 29 instruction-only skills: 4 featured guides and 25 reusable workflows.
 
 Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the skill matching the task. Follow the user's project instructions and existing authorization.
 
@@ -8,7 +8,7 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 
 - [Agent directions](https://mguhlin.github.io/vcc/AGENT_GUIDE.md): selection, creation, validation, and use.
 - [Structured directory](https://mguhlin.github.io/vcc/agent-skills.json): names, descriptions, sources, guides, and skill URLs.
-- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): 28 local skill folders; no executable installer.
+- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): 29 local skill folders; no executable installer.
 
 ## Featured guides
 
@@ -17,7 +17,7 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 - [Education privacy](https://mguhlin.github.io/vcc/agent-skills/edu-compliance/SKILL.md): `edu-compliance`. [Readable guide](https://mguhlin.github.io/vcc/guides/education.html).
 - [Vibe-Code Rescue](https://mguhlin.github.io/vcc/agent-skills/vibe-code-rescue/SKILL.md): `vibe-code-rescue`. [Readable guide](https://mguhlin.github.io/vcc/guides/rescue.html).
 
-## Learning and productivity
+## Reusable workflows
 
 - [SIFT Approach](https://mguhlin.github.io/vcc/agent-skills/sift-approach/SKILL.md): `sift-approach`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#sift-approach).
 - [PRISM Thinking Coach](https://mguhlin.github.io/vcc/agent-skills/prism-thinking/SKILL.md): `prism-thinking`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#prism-thinking).
@@ -43,3 +43,4 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 - [Archive Harbor](https://mguhlin.github.io/vcc/agent-skills/archive-harbor/SKILL.md): `archive-harbor`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#archive-harbor).
 - [ClearCopy](https://mguhlin.github.io/vcc/agent-skills/clearcopy/SKILL.md): `clearcopy`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#clearcopy).
 - [Build Texas Classroom Crosswalk](https://mguhlin.github.io/vcc/agent-skills/build-texas-classroom-crosswalk/SKILL.md): `build-texas-classroom-crosswalk`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#build-texas-classroom-crosswalk).
+- [Go App Builder](https://mguhlin.github.io/vcc/agent-skills/go-app-builder/SKILL.md): `go-app-builder`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#go-app-builder).

@@ -100,6 +100,23 @@ def concept_image(item):
                 box(x,y,width,100,'#fff')
                 line(x+14,y+36,x+width-24)
                 line(x+14,y+65,x+width-58)
+    elif slug == 'go-app-builder':
+        text(48,112,'A shared core. Platform-aware adapters.',27)
+        box(232,142,496,64,'#dce7f2')
+        text(270,182,'Go logic + portable file formats',24)
+        for i,(label,detail) in enumerate([
+            ('Windows','Files + runtime'),('macOS','Files + signing'),
+            ('Linux','Files + libraries'),('Android','URIs + lifecycle'),
+            ('Browser','Wasm + fallback')
+        ]):
+            x=48+i*176
+            parts.append(f'<path d="M480 206V224H{x+80}V246" fill="none" stroke="#8499b0" stroke-width="2"/>')
+            box(x,246,160,110)
+            text(x+12,281,label,23,'#1c528d')
+            text(x+12,321,detail,17)
+        line(48,394,912)
+        text(48,430,'Open · work · cancel · save · clear',25)
+        text(48,470,'Verify the installed artifact and every offline claim.',21,'#3c546c')
     else:
         text(52,122,'Keep the claim beside its evidence.',26)
         rows=[['Original claim','Source + location','Finding'],['Claim one','Add evidence','Unresolved'],['Claim two','Add evidence','Unresolved']]
@@ -132,22 +149,34 @@ def render_skills(md):
             caption=f'Concept sketch: {item["project"]}. A possible interface, not a working app.'
         raw=(ROOT/'skills'/slug/'SKILL.md').read_text()
         prompt=(ROOT/'skills'/slug/'PROJECT_PROMPT.md').read_text()
-        links.append(f'<li data-skill-entry><a href="#{slug}" data-skill-link="{slug}"><span>{e(item["title"])}</span><small>{e(item["category"])}</small></a></li>')
+        search_text=' '.join(item[field] for field in ['title','category','summary'])
+        links.append(f'<li data-skill-entry><a href="#{slug}" data-skill-link="{slug}" data-skill-search="{e(search_text)}"><span>{e(item["title"])}</span><small>{e(item["category"])}</small></a></li>')
         origin=f'{e(item["origin"])} · <a href="../skills/SOURCES.md">Sources &amp; reuse</a>'
         if item.get('source'):origin+=f' · <a href="{e(item["source"])}">Upstream skill (CC0)</a>'
+        reference_labels={'android':'Android','validation-release':'validation and release'}
         references=''.join(
-            f'<a href="../skills/{slug}/{e(file)}">Read {e(Path(file).stem.replace("-", " "))}</a>'
+            f'<a href="../skills/{slug}/{e(file)}">Read {e(reference_labels.get(Path(file).stem,Path(file).stem.replace("-", " ")))}</a>'
             for file in item.get('support_files',[]) if file.startswith('references/')
         )
+        skill_bundle=''
+        if item.get('bundle'):
+            bundle_path=ROOT/item['bundle']
+            bundle_path.parent.mkdir(parents=True,exist_ok=True)
+            with zipfile.ZipFile(bundle_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+                for file in dict.fromkeys(['SKILL.md','PROJECT_PROMPT.md',*item.get('support_files',[])]):
+                    info=zipfile.ZipInfo(f'{slug}/{file}',date_time=(1980,1,1,0,0,0))
+                    info.compress_type=zipfile.ZIP_DEFLATED;info.external_attr=0o100644<<16
+                    archive.writestr(info,(ROOT/'skills'/slug/file).read_bytes())
+            skill_bundle=f'<a href="../{e(item["bundle"])}" download>Download complete skill ZIP</a>'
         panels.append(f'''<article class="skill-panel" id="{slug}" data-skill-panel>
 <h2 class="skill-title" id="{slug}-title" tabindex="-1">{e(item['title'])}</h2>
 <a class="skill-browse-return" href="#skill-browser" hidden>Browse skills</a>
 <p class="skill-summary">{e(item['summary'])}</p><p class="meta">{origin}</p>
-<div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a><a href="#{slug}-file">Read full skill</a>{references}<span class="skill-status" role="status"></span></div>
+<div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a>{skill_bundle}<a href="#{slug}-file">Read full skill</a>{references}<span class="skill-status" role="status"></span></div>
 {render_agent_instructions(slug,level=3)}
 <figure class="skill-concept"><a href="../{image}"><img src="../{image}" alt="{e(alt)}" width="{width}" height="{height}" loading="lazy"></a><figcaption>{e(caption)}</figcaption></figure>
 <section class="skill-prompt" aria-labelledby="{slug}-project"><h3 id="{slug}-project">Turn this skill into a project</h3>
-<p>Copy this prompt with the skill and VCC’s three instruction files. Adapt the audience and subject before building.</p>
+<p>Copy this prompt with the skill and the relevant VCC instruction files. Adapt the audience and subject before building.</p>
 <label for="{slug}-prompt">Project prompt</label><textarea id="{slug}-prompt" readonly rows="12" spellcheck="false">{e(prompt)}</textarea>
 <pre class="skill-print-source">{e(prompt)}</pre><div class="skill-actions"><button type="button" class="button secondary" data-skill-copy="{slug}-prompt" data-copy-label="Project prompt">Copy project prompt</button><a href="../skills/{slug}/PROJECT_PROMPT.md" download>Download prompt</a><span class="skill-status" role="status"></span></div></section>
 <section class="skill-source" aria-labelledby="{slug}-file"><h3 id="{slug}-file">Full skill file</h3><label for="{slug}-raw">{slug}/SKILL.md</label><textarea id="{slug}-raw" readonly rows="18" spellcheck="false">{e(raw)}</textarea><pre class="skill-print-source">{e(raw)}</pre><p class="meta">Read or select the full Markdown here. The Copy skill button copies the entire file.</p></section>

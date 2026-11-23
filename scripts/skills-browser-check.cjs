@@ -36,6 +36,11 @@ module.exports=async function({page,context,base}){
   assert.equal(await page.locator(':focus').getAttribute('id'),item.slug+'-title');
   const source=await context.request.get(base+'skills/'+item.slug+'/SKILL.md');assert.equal(source.status(),200);
   const prompt=await context.request.get(base+'skills/'+item.slug+'/PROJECT_PROMPT.md');assert.equal(prompt.status(),200);
+  for(const file of item.support_files||[]){
+   const support=await context.request.get(base+'skills/'+item.slug+'/'+file);assert.equal(support.status(),200,item.slug+' '+file);
+   if(file.startsWith('references/'))assert.equal(await panel.locator('a[href="../skills/'+item.slug+'/'+file+'"]').count(),1,'reference is discoverable');
+  }
+  if(item.bundle){const download=panel.getByRole('link',{name:'Download complete skill ZIP',exact:true});assert.equal(await download.getAttribute('href'),'../'+item.bundle);const response=await context.request.get(base+item.bundle);assert.equal(response.status(),200);assert.ok((await response.body()).length>1000)}
   assert.equal(await panel.locator('textarea').last().inputValue(),await source.text());
   assert.equal(await panel.locator('textarea').first().inputValue(),await prompt.text());
   await panel.getByRole('button',{name:'Copy skill',exact:true}).click();
@@ -52,6 +57,9 @@ module.exports=async function({page,context,base}){
  }
  await page.locator('#skill-search').fill('Freewriting Coach');
  assert.equal(await page.locator('[data-skill-entry]:visible').count(),1);
+ await page.locator('#skill-search').fill('Android');
+ assert.equal(await page.locator('[data-skill-entry]:visible').count(),1,'platform terms find Go App Builder');
+ assert.ok(await page.locator('[data-skill-link="go-app-builder"]').isVisible());
  await page.locator('#skill-search').fill('zzzznomatch');assert.ok(await page.locator('.skill-empty').isVisible());
  await page.getByRole('button',{name:'Clear search',exact:true}).click();assert.equal(await page.locator('[data-skill-entry]:visible').count(),catalog.length);
  await page.goto(base+'guides/skills.html#quadrant-notes');assert.ok(await page.locator('#quadrant-notes').isVisible());

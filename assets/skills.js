@@ -66,7 +66,7 @@ if(skillsRoot){
  function filterSkills(){
   const query=search.value.trim().toLocaleLowerCase();let count=0;
   for(const link of links){
-   const show=!query||link.textContent.toLocaleLowerCase().includes(query);
+   const show=!query||(link.dataset.skillSearch||link.textContent).toLocaleLowerCase().includes(query);
    link.closest('li').hidden=!show;
    if(show)count++;
   }

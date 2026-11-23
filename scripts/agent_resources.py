@@ -18,6 +18,8 @@ def skill_entries():
         entries.append(dict(name=item['slug'],key=item['slug'],title=item['title'],source=f"skills/{item['slug']}/SKILL.md",guide=f"guides/skills.html#{item['slug']}",description=f"Use for {item['category'].lower()}. {item['summary']}",license=item.get('license','CC0-1.0' if item.get('source') else 'CC-BY-4.0'),use=f"Use {item['title']} for the task and material I supply in this conversation. Follow its workflow and safeguards, ask for essential missing inputs, and distinguish verified evidence from examples or uncertainty. If I ask for a vibe-coded application, use the matching project prompt from VCC and the project's existing design, education, and security instructions."))
         if item.get('support_files'):
             entries[-1]['support_files']=item['support_files']
+        if item.get('use'):
+            entries[-1]['use']=item['use']
     for entry in entries:
         entry['skill_path']=f"agent-skills/{entry['name']}/SKILL.md"
         entry['skill_url']=BASE+entry['skill_path']
@@ -56,7 +58,7 @@ def skill_export(entry):
 def setup_prompt(entry):
     name=entry['name']
     support=''.join(f" Save {BASE}agent-skills/{name}/{file} as {file} relative to the skill folder." for file in entry.get('support_files',[]))
-    return f"Read {BASE}AGENT_GUIDE.md and create the {name} skill from {entry['skill_url']}. Read the entire SKILL.md. Use this project's .agents/skills/{name}/SKILL.md for Codex project scope, or the current host's supported project skill location. Inspect any existing same-name skill first, reuse an identical copy, and preserve customized content until any needed merge/replace decision is resolved. Preserve the complete instructions, source attribution, and license notices. Validate the name, description, and saved content against the downloaded file. Report the actual file path and validation result.{support} This request creates the skill files; I will specify the project or learning task separately."
+    return f"Read {BASE}AGENT_GUIDE.md and create the {name} skill from {entry['skill_url']}. Read the entire SKILL.md. Use this project's .agents/skills/{name}/SKILL.md for Codex project scope, or the current host's supported project skill location. Inspect any existing same-name skill first, reuse an identical copy, and preserve customized content until any needed merge/replace decision is resolved. Preserve the complete instructions, source attribution, and license notices.{support} Validate the name, description, main instructions, and any supporting files against their downloaded sources. Report the actual file path and validation result. This request creates the skill files; I will specify the project or learning task separately."
 
 
 def use_prompt(entry):
@@ -101,7 +103,7 @@ def write_agent_resources():
     index=f'# Vibe-Coding Center\n\n> {len(entries)} instruction-only skills: {featured_count} featured guides and {reusable_count} reusable workflows.\n\nRead AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the skill matching the task. Follow the user\'s project instructions and existing authorization.\n\n## Agent entry points\n\n'
     index+=f'- [Agent directions]({BASE}AGENT_GUIDE.md): selection, creation, validation, and use.\n- [Structured directory]({BASE}agent-skills.json): names, descriptions, sources, guides, and skill URLs.\n- [All skill files]({BASE}downloads/vcc-agent-skills.zip): {len(entries)} local skill folders; no executable installer.\n\n## Featured guides\n\n'
     for i,entry in enumerate(entries):
-        if i==featured_count:index+='\n## Learning and productivity\n\n'
+        if i==featured_count:index+='\n## Reusable workflows\n\n'
         index+=f"- [{entry['title']}]({entry['skill_url']}): `{entry['name']}`. [Readable guide]({entry['guide_url']}).\n"
     (ROOT/'llms.txt').write_text(index)
     with zipfile.ZipFile(ROOT/'downloads/vcc-agent-skills.zip','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:

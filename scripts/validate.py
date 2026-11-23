@@ -62,6 +62,12 @@ with zipfile.ZipFile(ROOT/'downloads/reusable-skills.zip') as bundle:
   for name in ['SKILL.md','PROJECT_PROMPT.md',*item.get('support_files',[])]:
    path=ROOT/'skills'/item['slug']/name
    if bundle.read('vcc/'+path.relative_to(ROOT).as_posix())!=path.read_bytes():errors.append(f'Stale reusable skill bundle: {path}')
+  if item.get('bundle'):
+   with zipfile.ZipFile(ROOT/item['bundle']) as individual:
+    expected={f'{item["slug"]}/{name}':(ROOT/'skills'/item['slug']/name).read_bytes() for name in ['SKILL.md','PROJECT_PROMPT.md',*item.get('support_files',[])]}
+    if len(individual.namelist())!=len(expected) or set(individual.namelist())!=set(expected):errors.append(f'Incomplete individual skill bundle: {item["slug"]}')
+    for name,data in expected.items():
+     if individual.read(name)!=data:errors.append(f'Stale individual skill component: {name}')
   if item.get('hero'):
    if bundle.read('vcc/'+item['hero'])!=(ROOT/item['hero']).read_bytes():errors.append(f'Stale hero: {item["slug"]}')
    raw=(ROOT/'skills'/item['slug']/'SKILL.md').read_text()

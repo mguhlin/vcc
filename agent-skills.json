@@ -259,6 +259,25 @@
         "agents/openai.yaml",
         "assets/icon.svg"
       ]
+    },
+    {
+      "name": "go-app-builder",
+      "title": "Go App Builder",
+      "description": "Use for go & app development. Plan and build Windows, macOS, Linux, Android, and browser editions with shared Go logic, usable platform adapters, offline checks, and verified release artifacts.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/go-app-builder/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#go-app-builder",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/go-app-builder/SKILL.md",
+      "license": "CC-BY-4.0",
+      "support_files": [
+        "PROJECT_PROMPT.md",
+        "references/architecture.md",
+        "references/desktop.md",
+        "references/android.md",
+        "references/browser.md",
+        "references/validation-release.md",
+        "references/sources.md",
+        "agents/openai.yaml"
+      ]
     }
   ]
 }

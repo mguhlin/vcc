@@ -53,3 +53,8 @@ Fourteen creator adaptations are part of the sidebar collection. Organization-sp
 The 14 new hero illustrations were created with OpenAI image generation for VCC, then optimized as WebP. Their prompts and dimensions are preserved in `assets/skills/heroes/PROMPTS.json`. VCC makes these original visual assets available under its CC BY 4.0 educational visual terms; generated artwork does not depict working applications or establish exclusive rights. See [skill sources and adaptations](skills/SOURCES.md).
 
 The compact skills-introduction artwork and colorful Vibe-Code Rescue illustration were made with OpenAI image generation. The rescue edit adds a red plus coding-repair toolkit and retains the reproduce/diagnose/repair/verify sequence. Its original vector source is preserved at `assets/art-source/rescue-workbench-original.svg`; the established SVG URL contains a self-contained image for compatibility, while pages use optimized WebP. The creator-supplied SecureVCC workstation artwork was edited to show `mguhlin.github.io/vcc` on the monitor. Prompts are in `assets/ARTWORK_PROMPTS.json`. Existing attribution and visual reuse terms remain applicable.
+
+
+## Go App Builder
+
+Go App Builder's main instructions, platform references, source guide, and project prompt are original VCC educational prose by Miguel Guhlin under CC BY 4.0. Its platform diagram is original code-drawn VCC artwork under the same educational visual terms. Upstream documentation and standards are linked and paraphrased; their software, brands, certifications, and licenses are not claimed by VCC. See [its source guide](skills/go-app-builder/references/sources.md) for the technical references and verification boundaries.

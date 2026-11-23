@@ -17,6 +17,11 @@ module.exports=async function({page,context,base}){
   }
   const payload=await context.request.get(base+new URL(skill.skill_url).pathname.replace('/vcc/',''));assert.equal(payload.status(),200);
   const text=await payload.text();assert.ok(text.startsWith('---\nname: '+skill.name+'\n'));assert.ok(text.includes('## VCC source and reuse'));assert.ok(indexText.includes(skill.skill_url));
+  for(const file of skill.support_files||[]){
+   const path=new URL(file,skill.skill_url).pathname.replace('/vcc/','');const support=await context.request.get(base+path);assert.equal(support.status(),200,skill.name+' agent reference '+file);
+   const source=await context.request.get(base+'skills/'+skill.name+'/'+file);assert.equal(await support.text(),await source.text(),'agent reference content stays complete');
+   assert.ok((await block.locator('#agent-'+skill.name+'-setup').textContent()).includes(file),'setup prompt preserves supporting paths');
+  }
   await page.setViewportSize({width:320,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),skill.name+' open agent prompts reflow');await page.setViewportSize({width:1440,height:1000});
  }
  await page.goto(base+'guides/rescue.html#ai-agent-instructions');const block=page.locator('.agent-instructions');await block.locator('summary').click();

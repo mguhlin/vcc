@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">Go portability workbench</title><desc id="desc">Shared Go logic and portable formats connect Windows, macOS, Linux, Android, and browser adapters, with common open, cancel, save, clear, and release checks.</desc>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Go portability workbench</text>
+<text x="48" y="112" font-family="system-ui,sans-serif" font-size="27" fill="#152d48">A shared core. Platform-aware adapters.</text>
+<rect x="232" y="142" width="496" height="64" fill="#dce7f2" stroke="#8499b0"/>
+<text x="270" y="182" font-family="system-ui,sans-serif" font-size="24" fill="#152d48">Go logic + portable file formats</text>
+<path d="M480 206V224H128V246" fill="none" stroke="#8499b0" stroke-width="2"/>
+<rect x="48" y="246" width="160" height="110" fill="#edf1f6" stroke="#8499b0"/>
+<text x="60" y="281" font-family="system-ui,sans-serif" font-size="23" fill="#1c528d">Windows</text>
+<text x="60" y="321" font-family="system-ui,sans-serif" font-size="17" fill="#152d48">Files + runtime</text>
+<path d="M480 206V224H304V246" fill="none" stroke="#8499b0" stroke-width="2"/>
+<rect x="224" y="246" width="160" height="110" fill="#edf1f6" stroke="#8499b0"/>
+<text x="236" y="281" font-family="system-ui,sans-serif" font-size="23" fill="#1c528d">macOS</text>
+<text x="236" y="321" font-family="system-ui,sans-serif" font-size="17" fill="#152d48">Files + signing</text>
+<path d="M480 206V224H480V246" fill="none" stroke="#8499b0" stroke-width="2"/>
+<rect x="400" y="246" width="160" height="110" fill="#edf1f6" stroke="#8499b0"/>
+<text x="412" y="281" font-family="system-ui,sans-serif" font-size="23" fill="#1c528d">Linux</text>
+<text x="412" y="321" font-family="system-ui,sans-serif" font-size="17" fill="#152d48">Files + libraries</text>
+<path d="M480 206V224H656V246" fill="none" stroke="#8499b0" stroke-width="2"/>
+<rect x="576" y="246" width="160" height="110" fill="#edf1f6" stroke="#8499b0"/>
+<text x="588" y="281" font-family="system-ui,sans-serif" font-size="23" fill="#1c528d">Android</text>
+<text x="588" y="321" font-family="system-ui,sans-serif" font-size="17" fill="#152d48">URIs + lifecycle</text>
+<path d="M480 206V224H832V246" fill="none" stroke="#8499b0" stroke-width="2"/>
+<rect x="752" y="246" width="160" height="110" fill="#edf1f6" stroke="#8499b0"/>
+<text x="764" y="281" font-family="system-ui,sans-serif" font-size="23" fill="#1c528d">Browser</text>
+<text x="764" y="321" font-family="system-ui,sans-serif" font-size="17" fill="#152d48">Wasm + fallback</text>
+<path d="M48 394H912" stroke="#c5d1df" stroke-width="2"/>
+<text x="48" y="430" font-family="system-ui,sans-serif" font-size="25" fill="#152d48">Open · work · cancel · save · clear</text>
+<text x="48" y="470" font-family="system-ui,sans-serif" font-size="21" fill="#3c546c">Verify the installed artifact and every offline claim.</text>
+</svg>

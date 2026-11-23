@@ -64,3 +64,10 @@ Archive Harbor does not infer successful downloads from button clicks or identic
 ## Build Texas Classroom Crosswalk
 
 The user supplied `build-texas-classroom-crosswalk.zip` for VCC. Its skill instructions, framework reference with citations, icon, and agent metadata are preserved. The archive included no separate license notice. VCC’s project prompt and concept sketch follow its CC BY 4.0 terms.
+
+
+## Go App Builder
+
+Go App Builder is original VCC educational guidance by Miguel Guhlin, offered under CC BY 4.0. It synthesizes reusable implementation and testing patterns with primary documentation from Go, desktop and mobile framework maintainers, Microsoft, Apple, Android, browser-platform documentation, W3C, and OWASP. [Its source guide](go-app-builder/references/sources.md) maps references to the decisions they support and the facts an assistant must recheck for a selected version and deployment.
+
+The skill does not copy an individual application's identity, source code, credentials, binaries, or development-specific file paths. Platform references, the project prompt, and agent metadata travel in its complete folder ZIP and both skill collection downloads. The original code-drawn concept sketch accompanies the reading page, reusable-skills ZIP, and complete VCC bundle. No SDK, runtime installer, framework code, or build dependency is installed or redistributed just by reading or saving this skill. The four VCC guides are linked companion reviews, not claims of security, accessibility, legal certification, or institutional approval.

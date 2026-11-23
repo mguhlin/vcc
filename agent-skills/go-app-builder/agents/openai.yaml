@@ -1,0 +1,4 @@
+interface:
+  display_name: "Go App Builder"
+  short_description: "Build shared Go apps with platform-specific evidence"
+  default_prompt: "Use $go-app-builder to plan or improve my shared Go application across its required platforms."

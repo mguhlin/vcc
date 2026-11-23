@@ -288,5 +288,28 @@
       "agents/openai.yaml",
       "assets/icon.svg"
     ]
+  },
+  {
+    "slug": "go-app-builder",
+    "title": "Go App Builder",
+    "category": "Go & app development",
+    "summary": "Plan and build Windows, macOS, Linux, Android, and browser editions with shared Go logic, usable platform adapters, offline checks, and verified release artifacts.",
+    "project": "Go portability workbench",
+    "concept": "Shared Go logic and portable formats connect Windows, macOS, Linux, Android, and browser adapters, with common open, cancel, save, clear, and release checks.",
+    "origin": "Original VCC workflow",
+    "group": "Application development",
+    "license": "CC-BY-4.0",
+    "bundle": "downloads/go-app-builder.zip",
+    "support_files": [
+      "PROJECT_PROMPT.md",
+      "references/architecture.md",
+      "references/desktop.md",
+      "references/android.md",
+      "references/browser.md",
+      "references/validation-release.md",
+      "references/sources.md",
+      "agents/openai.yaml"
+    ],
+    "use": "Inspect my existing project and requested platforms before choosing a shared Go core, native adapters, or browser implementation. Read the relevant platform references linked from the skill before making those decisions; identify any unavailable references rather than claiming to have read them. Preserve working behavior, build a feature-parity and compatibility matrix, apply the four VCC review tracks, and verify offline behavior and the actual packaged artifacts. If only planning or review is requested, stay within that mode. Use the project prompt when I want a new build. No persistent skill installation is needed for this immediate-use request."
   }
 ]
