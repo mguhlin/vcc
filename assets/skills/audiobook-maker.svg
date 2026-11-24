@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">Listening edition workbench</title><desc id="desc">Source chapter text sits beside a checked listening edition, with mapped notes and a path through a local voice to WAV, MP3, or M4B audio.</desc>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Listening edition workbench</text>
+<text x="48" y="112" font-family="system-ui,sans-serif" font-size="27" fill="#152d48">Prepare the text. Check it. Then listen.</text>
+<rect x="48" y="142" width="410" height="220" fill="#edf1f6" stroke="#8499b0"/>
+<rect x="502" y="142" width="410" height="220" fill="#edf1f6" stroke="#8499b0"/>
+<text x="70" y="180" font-family="system-ui,sans-serif" font-size="24" fill="#1c528d">Source chapter</text>
+<text x="524" y="180" font-family="system-ui,sans-serif" font-size="24" fill="#1c528d">Listening edition</text>
+<path d="M70 220H430" stroke="#c5d1df" stroke-width="2"/>
+<path d="M524 220H884" stroke="#c5d1df" stroke-width="2"/>
+<path d="M70 255H430" stroke="#c5d1df" stroke-width="2"/>
+<path d="M524 255H884" stroke="#c5d1df" stroke-width="2"/>
+<path d="M70 290H430" stroke="#c5d1df" stroke-width="2"/>
+<path d="M524 290H884" stroke="#c5d1df" stroke-width="2"/>
+<text x="70" y="335" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">Prose + notes + captions</text>
+<text x="524" y="335" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">Clean text + mapped notes</text>
+<path d="M48 394H912" stroke="#c5d1df" stroke-width="2"/>
+<text x="48" y="430" font-family="system-ui,sans-serif" font-size="25" fill="#152d48">Chapter text → Local voice → WAV → MP3 / M4B</text>
+<text x="48" y="470" font-family="system-ui,sans-serif" font-size="21" fill="#3c546c">Keep originals. Review every change. Pilot the voice.</text>
+</svg>

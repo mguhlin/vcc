@@ -100,6 +100,20 @@ def concept_image(item):
                 box(x,y,width,100,'#fff')
                 line(x+14,y+36,x+width-24)
                 line(x+14,y+65,x+width-58)
+    elif slug == 'audiobook-maker':
+        text(48,112,'Prepare the text. Check it. Then listen.',27)
+        box(48,142,410,220,'#edf1f6')
+        box(502,142,410,220,'#edf1f6')
+        text(70,180,'Source chapter',24,'#1c528d')
+        text(524,180,'Listening edition',24,'#1c528d')
+        for y in (220,255,290):
+            line(70,y,430)
+            line(524,y,884)
+        text(70,335,'Prose + notes + captions',21)
+        text(524,335,'Clean text + mapped notes',21)
+        line(48,394,912)
+        text(48,430,'Chapter text → Local voice → WAV → MP3 / M4B',25)
+        text(48,470,'Keep originals. Review every change. Pilot the voice.',21,'#3c546c')
     elif slug == 'go-app-builder':
         text(48,112,'A shared core. Platform-aware adapters.',27)
         box(232,142,496,64,'#dce7f2')
@@ -152,7 +166,10 @@ def render_skills(md):
         search_text=' '.join(item[field] for field in ['title','category','summary'])
         links.append(f'<li data-skill-entry><a href="#{slug}" data-skill-link="{slug}" data-skill-search="{e(search_text)}"><span>{e(item["title"])}</span><small>{e(item["category"])}</small></a></li>')
         origin=f'{e(item["origin"])} · <a href="../skills/SOURCES.md">Sources &amp; reuse</a>'
-        if item.get('source'):origin+=f' · <a href="{e(item["source"])}">Upstream skill (CC0)</a>'
+        if item.get('source'):
+            source_label=item.get('source_label','Upstream skill (CC0)')
+            origin+=f' · <a href="{e(item["source"])}">{e(source_label)}</a>'
+        if item.get('credit'):origin+=f' · {e(item["credit"])}'
         reference_labels={'android':'Android','validation-release':'validation and release'}
         references=''.join(
             f'<a href="../skills/{slug}/{e(file)}">Read {e(reference_labels.get(Path(file).stem,Path(file).stem.replace("-", " ")))}</a>'

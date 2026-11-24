@@ -278,6 +278,19 @@
         "references/sources.md",
         "agents/openai.yaml"
       ]
+    },
+    {
+      "name": "audiobook-maker",
+      "title": "Audiobook Maker",
+      "description": "Use for reading & listening. Prepare faithful PDF, EPUB, or text listening editions, with traceable notes, content checks, and an optional free local audio path.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/audiobook-maker/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#audiobook-maker",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/audiobook-maker/SKILL.md",
+      "license": "MIT",
+      "support_files": [
+        "PROJECT_PROMPT.md",
+        "references/free-local-audio.md"
+      ]
     }
   ]
 }

@@ -28,6 +28,8 @@ GitHub resources are linked references, not bundled or automatically installed. 
 
 ## Reusable skills
 
+**Audiobook Maker** adapts **Lance Eaton's Book to Audio Edition** workflow from his [MIT-licensed repository](https://github.com/leaton79/book-to-audiobook), introduced in [AI Audiobooks: An Update](https://aiedusimplified.substack.com/p/ai-audiobooks-an-update). Miguel Guhlin reformatted and extended it for VCC. Eaton's full MIT notice remains in the skill and exported copies. The companion project prompt, concept sketch, and free local audio guide are VCC additions under CC BY 4.0. No endorsement, source-book rights, speech software, or voice models are included. See [provenance and changes](skills/SOURCES.md#audiobook-maker).
+
 The seven user-supplied skills and VCC project prompts are educational prose by Miguel Guhlin under CC BY 4.0. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity adapt Miguel Guhlin's CC0-1.0 skill files in mguhlin/creations and retain CC0-1.0; each adaptation links to its source. The original vector concept sketches were drawn in code for VCC and follow its CC BY 4.0 educational visual terms. See [skill sources and changes](skills/SOURCES.md). No upstream executable code or image assets are bundled with the adaptations.
 
 Build Texas Classroom Crosswalk comes from the user-supplied skill archive. See [its source and reuse notes](skills/SOURCES.md#build-texas-classroom-crosswalk).

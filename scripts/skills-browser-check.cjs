@@ -36,6 +36,15 @@ module.exports=async function({page,context,base}){
   assert.equal(await page.locator(':focus').getAttribute('id'),item.slug+'-title');
   const source=await context.request.get(base+'skills/'+item.slug+'/SKILL.md');assert.equal(source.status(),200);
   const prompt=await context.request.get(base+'skills/'+item.slug+'/PROJECT_PROMPT.md');assert.equal(prompt.status(),200);
+  if(item.slug==='audiobook-maker'){
+   const credit=panel.locator('p.meta').first();
+   assert.ok((await credit.textContent()).includes('Lance Eaton'));
+   assert.equal(await credit.getByRole('link',{name:'Eaton’s original workflow (MIT)',exact:true}).getAttribute('href'),'https://github.com/leaton79/book-to-audiobook');
+   assert.ok(!((await credit.textContent()).includes('CC0')),'MIT source must not be mislabeled CC0');
+   assert.ok((await source.text()).includes('Copyright (c) 2026 Lance Eaton'));
+   const exported=await context.request.get(base+'agent-skills/audiobook-maker/SKILL.md');
+   assert.ok((await exported.text()).includes('Copyright (c) 2026 Lance Eaton'),'credit travels with the agent export');
+  }
   for(const file of item.support_files||[]){
    const support=await context.request.get(base+'skills/'+item.slug+'/'+file);assert.equal(support.status(),200,item.slug+' '+file);
    if(file.startsWith('references/'))assert.equal(await panel.locator('a[href="../skills/'+item.slug+'/'+file+'"]').count(),1,'reference is discoverable');
@@ -60,6 +69,10 @@ module.exports=async function({page,context,base}){
  await page.locator('#skill-search').fill('Android');
  assert.equal(await page.locator('[data-skill-entry]:visible').count(),1,'platform terms find Go App Builder');
  assert.ok(await page.locator('[data-skill-link="go-app-builder"]').isVisible());
+ await page.locator('#skill-search').fill('audiobook');
+ assert.equal(await page.locator('[data-skill-entry]:visible').count(),1,'listening workflow is discoverable');
+ await page.locator('[data-skill-link="audiobook-maker"]').click();
+ assert.ok(await page.locator('#audiobook-maker').isVisible());
  await page.locator('#skill-search').fill('zzzznomatch');assert.ok(await page.locator('.skill-empty').isVisible());
  await page.getByRole('button',{name:'Clear search',exact:true}).click();assert.equal(await page.locator('[data-skill-entry]:visible').count(),catalog.length);
  await page.goto(base+'guides/skills.html#quadrant-notes');assert.ok(await page.locator('#quadrant-notes').isVisible());

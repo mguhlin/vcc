@@ -1,0 +1,17 @@
+# Project prompt: listening edition workbench
+
+Read `audiobook-maker/SKILL.md`, including its Lance Eaton attribution and MIT notice, plus this project's `WEB_DESIGN.md`, `EDU_COMPLIANCE.md`, and `securevcc.md` before building. Use Vibe-Code Rescue for an existing broken project when relevant. Identify unavailable files rather than claiming to have read them.
+
+Build a local-first workbench for an adult educator to prepare and check authorized text before text-to-speech narration. Begin with pasted UTF-8 text and a small fictional sample. The first version is a manual review tool; PDF/EPUB extraction, OCR, generated figure descriptions, and narration are later capabilities only if explicitly implemented and tested.
+
+Show source text beside an editable listening edition. Let the user define chapters, mark verified layout clutter, propose mechanical corrections, and move notes into chapter groups. Preserve the source, unique sidebar content, citations, numbers, and real hyphens. Make every proposed removal or replacement inspectable and reversible. Keep added table narrations and figure descriptions visibly separate from author text. A reviewer must approve uncertain transformations before final export.
+
+Keep a coverage ledger linking source blocks to retained text, moved notes, approved omissions, or unresolved decisions. Chapter endpoints and word counts are useful warnings, not proof that the middle survived. Show incomplete chapters and unmatched notes plainly. Export chapter text, grouped notes, and the review ledger separately; preserve Unicode, ordering, attribution, and required notices. No maintenance timestamps are needed in the interface, exports, or file metadata.
+
+Use clear chapter navigation, labeled editing controls, keyboard access, visible focus, readable side-by-side text that stacks on phones, and accessible change summaries. Support undo, cancellation, empty text, malformed imports, and download failures without losing work. Default to memory-only processing; any persistent local save must be opt-in with scoped clearing. Do not add accounts, telemetry, external fonts, or remote APIs.
+
+Use the optional `references/free-local-audio.md` only if I request audio generation. A static web page must not pretend it can run a desktop speech engine. A future local desktop/CLI companion can receive chapter text through an explicit export; require a short voice preview and verify actual chapter files before reporting success. Keep the voice/model license and book rights separate. No voice cloning or paid service is required.
+
+Verify with invented passages containing a page break, a repeated header, a meaningful bracketed citation, an exponent, a real compound word, two chapter notes numbered 1, a unique sidebar, and a table with units and an empty value. Check that changes are reversible and every source block is accounted for. Test keyboard editing, narrow-screen reflow, export/reimport, interruption/recovery, and clear-local-work behavior. Report implemented capabilities, checks run, and remaining limits.
+
+Credit the workflow to Lance Eaton's [Book to Audio Edition](https://github.com/leaton79/book-to-audiobook), introduced in [AI Audiobooks: An Update](https://aiedusimplified.substack.com/p/ai-audiobooks-an-update), adapted for [VCC](https://mguhlin.github.io/vcc/) by Miguel Guhlin. This project prompt is VCC educational prose under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the adapted skill retains MIT. No book content or upstream executable code is included.

@@ -1,5 +1,24 @@
 # Reusable skills: sources and adaptations
 
+## Audiobook Maker
+
+**Original workflow: Lance Eaton. VCC adaptation: Miguel Guhlin.** [Audiobook Maker](audiobook-maker/SKILL.md) adapts Eaton's **Book to Audio Edition** prompts from [leaton79/book-to-audiobook](https://github.com/leaton79/book-to-audiobook), linked in his blog post [AI Audiobooks: An Update](https://aiedusimplified.substack.com/p/ai-audiobooks-an-update). Eaton developed the original workflow with Claude. This is an attributed adaptation, not a claim of endorsement or VCC authorship of the original method.
+
+The repository explicitly licenses code **and documentation** under MIT. The full `Copyright (c) 2026 Lance Eaton` notice travels inside the maintained skill, agent export, and downloadable copies. The blog identifies its own CC BY-SA 4.0 terms; VCC links to the post and adapts the separately MIT-licensed repository prompts rather than reproducing the blog. No blog imagery, book text, upstream scripts, dependencies, or voice models are redistributed.
+
+Source identities from the GitHub connector:
+
+| Repository file | Git blob |
+| --- | --- |
+| `prompts/chat-only-prompt.md` | `37751f4c753b33e3a8eabd2a2038c76bafff7431` |
+| `prompts/code-assistant-prompt.md` | `f760aaac0abdd1403bacf51a7abd90f4d32af069` |
+| `README.md` | `58fea1f3fb11409399c587f800f365f66bc28ba3` |
+| `LICENSE` | `ab7d1eced19bb5e2fbe9c37616c4e1a2ded5bece` |
+
+VCC renames and reformats the workflow, separates text preparation from optional audio synthesis, and adds explicit chat/file capability boundaries, permitted processing destinations, a representative pilot, conservative handling of unique sidebars and citations, traceable note relocation, uncertain OCR handling, source-block reconciliation, interruption recovery, and final text re-extraction. It avoids treating matching endpoints, OCR word-frequency scores, or extraction ratios as proof that nothing was lost. Required notices remain in the delivered package even when excluded from narration.
+
+The separately authored [project prompt](audiobook-maker/PROJECT_PROMPT.md), concept sketch, and [free local audio reference](audiobook-maker/references/free-local-audio.md) follow VCC's CC BY 4.0 terms. The reference cites official Piper, Kokoro, Balabolka, and FFmpeg documentation and distinguishes engine/model licenses from book rights. The complete skill folder ZIP and both collection ZIPs include the project prompt and local audio reference. These are instructions, not a completed converter or claims of tested speech quality on a full book.
+
 ## Supplied collection
 
 Miguel Guhlin supplied the full text of SIFT Approach, PRISM Thinking Coach, Outline Helper, Quadrant Note-Taking, AI Citation Assistant, Vocabulary Enhancement, and Freewriting Coach. Their Markdown instructions are preserved as supplied; the Freewriting description is quoted so its colon parses correctly as YAML. These seven files follow VCC's CC BY 4.0 educational-prose terms; attribute Miguel Guhlin and link to VCC. SIFT's underlying framework is credited to Mike Caulfield in the skill. No ownership of that framework is claimed.
