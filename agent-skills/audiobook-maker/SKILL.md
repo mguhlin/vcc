@@ -61,6 +61,8 @@ If output would truncate, pause at a complete paragraph and record the last comp
 
 ## Optional: make the audio locally
 
+[PageSpindle — Spin text into listening](https://mguhlin.github.io/pagespindle/) is the companion application, maintained in its [own repository](https://github.com/mguhlin/pagespindle). Choose a Windows, macOS, or Linux download, or the [browser edition](https://mguhlin.github.io/pagespindle/browser/). It implements source preservation, optional local Qwen preparation, passage review, note destinations, an optional copyable chatbot prompt, and local narration. Models must be downloaded first; browser AI additionally requires WebGPU and adequate GPU memory/storage. Manual review works without AI. The initial voice is English; the browser exports WAV chapters, while the desktop edition can use separately installed FFmpeg for MP3/M4B. Check its release evidence and limits. OCR, visual interpretation, listening-ready PDF production, and automatic full-book fidelity verification remain separate tasks.
+
 When the user requests a recording, read [Free local audio path](references/free-local-audio.md). It maps clean chapter text → local speech synthesis → WAV chapter masters → MP3 chapters or an M4B with chapter metadata, without requiring a paid narration service. Verify the selected engine, voice terms, installation permissions, and a short pilot before processing the book. Keep notes as separate optional tracks. Do not upload the book, clone a person's voice, or publish the recording without the relevant authorization.
 
 ## License

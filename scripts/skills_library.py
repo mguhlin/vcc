@@ -175,6 +175,7 @@ def render_skills(md):
             f'<a href="../skills/{slug}/{e(file)}">Read {e(reference_labels.get(Path(file).stem,Path(file).stem.replace("-", " ")))}</a>'
             for file in item.get('support_files',[]) if file.startswith('references/')
         )
+        app_link=f'<a href="{e(item["app_url"])}">{e(item.get("app_label","Open companion app"))}</a>' if item.get('app_url') else ''
         skill_bundle=''
         if item.get('bundle'):
             bundle_path=ROOT/item['bundle']
@@ -189,7 +190,7 @@ def render_skills(md):
 <h2 class="skill-title" id="{slug}-title" tabindex="-1">{e(item['title'])}</h2>
 <a class="skill-browse-return" href="#skill-browser" hidden>Browse skills</a>
 <p class="skill-summary">{e(item['summary'])}</p><p class="meta">{origin}</p>
-<div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a>{skill_bundle}<a href="#{slug}-file">Read full skill</a>{references}<span class="skill-status" role="status"></span></div>
+<div class="skill-actions"><button type="button" class="button" data-skill-copy="{slug}-raw" data-copy-label="Skill">Copy skill</button><a href="../skills/{slug}/SKILL.md" download>Download SKILL.md</a>{skill_bundle}{app_link}<a href="#{slug}-file">Read full skill</a>{references}<span class="skill-status" role="status"></span></div>
 {render_agent_instructions(slug,level=3)}
 <figure class="skill-concept"><a href="../{image}"><img src="../{image}" alt="{e(alt)}" width="{width}" height="{height}" loading="lazy"></a><figcaption>{e(caption)}</figcaption></figure>
 <section class="skill-prompt" aria-labelledby="{slug}-project"><h3 id="{slug}-project">Turn this skill into a project</h3>

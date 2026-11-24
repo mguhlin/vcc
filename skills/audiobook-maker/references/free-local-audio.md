@@ -4,6 +4,12 @@ This is the optional narration stage after Audiobook Maker has produced and chec
 
 **Practical route:** approved chapter text → local Piper voice → WAV chapter masters → MP3 chapter files, or one M4B with chapter metadata → your audiobook player.
 
+## Use the PageSpindle companion app
+
+[PageSpindle](https://mguhlin.github.io/pagespindle/) brings import, optional local AI preparation, side-by-side review, voice preview, and audiobook export into one workspace. [Open the browser edition](https://mguhlin.github.io/pagespindle/browser/) for local WebGPU text preparation and WebAssembly narration after explicit model downloads, or choose the matching Windows/macOS/Linux package and common model pack. It credits Lance Eaton and follows VCC’s four protections. Save a project backup, review every passage, audition the English voice, and export the WAV chapters. The desktop app supports optional FFmpeg MP3/M4B conversion. Its [source and release evidence](https://github.com/mguhlin/pagespindle) explain unsigned-package, hardware, offline-cache, input and job-size limits.
+
+The optional chatbot handoff copies a passage with the skill’s conservative preparation instructions. A local chatbot can keep that step offline; pasting it into a hosted chatbot transfers the passage to that provider. Review the result before pasting it back into the prepared passage. The app’s built-in Qwen model avoids that manual handoff.
+
 ## Choose an engine
 
 | Route | Suitable starting point | Tradeoff |

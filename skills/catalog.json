@@ -330,6 +330,8 @@
       "PROJECT_PROMPT.md",
       "references/free-local-audio.md"
     ],
-    "use": "Prepare an authorized text for listening while preserving the author's prose, unique content, citations, and traceable notes. Establish available tools and essential content choices, pilot a representative section, and reconcile retained content throughout each chapter. If I request audio, read the included free local audio reference, use an authorized local voice workflow, and verify a short sample before full synthesis. Distinguish actual generated files and listening checks from plans or unavailable capabilities."
+    "use": "Prepare an authorized text for listening while preserving the author's prose, unique content, citations, and traceable notes. Establish available tools and essential content choices, pilot a representative section, and reconcile retained content throughout each chapter. If I request audio, read the included free local audio reference, use an authorized local voice workflow, and verify a short sample before full synthesis. Distinguish actual generated files and listening checks from plans or unavailable capabilities.",
+    "app_url": "https://mguhlin.github.io/pagespindle/",
+    "app_label": "Open PageSpindle app"
   }
 ]
