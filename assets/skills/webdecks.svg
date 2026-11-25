@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">Presentation and presenter workspace</title><desc id="desc">A projected slide sits beside a presenter console with current and next previews, speaker notes, and notes-size controls; a phone shows the stacked reading layout.</desc>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Presentation and presenter workspace</text>
+<rect x="48" y="112" width="470" height="264" fill="#152d48" stroke="#8499b0"/>
+<text x="74" y="166" font-family="Georgia,serif" font-size="28" fill="#fff">One clear idea per slide</text>
+<path d="M74 218H460" stroke="#8499b0" stroke-width="2"/>
+<path d="M74 254H460" stroke="#8499b0" stroke-width="2"/>
+<path d="M74 290H460" stroke="#8499b0" stroke-width="2"/>
+<rect x="550" y="112" width="362" height="264" fill="#edf1f6" stroke="#8499b0"/>
+<text x="572" y="150" font-family="system-ui,sans-serif" font-size="24" fill="#1c528d">Presenter view</text>
+<rect x="572" y="172" width="150" height="84" fill="#dce7f2" stroke="#8499b0"/>
+<rect x="740" y="172" width="150" height="84" fill="#dce7f2" stroke="#8499b0"/>
+<text x="584" y="204" font-family="system-ui,sans-serif" font-size="20" fill="#152d48">Current</text>
+<text x="754" y="204" font-family="system-ui,sans-serif" font-size="20" fill="#152d48">Next</text>
+<text x="572" y="292" font-family="system-ui,sans-serif" font-size="22" fill="#152d48">Speaker notes</text>
+<text x="572" y="338" font-family="system-ui,sans-serif" font-size="22" fill="#152d48">A−   A+   /   Timer</text>
+<text x="48" y="430" font-family="system-ui,sans-serif" font-size="25" fill="#152d48">Project · Present · Read on a phone · Print</text>
+<text x="48" y="470" font-family="system-ui,sans-serif" font-size="21" fill="#3c546c">Keep the notes, controls, and reading layout together.</text>
+</svg>

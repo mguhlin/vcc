@@ -114,6 +114,18 @@ def concept_image(item):
         line(48,394,912)
         text(48,430,'Chapter text → Local voice → WAV → MP3 / M4B',25)
         text(48,470,'Keep originals. Review every change. Pilot the voice.',21,'#3c546c')
+    elif slug == 'webdecks':
+        box(48,112,470,264,'#152d48')
+        text(74,166,'One clear idea per slide',28,'#fff',True)
+        for y in (218,254,290):line(74,y,460,'#8499b0')
+        box(550,112,362,264)
+        text(572,150,'Presenter view',24,'#1c528d')
+        box(572,172,150,84,'#dce7f2');box(740,172,150,84,'#dce7f2')
+        text(584,204,'Current',20);text(754,204,'Next',20)
+        text(572,292,'Speaker notes',22)
+        text(572,338,'A−   A+   /   Timer',22)
+        text(48,430,'Project · Present · Read on a phone · Print',25)
+        text(48,470,'Keep the notes, controls, and reading layout together.',21,'#3c546c')
     elif slug == 'go-app-builder':
         text(48,112,'A shared core. Platform-aware adapters.',27)
         box(232,142,496,64,'#dce7f2')

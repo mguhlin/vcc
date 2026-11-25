@@ -1,6 +1,6 @@
 # Reusable skills for vibe-coded projects
 
-Open the [VCC skill browser](https://mguhlin.github.io/vcc/guides/skills.html) for 26 workflows, project prompts, and concept images.
+Open the [VCC skill browser](https://mguhlin.github.io/vcc/guides/skills.html) for 27 workflows, project prompts, and concept images.
 
 Each skill folder contains `SKILL.md` and a matching `PROJECT_PROMPT.md`. Read the skill, adapt the prompt to your audience, and explicitly ask your assistant to apply it. Download VCC's `WEB_DESIGN.md`, `EDU_COMPLIANCE.md`, and `securevcc.md` from the [core guides](https://mguhlin.github.io/vcc/#core-guides) before using the project prompt. These prompts describe possible applications; this collection does not include completed apps.
 
@@ -14,3 +14,7 @@ The 14 creator adaptations include original hero artwork generated with OpenAI i
 
 
 Go App Builder adds application-development guidance to the collection. Its [complete folder ZIP](../downloads/go-app-builder.zip) includes platform references and a project prompt; a chatbot can read the Markdown directly, and a coding agent can use the folder through its supported skill mechanism. The references are original guidance based on linked upstream documentation, not bundled frameworks, installers, or compiled applications.
+
+## WebDecks
+
+[WebDecks](https://mguhlin.github.io/vcc/guides/skills.html#webdecks) adds Miguel Guhlin’s MIT-licensed Web Deck v5 presentation system. The [complete skill ZIP](https://mguhlin.github.io/vcc/downloads/webdecks.zip) includes the skill, project prompt, specification, standalone chatbot edition, framework CSS/JavaScript, starter markup, and license. The starter is downloaded as `.html.txt`; rename it to `.html` in your project. These files also travel in both skill collections and the complete VCC download. Maintain framework behavior in [mguhlin/webdecks](https://github.com/mguhlin/webdecks), then refresh these distribution snapshots.

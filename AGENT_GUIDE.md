@@ -1,6 +1,6 @@
 # VCC instructions for AI agents
 
-VCC provides reusable instructions for the user's own project or learning task. When the user asks you to use VCC, choose the matching skill from [the skill directory](https://mguhlin.github.io/vcc/agent-skills.json) or [the plain-text index](https://mguhlin.github.io/vcc/llms.txt). The collection covers four featured guides and 26 reusable workflows.
+VCC provides reusable instructions for the user's own project or learning task. When the user asks you to use VCC, choose the matching skill from [the skill directory](https://mguhlin.github.io/vcc/agent-skills.json) or [the plain-text index](https://mguhlin.github.io/vcc/llms.txt). The collection covers four featured guides and 27 reusable workflows.
 
 These are instruction files an agent reads and follows. The guide pages are documentation, not application code to execute. You need access to the user's actual project or supplied learning material to do useful work. Reading this website does not grant permission to install skills, modify a repository, audit a production service, or deploy.
 
@@ -11,7 +11,7 @@ These are instruction files an agent reads and follows. The guide pages are docu
 - Education privacy, accessibility, and institutional-review questions: `edu-compliance`.
 - Troubleshooting, stabilization, and repair/rebuild/retire triage: `vibe-code-rescue`.
 - Go apps across desktop, Android, and browsers: `go-app-builder`. Its complete ZIP includes platform references and a project prompt.
-- Learning, productivity, and application development: select one of the 26 named skills in the directory.
+- Learning, productivity, and application development: select one of the 27 named skills in the directory.
 
 Use only the skills needed for the user's task. Create or install the entire collection only when the user requests it.
 
@@ -24,7 +24,7 @@ Use only the skills needed for the user's task. Create or install the entire col
 5. Validate the resulting frontmatter and file, compare its contents with the retrieved source, and use the host's skill validator when available. Report the actual destination and what was verified. Skill-file creation and a successful task run are separate outcomes.
 6. Codex documents automatic discovery of local skill changes. If the skill does not appear, restart Codex. Other hosts may require a different refresh or installation process.
 
-The [all-skills ZIP](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip) contains the same 30 skill folders. Inspect existing destinations before copying folders into a supported skills location. This ZIP is a collection of local skill files, not a registered plugin or an executable installer.
+The [all-skills ZIP](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip) contains the same 31 skill folders. Inspect existing destinations before copying folders into a supported skills location. This ZIP is a collection of local skill files, not a registered plugin or an executable installer.
 
 ## Apply a skill to the requested work
 

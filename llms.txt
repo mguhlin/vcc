@@ -1,6 +1,6 @@
 # Vibe-Coding Center
 
-> 30 instruction-only skills: 4 featured guides and 26 reusable workflows.
+> 31 instruction-only skills: 4 featured guides and 27 reusable workflows.
 
 Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the skill matching the task. Follow the user's project instructions and existing authorization.
 
@@ -8,7 +8,7 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 
 - [Agent directions](https://mguhlin.github.io/vcc/AGENT_GUIDE.md): selection, creation, validation, and use.
 - [Structured directory](https://mguhlin.github.io/vcc/agent-skills.json): names, descriptions, sources, guides, and skill URLs.
-- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): 30 local skill folders; no executable installer.
+- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): 31 local skill folders; no executable installer.
 
 ## Featured guides
 
@@ -45,3 +45,4 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 - [Build Texas Classroom Crosswalk](https://mguhlin.github.io/vcc/agent-skills/build-texas-classroom-crosswalk/SKILL.md): `build-texas-classroom-crosswalk`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#build-texas-classroom-crosswalk).
 - [Go App Builder](https://mguhlin.github.io/vcc/agent-skills/go-app-builder/SKILL.md): `go-app-builder`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#go-app-builder).
 - [Audiobook Maker](https://mguhlin.github.io/vcc/agent-skills/audiobook-maker/SKILL.md): `audiobook-maker`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#audiobook-maker).
+- [WebDecks](https://mguhlin.github.io/vcc/agent-skills/webdecks/SKILL.md): `webdecks`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#webdecks).

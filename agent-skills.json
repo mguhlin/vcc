@@ -291,6 +291,24 @@
         "PROJECT_PROMPT.md",
         "references/free-local-audio.md"
       ]
+    },
+    {
+      "name": "webdecks",
+      "title": "WebDecks",
+      "description": "Use for html presentations. Build portable HTML slide decks with speaker notes, a synchronized presenter view, phone reflow, keyboard controls, and print-to-PDF.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/webdecks/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#webdecks",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/webdecks/SKILL.md",
+      "license": "MIT",
+      "support_files": [
+        "PROJECT_PROMPT.md",
+        "references/webdeck_spec_v5.md",
+        "references/webdeck_v5_standalone.md",
+        "assets/deck-framework.css",
+        "assets/deck-framework.js",
+        "assets/template-deck.html.txt",
+        "LICENSE"
+      ]
     }
   ]
 }

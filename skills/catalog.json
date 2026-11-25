@@ -333,5 +333,30 @@
     "use": "Prepare an authorized text for listening while preserving the author's prose, unique content, citations, and traceable notes. Establish available tools and essential content choices, pilot a representative section, and reconcile retained content throughout each chapter. If I request audio, read the included free local audio reference, use an authorized local voice workflow, and verify a short sample before full synthesis. Distinguish actual generated files and listening checks from plans or unavailable capabilities.",
     "app_url": "https://mguhlin.github.io/pagespindle/",
     "app_label": "Open PageSpindle app"
+  },
+  {
+    "slug": "webdecks",
+    "title": "WebDecks",
+    "category": "HTML presentations",
+    "summary": "Build portable HTML slide decks with speaker notes, a synchronized presenter view, phone reflow, keyboard controls, and print-to-PDF.",
+    "project": "Presentation and presenter workspace",
+    "concept": "A projected slide sits beside a presenter console with current and next previews, speaker notes, and notes-size controls; a phone shows the stacked reading layout.",
+    "origin": "Miguel Guhlin Web Deck v5 adaptation",
+    "group": "Presentations",
+    "license": "MIT",
+    "source": "https://github.com/mguhlin/webdecks",
+    "source_label": "Web Deck v5 source (MIT)",
+    "credit": "Web Deck v5 and VCC adaptation by Miguel Guhlin.",
+    "bundle": "downloads/webdecks.zip",
+    "support_files": [
+      "PROJECT_PROMPT.md",
+      "references/webdeck_spec_v5.md",
+      "references/webdeck_v5_standalone.md",
+      "assets/deck-framework.css",
+      "assets/deck-framework.js",
+      "assets/template-deck.html.txt",
+      "LICENSE"
+    ],
+    "use": "Read the bundled specification and use the included framework and starter to build or edit my requested HTML presentation. Preserve project identity, add speaker notes, retain presenter synchronization and notes resizing, verify projected and phone layouts and print output where tools allow, and report actual evidence. For a single-file delivery, use the bundled standalone reference. Follow existing publication authorization; this skill grants none by itself."
   }
 ]

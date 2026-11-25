@@ -24,13 +24,13 @@ The Four Checks Before You Share cartoon was remade with OpenAI image generation
 
 ## Linked resources
 
-GitHub resources are linked references, not bundled or automatically installed. Each upstream license, dependency notice, asset right, and model license applies separately. A repository license does not grant rights to copied brand identities or every linked example. See RESOURCE_REVIEW.md for license signals and limitations.
+Recommended GitHub resources are linked references, not automatically installed. The WebDecks section below identifies its explicitly bundled framework and references. Each upstream license, dependency notice, asset right, and model license applies separately. A repository license does not grant rights to copied brand identities or every linked example. See RESOURCE_REVIEW.md for license signals and limitations.
 
 ## Reusable skills
 
 **Audiobook Maker** adapts **Lance Eaton's Book to Audio Edition** workflow from his [MIT-licensed repository](https://github.com/leaton79/book-to-audiobook), introduced in [AI Audiobooks: An Update](https://aiedusimplified.substack.com/p/ai-audiobooks-an-update). Miguel Guhlin reformatted and extended it for VCC. Eaton's full MIT notice remains in the skill and exported copies. The companion project prompt, concept sketch, and free local audio guide are VCC additions under CC BY 4.0. No endorsement, source-book rights, speech software, or voice models are included. See [provenance and changes](skills/SOURCES.md#audiobook-maker).
 
-The seven user-supplied skills and VCC project prompts are educational prose by Miguel Guhlin under CC BY 4.0. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity adapt Miguel Guhlin's CC0-1.0 skill files in mguhlin/creations and retain CC0-1.0; each adaptation links to its source. The original vector concept sketches were drawn in code for VCC and follow its CC BY 4.0 educational visual terms. See [skill sources and changes](skills/SOURCES.md). No upstream executable code or image assets are bundled with the adaptations.
+The seven user-supplied skills and VCC project prompts are educational prose by Miguel Guhlin under CC BY 4.0. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity adapt Miguel Guhlin's CC0-1.0 skill files in mguhlin/creations and retain CC0-1.0; each adaptation links to its source. The original vector concept sketches were drawn in code for VCC and follow its CC BY 4.0 educational visual terms. See [skill sources and changes](skills/SOURCES.md). The WebDecks framework is the bundled-code exception described below; the other skill adaptations do not bundle upstream executable code or image assets.
 
 Build Texas Classroom Crosswalk comes from the user-supplied skill archive. See [its source and reuse notes](skills/SOURCES.md#build-texas-classroom-crosswalk).
 
@@ -60,3 +60,7 @@ The compact skills-introduction artwork and colorful Vibe-Code Rescue illustrati
 ## Go App Builder
 
 Go App Builder's main instructions, platform references, source guide, and project prompt are original VCC educational prose by Miguel Guhlin under CC BY 4.0. Its platform diagram is original code-drawn VCC artwork under the same educational visual terms. Upstream documentation and standards are linked and paraphrased; their software, brands, certifications, and licenses are not claimed by VCC. See [its source guide](skills/go-app-builder/references/sources.md) for the technical references and verification boundaries.
+
+## WebDecks
+
+Web Deck v5 is by Miguel Guhlin, published at [mguhlin/webdecks](https://github.com/mguhlin/webdecks) under MIT. VCC includes distribution snapshots of `webdeck_spec_v5.md`, `webdeck_v5_standalone.md`, `assets/deck-framework.css`, `assets/deck-framework.js`, and `decks/template-deck.html`, plus the original license. The template is renamed to `assets/template-deck.html.txt` for an inert download; its contents are unchanged. The VCC skill and project prompt adapt the workflow for portable folders, existing project authorization, privacy, and honest verification, under the same MIT terms. The original copyright and full MIT notice remain in the skill, agent export, and downloadable folder. The WebDecks repository remains the maintained source for framework changes. The VCC concept sketch is original educational artwork under CC BY 4.0. Linked example decks and remote font files are not bundled.

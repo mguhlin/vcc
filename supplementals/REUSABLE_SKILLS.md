@@ -2,13 +2,15 @@
 
 A skill is a reusable set of instructions for an AI assistant: what to do, which steps to follow, and what a useful result looks like. Skills save you from rewriting the same directions and help keep a workflow consistent. Review the result each time; a skill does not guarantee accuracy or run an application by itself.
 
-Choose a skill in the alphabetical list, copy its Markdown, and use the project prompt to turn its workflow into a vibe-coded solution. The collection has 26 skills. Concept sketches suggest possible interfaces; the 14 new hero illustrations evoke their workflows. Neither is a finished app.
+Choose a skill in the alphabetical list, copy its Markdown, and use the project prompt to turn its workflow into a vibe-coded solution. The collection has 27 skills. Concept sketches suggest possible interfaces; the 14 new hero illustrations evoke their workflows. Neither is a finished app.
 
-Each entry also includes **Use with an AI agent**: an agent-ready file, a skill setup prompt, and a prompt for immediate use. The [agent directions](../AGENT_GUIDE.md) cover the 26 skills plus the four featured guides; [download all 30 agent skills](../downloads/vcc-agent-skills.zip) for local skill setup.
+Each entry also includes **Use with an AI agent**: an agent-ready file, a skill setup prompt, and a prompt for immediate use. The [agent directions](../AGENT_GUIDE.md) cover the 27 skills plus the four featured guides; [download all 31 agent skills](../downloads/vcc-agent-skills.zip) for local skill setup.
 
 **Preparing a book for listening?** [Audiobook Maker](skills.html#audiobook-maker) adapts **Lance Eaton's Book to Audio Edition** workflow from [AI Audiobooks: An Update](https://aiedusimplified.substack.com/p/ai-audiobooks-an-update) and his [MIT-licensed repository](https://github.com/leaton79/book-to-audiobook). The VCC adaptation preserves prose, maps relocated notes, and checks for missing content. Its [free local audio path](../skills/audiobook-maker/references/free-local-audio.md) explains how to turn the checked text into chapter audio or an M4B without a paid narration service. [Download the complete skill ZIP](../downloads/audiobook-maker.zip), or use [PageSpindle](https://mguhlin.github.io/pagespindle/), the companion app with desktop downloads and local browser AI/narration.
 
 **Building a Go application?** [Go App Builder](skills.html#go-app-builder) covers Windows, macOS, Linux, Android, and the browser. Its shared-core and platform-adapter workflow includes compatibility tables, offline installation and operation, secure file access, accessible interfaces, the four VCC checks, and verification of published artifacts. [Download its complete skill ZIP](../downloads/go-app-builder.zip), including the project prompt and detailed references. The main skill remains useful on its own; fetch or attach the platform references for deeper work.
+
+**Creating a presentation?** [WebDecks](skills.html#webdecks) brings Web Deck v5 into the library: a 1280 × 720 canvas, teleprompter notes, synchronized presenter view with notes resizing, keyboard controls, phone reflow, and print-to-PDF. [Download the complete skill ZIP](../downloads/webdecks.zip) for the specification, framework, starter markup, standalone chatbot reference, and MIT license. Its HTML starter is supplied as `.html.txt`; rename it to `.html` in your project. The [WebDecks site](https://mguhlin.github.io/webdecks/) remains the maintained source.
 
 ## From instructions to a working tool
 
@@ -23,6 +25,6 @@ Most starter projects use guided forms and prompts without requiring a live AI s
 
 The first seven skills were supplied by Miguel Guhlin for VCC. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity are self-contained adaptations of Miguel Guhlin's CC0 skills in [mguhlin/creations](https://github.com/mguhlin/creations/tree/main/architect/skills/packages). The 14 creator adaptations add critical thinking, ethical decisions, district planning, policy work, workshop and proposal design, instructional coaching, storytelling, learning calendars, authorized video archiving, and careful text/file cleanup. See [sources and changes](../skills/SOURCES.md) and [credits and reuse](../CREDITS.md).
 
-[Download all 26 skills, project prompts, and concept images](../downloads/reusable-skills.zip). The [complete VCC download](../downloads/vcc-complete.zip) also includes this collection.
+[Download all 27 skills, project prompts, and concept images](../downloads/reusable-skills.zip). The [complete VCC download](../downloads/vcc-complete.zip) also includes this collection.
 
 Browse and copy locally after downloading. Copy buttons work when the browser grants clipboard access; otherwise select the text and use your device's copy command. No accounts, uploaded documents, or AI API calls are used by this library.
