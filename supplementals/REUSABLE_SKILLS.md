@@ -1,16 +1,6 @@
 # Reusable skills
 
-A skill is a reusable set of instructions for an AI assistant: what to do, which steps to follow, and what a useful result looks like. Skills save you from rewriting the same directions and help keep a workflow consistent. Review the result each time; a skill does not guarantee accuracy or run an application by itself.
-
-Choose a skill in the alphabetical list, copy its Markdown, and use the project prompt to turn its workflow into a vibe-coded solution. The collection has 27 skills. Concept sketches suggest possible interfaces; the 14 new hero illustrations evoke their workflows. Neither is a finished app.
-
-Each entry also includes **Use with an AI agent**: an agent-ready file, a skill setup prompt, and a prompt for immediate use. The [agent directions](../AGENT_GUIDE.md) cover the 27 skills plus the four featured guides; [download all 31 agent skills](../downloads/vcc-agent-skills.zip) for local skill setup.
-
-**Preparing a book for listening?** [Audiobook Maker](skills.html#audiobook-maker) adapts **Lance Eaton's Book to Audio Edition** workflow from [AI Audiobooks: An Update](https://aiedusimplified.substack.com/p/ai-audiobooks-an-update) and his [MIT-licensed repository](https://github.com/leaton79/book-to-audiobook). The VCC adaptation preserves prose, maps relocated notes, and checks for missing content. Its [free local audio path](../skills/audiobook-maker/references/free-local-audio.md) explains how to turn the checked text into chapter audio or an M4B without a paid narration service. [Download the complete skill ZIP](../downloads/audiobook-maker.zip), or use [PageSpindle](https://mguhlin.github.io/pagespindle/), the companion app with desktop downloads and local browser AI/narration.
-
-**Building a Go application?** [Go App Builder](skills.html#go-app-builder) covers Windows, macOS, Linux, Android, and the browser. Its shared-core and platform-adapter workflow includes compatibility tables, offline installation and operation, secure file access, accessible interfaces, the four VCC checks, and verification of published artifacts. [Download its complete skill ZIP](../downloads/go-app-builder.zip), including the project prompt and detailed references. The main skill remains useful on its own; fetch or attach the platform references for deeper work.
-
-**Creating a presentation?** [WebDecks](skills.html#webdecks) brings Web Deck v5 into the library: a 1280 × 720 canvas, teleprompter notes, synchronized presenter view with notes resizing, keyboard controls, phone reflow, and print-to-PDF. [Download the complete skill ZIP](../downloads/webdecks.zip) for the specification, framework, starter markup, standalone chatbot reference, and MIT license. Its HTML starter is supplied as `.html.txt`; rename it to `.html` in your project. The [WebDecks site](https://mguhlin.github.io/webdecks/) remains the maintained source.
+Skills give your AI assistant clear instructions for a repeatable task. Browse 27 workflows, copy a skill or download its agent-ready file, and adapt the included project prompt. Each entry includes [setup guidance](../AGENT_GUIDE.md), downloads, and a concept image. Review and test the results before sharing.
 
 ## From instructions to a working tool
 
