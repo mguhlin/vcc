@@ -102,3 +102,5 @@ The workflow separates feature parity from framework labels, offline operation f
 ## WebDecks
 
 [WebDecks](https://mguhlin.github.io/vcc/guides/skills.html#webdecks) adds Miguel Guhlin’s MIT-licensed Web Deck v5 presentation system. The [complete skill ZIP](https://mguhlin.github.io/vcc/downloads/webdecks.zip) includes the skill, project prompt, specification, standalone chatbot edition, framework CSS/JavaScript, starter markup, and license. The starter is downloaded as `.html.txt`; rename it to `.html` in your project. These files also travel in both skill collections and the complete VCC download. Maintain framework behavior in [mguhlin/webdecks](https://github.com/mguhlin/webdecks), then refresh these distribution snapshots.
+
+SecureVCC also includes installed-mobile release checks inspired by the App Store Compliance Playbook. Read [the mobile worksheet](securevcc/ANDROID_RELEASE.md) and use `scripts/check_android_release.py` on final signed APK bytes with official Android build-tools. Reports distinguish scoped static evidence from runtime, privacy, accessibility and store-account decisions. No upstream hooks or rule packs are installed or bundled.

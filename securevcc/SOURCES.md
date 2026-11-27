@@ -91,3 +91,7 @@ The adaptation preserves the original as provenance while qualifying its blanket
 - The reusable prompt references `securevcc.md`, respects existing authorization, and requires no Desktop path. The existing report/coverage model replaces automatic severity labels and claims of exhaustive assurance.
 
 Implementation references consulted: [OWASP DOM XSS prevention](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html), [OWASP CSV injection](https://owasp.org/www-community/attacks/CSV_Injection), [RFC 4180](https://www.rfc-editor.org/rfc/rfc4180), [MDN CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy), and [MDN getRandomValues](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues). These are linked references, not redistributed implementations or certification evidence.
+
+## App-store and installed-mobile release checks
+
+[App Store Compliance Playbook](https://github.com/mjmirza/app-store-compliance), version 2.5.3, source revision `c6594f9f9e96c6fbc525242ba3f3fa4b7cc55395`, informed selection of permission, privacy, release-artifact and submission-evidence topics. Its custom OpenRoots Agent License 2.3 remains upstream. VCC contains original checks and links, with no copied scanner, hook or rule pack. Store policy thresholds are supplied by each caller and require current official verification.

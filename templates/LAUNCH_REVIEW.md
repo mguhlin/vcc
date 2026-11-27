@@ -27,6 +27,9 @@ For each row use **verified**, **partially verified**, **unverified**, or **not 
 | Secrets, dependencies, and safe input rendering | Unverified | | |
 | Access rules, sharing, and deletion where applicable | Unverified | | |
 | Hosting, actual network calls, and vendor behavior | Unverified | | |
+| Installed mobile artifact, signatures, permissions, backup/cleartext rules | Unverified | | |
+| Mobile essential task, process death, large text, screen reader, provider recovery | Unverified | | |
+| App-store declarations/account readiness when applicable | Unverified | | |
 | School authorization, legal triggers, contracts | Unverified | | |
 
 ## Decision
