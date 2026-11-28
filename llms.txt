@@ -1,6 +1,6 @@
 # Vibe-Coding Center
 
-> 31 instruction-only skills: 4 featured guides and 27 reusable workflows.
+> 32 instruction-only skills: 4 featured guides and 28 reusable workflows.
 
 Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the skill matching the task. Follow the user's project instructions and existing authorization.
 
@@ -8,7 +8,7 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 
 - [Agent directions](https://mguhlin.github.io/vcc/AGENT_GUIDE.md): selection, creation, validation, and use.
 - [Structured directory](https://mguhlin.github.io/vcc/agent-skills.json): names, descriptions, sources, guides, and skill URLs.
-- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): 31 local skill folders; no executable installer.
+- [All skill files](https://mguhlin.github.io/vcc/downloads/vcc-agent-skills.zip): 32 local skill folders; no executable installer.
 
 ## Featured guides
 
@@ -46,3 +46,4 @@ Read AGENT_GUIDE.md when the user asks to create or use a VCC skill. Select the 
 - [Go App Builder](https://mguhlin.github.io/vcc/agent-skills/go-app-builder/SKILL.md): `go-app-builder`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#go-app-builder).
 - [Audiobook Maker](https://mguhlin.github.io/vcc/agent-skills/audiobook-maker/SKILL.md): `audiobook-maker`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#audiobook-maker).
 - [WebDecks](https://mguhlin.github.io/vcc/agent-skills/webdecks/SKILL.md): `webdecks`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#webdecks).
+- [Android Release Audit](https://mguhlin.github.io/vcc/agent-skills/android-release-audit/SKILL.md): `android-release-audit`. [Readable guide](https://mguhlin.github.io/vcc/guides/skills.html#android-release-audit).

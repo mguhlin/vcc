@@ -358,5 +358,19 @@
       "LICENSE"
     ],
     "use": "Read the bundled specification and use the included framework and starter to build or edit my requested HTML presentation. Preserve project identity, add speaker notes, retain presenter synchronization and notes resizing, verify projected and phone layouts and print output where tools allow, and report actual evidence. For a single-file delivery, use the bundled standalone reference. Follow existing publication authorization; this skill grants none by itself."
+  },
+  {
+    "slug": "android-release-audit",
+    "title": "Android Release Audit",
+    "category": "Security & delivery",
+    "summary": "Review Android permissions, updates, privacy recovery and final signed artifacts before release; investigate Play Protect warnings with evidence.",
+    "project": "Android release review desk",
+    "concept": "A signed artifact and its tested identity sit beside a ten-domain evidence ledger and explicit Release, Conditional or Hold decision.",
+    "origin": "Original VCC guidance; creator-supplied audit rubric",
+    "group": "Original VCC workflows",
+    "bundle": "downloads/android-release-audit.zip",
+    "support_files": [
+      "references/policy-sources.md"
+    ]
   }
 ]

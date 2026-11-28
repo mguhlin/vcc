@@ -67,8 +67,9 @@ module.exports=async function({page,context,base}){
  await page.locator('#skill-search').fill('Freewriting Coach');
  assert.equal(await page.locator('[data-skill-entry]:visible').count(),1);
  await page.locator('#skill-search').fill('Android');
- assert.equal(await page.locator('[data-skill-entry]:visible').count(),1,'platform terms find Go App Builder');
+ assert.equal(await page.locator('[data-skill-entry]:visible').count(),2,'Android search finds building and release review workflows');
  assert.ok(await page.locator('[data-skill-link="go-app-builder"]').isVisible());
+ assert.ok(await page.locator('[data-skill-link="android-release-audit"]').isVisible());
  await page.locator('#skill-search').fill('audiobook');
  assert.equal(await page.locator('[data-skill-entry]:visible').count(),1,'listening workflow is discoverable');
  await page.locator('[data-skill-link="audiobook-maker"]').click();

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<title id="title">Android release review desk</title><desc id="desc">A signed artifact and its tested identity sit beside a ten-domain evidence ledger and explicit Release, Conditional or Hold decision.</desc>
+<rect width="960" height="520" fill="#dce7f2"/>
+<path d="M24 68H936V496H24Z" fill="#fff" stroke="#8499b0" stroke-width="2"/>
+<text x="24" y="44" font-family="Georgia,serif" font-size="30" fill="#152d48">Android release review desk</text>
+<text x="48" y="112" font-family="system-ui,sans-serif" font-size="27" fill="#152d48">Review the bytes you intend to publish.</text>
+<rect x="48" y="148" width="330" height="206" fill="#edf1f6" stroke="#8499b0"/>
+<text x="68" y="188" font-family="system-ui,sans-serif" font-size="25" fill="#1c528d">Signed APK / AAB</text>
+<text x="68" y="232" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">Package + version</text>
+<text x="68" y="274" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">SHA-256 + signer</text>
+<text x="68" y="316" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">Installed task evidence</text>
+<rect x="410" y="148" width="502" height="206" fill="#fff" stroke="#8499b0"/>
+<text x="432" y="188" font-family="system-ui,sans-serif" font-size="25" fill="#1c528d">Ten-domain evidence ledger</text>
+<text x="432" y="232" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">Pass: supported by evidence</text>
+<text x="432" y="274" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">Conditional: gap or prerequisite</text>
+<text x="432" y="316" font-family="system-ui,sans-serif" font-size="21" fill="#152d48">Fail: demonstrated blocker</text>
+<path d="M48 394H912" stroke="#c5d1df" stroke-width="2"/>
+<text x="48" y="430" font-family="system-ui,sans-serif" font-size="26" fill="#152d48">Release  /  Conditional  /  Hold</text>
+<text x="48" y="470" font-family="system-ui,sans-serif" font-size="22" fill="#3c546c">A local pass is not Google approval.</text>
+</svg>

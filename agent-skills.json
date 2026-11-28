@@ -309,6 +309,18 @@
         "assets/template-deck.html.txt",
         "LICENSE"
       ]
+    },
+    {
+      "name": "android-release-audit",
+      "title": "Android Release Audit",
+      "description": "Use for security & delivery. Review Android permissions, updates, privacy recovery and final signed artifacts before release; investigate Play Protect warnings with evidence.",
+      "source_url": "https://mguhlin.github.io/vcc/skills/android-release-audit/SKILL.md",
+      "guide_url": "https://mguhlin.github.io/vcc/guides/skills.html#android-release-audit",
+      "skill_url": "https://mguhlin.github.io/vcc/agent-skills/android-release-audit/SKILL.md",
+      "license": "CC-BY-4.0",
+      "support_files": [
+        "references/policy-sources.md"
+      ]
     }
   ]
 }

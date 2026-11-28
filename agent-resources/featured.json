@@ -19,7 +19,7 @@
     "description": "Review and harden vibe-coded applications with evidence-driven checks for credentials, permissions, browser-local privacy, imports/exports, state consistency, deployment, and safe repair. Use for scoped security audits or authorized fixes.",
     "license": "MIT",
     "use": "Perform a scoped source review of this project with safe local synthetic checks where authorized. Start with secrets and protected operations. Report confirmed findings separately from hypotheses and untested boundaries. Make repairs only within my existing authorization.",
-    "version": 4
+    "version": 5
   },
   {
     "name": "edu-compliance",

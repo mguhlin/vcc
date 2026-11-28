@@ -1,6 +1,6 @@
 # VCC instructions for AI agents
 
-VCC provides reusable instructions for the user's own project or learning task. When the user asks you to use VCC, choose the matching skill from [the skill directory](https://mguhlin.github.io/vcc/agent-skills.json) or [the plain-text index](https://mguhlin.github.io/vcc/llms.txt). The collection covers four featured guides and 27 reusable workflows.
+VCC provides reusable instructions for the user's own project or learning task. When the user asks you to use VCC, choose the matching skill from [the skill directory](https://mguhlin.github.io/vcc/agent-skills.json) or [the plain-text index](https://mguhlin.github.io/vcc/llms.txt). The collection covers four featured guides and 28 reusable workflows.
 
 These are instruction files an agent reads and follows. The guide pages are documentation, not application code to execute. You need access to the user's actual project or supplied learning material to do useful work. Reading this website does not grant permission to install skills, modify a repository, audit a production service, or deploy.
 

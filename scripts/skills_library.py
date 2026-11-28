@@ -126,6 +126,17 @@ def concept_image(item):
         text(572,338,'A−   A+   /   Timer',22)
         text(48,430,'Project · Present · Read on a phone · Print',25)
         text(48,470,'Keep the notes, controls, and reading layout together.',21,'#3c546c')
+    elif slug == 'android-release-audit':
+        text(48,112,'Review the bytes you intend to publish.',27)
+        box(48,148,330,206)
+        text(68,188,'Signed APK / AAB',25,'#1c528d')
+        for y,label in [(232,'Package + version'),(274,'SHA-256 + signer'),(316,'Installed task evidence')]:text(68,y,label,21)
+        box(410,148,502,206,'#fff')
+        text(432,188,'Ten-domain evidence ledger',25,'#1c528d')
+        for y,label in [(232,'Pass: supported by evidence'),(274,'Conditional: gap or prerequisite'),(316,'Fail: demonstrated blocker')]:text(432,y,label,21)
+        line(48,394,912)
+        text(48,430,'Release  /  Conditional  /  Hold',26)
+        text(48,470,'A local pass is not Google approval.',22,'#3c546c')
     elif slug == 'go-app-builder':
         text(48,112,'A shared core. Platform-aware adapters.',27)
         box(232,142,496,64,'#dce7f2')

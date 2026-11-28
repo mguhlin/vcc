@@ -15,6 +15,6 @@ Most starter projects use guided forms and prompts without requiring a live AI s
 
 The first seven skills were supplied by Miguel Guhlin for VCC. SIFT credits Mike Caulfield's framework. Compare Options and Source Integrity are self-contained adaptations of Miguel Guhlin's CC0 skills in [mguhlin/creations](https://github.com/mguhlin/creations/tree/main/architect/skills/packages). The 14 creator adaptations add critical thinking, ethical decisions, district planning, policy work, workshop and proposal design, instructional coaching, storytelling, learning calendars, authorized video archiving, and careful text/file cleanup. See [sources and changes](../skills/SOURCES.md) and [credits and reuse](../CREDITS.md).
 
-[Download all 27 skills, project prompts, and concept images](../downloads/reusable-skills.zip). The [complete VCC download](../downloads/vcc-complete.zip) also includes this collection.
+[Download all 28 skills, project prompts, and concept images](../downloads/reusable-skills.zip). The [complete VCC download](../downloads/vcc-complete.zip) also includes this collection.
 
 Browse and copy locally after downloading. Copy buttons work when the browser grants clipboard access; otherwise select the text and use your device's copy command. No accounts, uploaded documents, or AI API calls are used by this library.

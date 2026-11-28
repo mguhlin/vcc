@@ -29,3 +29,9 @@ Mark every row PASS, FAIL, NOT RUN or N/A with a reason. A source-only pass cann
 Revalidate official sources: [permissions](https://developer.android.com/privacy-and-security/permissions), [WebView bridges](https://developer.android.com/privacy-and-security/risks/insecure-webview-native-bridges), [backup](https://developer.android.com/identity/data/autobackup), [signing](https://developer.android.com/studio/publish/app-signing), [page sizes](https://developer.android.com/guide/practices/page-sizes), [target policy](https://developer.android.com/google/play/requirements/target-sdk).
 
 Original VCC educational guidance by Miguel Guhlin, CC BY 4.0. Upstream references retain their own terms.
+
+## Permission, update and warning decisions
+
+Use the [Android Release Audit skill](../skills/android-release-audit/SKILL.md) and its primary policy references for the ten-domain release gate. Play APK self-updates cannot be excused by a baseline exception. Direct APK and Play routes have different delivery rules; neither a valid signature nor a local preflight establishes Play Protect approval. Keep protection enabled and hold promotion for an unresolved harmful-app warning.
+
+Test that cache-cleanup failure cannot skip sync disconnection, revocation or cancellation during local erase. Repeat the actual confirmation flow and check protected state before and after, including failure/restart. Record missing Console declarations, physical-device checks and real-provider evidence explicitly.
